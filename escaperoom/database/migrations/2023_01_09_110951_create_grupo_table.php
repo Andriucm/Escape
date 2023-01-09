@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('grupo', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('codGrupo');
+            $table->bigInteger('cod_usuario')->unsigned();
+            $table->foreign('cod_usuario')->references('codUsuario')->on('usuario');
             $table->timestamps();
         });
     }

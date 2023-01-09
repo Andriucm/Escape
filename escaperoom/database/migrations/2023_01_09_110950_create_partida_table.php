@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('partida', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('codPartida');
+            $table->string('dificultad', 100);
             $table->timestamps();
         });
     }
