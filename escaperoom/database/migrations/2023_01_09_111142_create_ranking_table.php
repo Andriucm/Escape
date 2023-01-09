@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('ranking', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('codGrupo');
-            $table->foreign('codGrupo')->references('id')->on('grupo');
+            $table->foreign('codGrupo')->references('codGrupo')->on('grupo');
             $table->timestamps();
         });
     }

@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('usuaripartida', function (Blueprint $table) {
             $table->unsignedBigInteger('codUsuario');
             $table->unsignedBigInteger('codPartida');
-            $table->foreign('codUsuario')->references('id')->on('usuario')->ononDelete('cascade');
-            $table->foreign('codPartida')->references('id')->on('partida')->ononDelete('cascade');
+            $table->foreign('codUsuario')->references('codUsuario')->on('usuario')->ononDelete('cascade');
+            $table->foreign('codPartida')->references('codPartida')->on('partida')->ononDelete('cascade');
             $table->primary(['codUsuario','codPartida']);
             $table->timestamps();
         });

@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('usuariogrupo', function (Blueprint $table) {
             $table->unsignedBigInteger('codUsuario');
             $table->unsignedBigInteger('codGrupo');
-            $table->foreign('codUsuario')->references('id')->on('usuario')->ononDelete('cascade');
-            $table->foreign('codGrupo')->references('id')->on('grupo')->ononDelete('cascade');
+            $table->foreign('codUsuario')->references('codUsuario')->on('usuario')->ononDelete('cascade');
+            $table->foreign('codGrupo')->references('codGrupo')->on('grupo')->ononDelete('cascade');
             $table->primary(['codUsuario','codGrupo']);
             $table->timestamps();
         });
