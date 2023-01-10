@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('partida', function (Blueprint $table) {
-            $table->bigIncrements('codPartida');
-            $table->string('dificultad', 100);
+        Schema::create('rankings', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('codGrupo');
+            $table->foreign('codGrupo')->references('codGrupo')->on('grupos');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('partida');
+        Schema::dropIfExists('rankings');
     }
 };
