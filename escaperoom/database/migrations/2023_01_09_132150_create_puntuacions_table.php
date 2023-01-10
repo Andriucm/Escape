@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('puntuacion', function (Blueprint $table) {
+        Schema::create('puntuacions', function (Blueprint $table) {
             $table->bigIncrements('codPuntuacion');
             $table->bigInteger('codUsuario')->unsigned();
             $table->bigInteger('codGrupo')->unsigned();
             $table->bigInteger('codPartida')->unsigned();
-            $table->foreign('codUsuario')->references('codUsuario')->on('usuario');
-            $table->foreign('codGrupo')->references('codGrupo')->on('grupo');
-            $table->foreign('codPartida')->references('codPartida')->on('partida');
+            $table->foreign('codUsuario')->references('codUsuario')->on('usuarios');
+            $table->foreign('codGrupo')->references('codGrupo')->on('grupos');
+            $table->foreign('codPartida')->references('codPartida')->on('partidas');
 
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('puntuacion');
+        Schema::dropIfExists('puntuacions');
     }
 };

@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
-            $table->bigIncrements('codUsuario');
-            $table->string('nombre', 30);
-            $table->string('apellido', 30);
-            $table->string('email', 100);
-            $table->integer('telefono');
-            $table->string('rol', 200);
+        Schema::create('partidas', function (Blueprint $table) {
+            $table->bigIncrements('codPartida');
+            $table->string('dificultad', 100);
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario');
+        Schema::dropIfExists('partidas');
     }
 };
