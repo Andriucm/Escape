@@ -18,7 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('codPartida');
             $table->foreign('codUsuario')->references('codUsuario')->on('usuarios')->ononDelete('cascade');
             $table->foreign('codPartida')->references('codPartida')->on('partidas')->ononDelete('cascade');
-            $table->primary(['codUsuario','codPartida']);
+            $table->unique(['codUsuario','codPartida']);
+            $table->bigIncrements('codUsuarioPartida');
             $table->timestamps();
         });
     }
