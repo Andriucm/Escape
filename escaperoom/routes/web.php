@@ -14,22 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/play', function () {
     return view('partida');
-});
+})->name('partida');
+
 Route::get('/groups', function () {
     return view('listadoAlumnos');
-});
+})->name('listadoAlumnos');
+
 Route::get('/groups', function () {
     return view('grupos');
-});
+})->name('grupos');
+
 Route::get('/profile', function () {
     return view('perfil');
-});
+})->name('perfil');
+
 Route::get('/register', function () {
     return view('loginRegister');
-});
+})->name('register');
+
 Route::get('/login', function () {
     return view('loginRegister');
-});
+})->name('login');
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
