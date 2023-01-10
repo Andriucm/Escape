@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usuariogrupo', function (Blueprint $table) {
+        Schema::create('usuario_grupos', function (Blueprint $table) {
             $table->unsignedBigInteger('codUsuario');
             $table->unsignedBigInteger('codGrupo');
-            $table->foreign('codUsuario')->references('codUsuario')->on('usuario')->ononDelete('cascade');
-            $table->foreign('codGrupo')->references('codGrupo')->on('grupo')->ononDelete('cascade');
+            $table->foreign('codUsuario')->references('codUsuario')->on('usuarios')->ononDelete('cascade');
+            $table->foreign('codGrupo')->references('codGrupo')->on('grupos')->ononDelete('cascade');
             $table->primary(['codUsuario','codGrupo']);
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuariogrupo');
+        Schema::dropIfExists('usuario_grupos');
     }
 };

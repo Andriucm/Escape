@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ranking', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('codGrupo');
-            $table->foreign('codGrupo')->references('codGrupo')->on('grupo');
+        Schema::create('usuarios', function (Blueprint $table) {
+            $table->bigIncrements('codUsuario');
+            $table->string('nombre', 30);
+            $table->string('apellido', 30);
+            $table->string('email', 100);
+            $table->integer('telefono');
+            $table->string('rol', 200);
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ranking');
+        Schema::dropIfExists('usuarios');
     }
 };
