@@ -1,6 +1,7 @@
 import './bootstrap';
-import './bootstrap';
-import { createApp } from 'vue';
+import { createApp } from 'vue/dist/vue.esm-bundler';
 import App from './App.vue'; //Ahí está el componente principal
 
-createApp(App).mount('#app'); //Id del elemento de la vista
+createApp(App).mount('#headerSection');
+
+createApp(App).mount('#footerSection');
