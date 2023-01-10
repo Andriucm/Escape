@@ -18,7 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('codGrupo');
             $table->foreign('codUsuario')->references('codUsuario')->on('usuarios')->ononDelete('cascade');
             $table->foreign('codGrupo')->references('codGrupo')->on('grupos')->ononDelete('cascade');
-            $table->primary(['codUsuario','codGrupo']);
+            $table->unique(['codUsuario','codGrupo']);
+            $table->bigIncrements('codUsuarioGrupo');
             $table->timestamps();
         });
     }
