@@ -16,9 +16,9 @@ Route::get('/play', function () {
     return view('partida');
 })->name('partida');
 
-Route::get('/groups', function () {
-    return view('listadoAlumnos');
-})->name('listadoAlumnos');
+// Route::get('/groups', function () {
+//     return view('listadoAlumnos');
+// })->name('listadoAlumnos');
 
 Route::get('/groups', function () {
     return view('grupos');

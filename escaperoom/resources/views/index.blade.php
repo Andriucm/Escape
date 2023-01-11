@@ -10,7 +10,5 @@
 <body>
     <div id="headerSection"></div>
     <div id="footerSection"></div>
-
-    
 </body>
 </html>
