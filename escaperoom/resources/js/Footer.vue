@@ -7,10 +7,10 @@
                 <div class="footer">
                         <div class="row">
                                 <ul>
-                                        <li><a href="/">Inicio</a></li>
-                                        <li><a href="/puntuaciones">Puntuaciones</a></li>
-                                        <li><a href="/groups">Grupos</a></li>
-                                        <li><a href="/profile">Perfil</a></li>
+                                        <li><a href="./">Inicio</a></li>
+                                        <li><a href="./puntuaciones">Puntuaciones</a></li>
+                                        <li><a href="./groups">Grupos</a></li>
+                                        <li><a href="./profile">Perfil</a></li>
                                 </ul>
                         </div>
 
