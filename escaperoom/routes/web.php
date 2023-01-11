@@ -35,6 +35,12 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('loginRegister');
 })->name('login');
+
 Route::get('/', function () {
     return view('index');
 })->name('index');
+
+Route::get('/puntuaciones', function () {
+    return view('puntuaciones');
+})->name('puntuaciones');
+
