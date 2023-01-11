@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,13 +29,13 @@ Route::get('/profile', function () {
     return view('perfil');
 })->name('perfil');
 
-Route::get('/register', function () {
-    return view('loginRegister');
-})->name('register');
-
 Route::get('/login', function () {
     return view('loginRegister');
 })->name('login');
+
+Route::post('/login', [UsuarioController::class,'store'])->name('login.store');
+
+
 
 Route::get('/', function () {
     return view('index');
