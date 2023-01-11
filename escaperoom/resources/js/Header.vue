@@ -3,19 +3,19 @@
 </script>
 
 <template>
-        <v-header class="header-container">
-                <div class="header">
-                        <div class="row">
-                                <img src="../../resources/img/logo.png" alt="Logo" class="logo" >
-                                <ul>
-                                        <li><a href="#">Puntuaciones</a></li>
-                                        <li><a href="#">Grupos</a></li>
-                                        <li><a href="#">Perfil</a></li>
-                                        <button type="button" class="btn">Jugar</button>
-                                </ul>
-                        </div>
-                </div>
-        </v-header>
+  <v-header class="header-container">
+    <div class="header">
+      <div class="row">
+        <img  src="../../resources/img/logo.png" alt="Logo" class="logo">
+        <ul>
+          <li><a href="/puntuaciones">Puntuaciones</a></li>
+          <li><a href="/groups">Grupos</a></li>
+          <li><a href="/profile">Perfil</a></li>>
+          <button type="button" class="btn">Jugar</button>
+        </ul>
+      </div>
+    </div>
+  </v-header>
 </template>
 
 <style>
@@ -30,7 +30,7 @@
   flex-direction: row;
   justify-content: flex-start;
   width: 50px;
-}        
+}
 
 .header .row {
   width: 100%;
@@ -57,7 +57,7 @@
 }
 
 .header .row ul li a {
-  font-size: 18px;      
+  font-size: 18px;
   display: block;
   color: gray;
   text-align: center;

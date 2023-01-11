@@ -1,7 +1,8 @@
 <x-layout>
     <x-slot name="title">
-        Listado alumnos
+        Puntuaciones
     </x-slot>
     
-    <h1>Listado alumnos</h1>
+    <h1>Puntuaciones</h1>
+    
 </x-layout>
