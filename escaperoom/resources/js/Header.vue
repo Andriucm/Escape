@@ -6,7 +6,7 @@
   <v-header class="header-container">
     <div class="header">
       <div class="row">
-        <img  src="../../resources/img/logo.png" alt="Logo" class="logo">
+        <img  src="../img/logo.png" alt="Logo" class="logo">
         <ul>
           <li><a href="./puntuaciones">Puntuaciones</a></li>
           <li><a href="./groups">Grupos</a></li>
