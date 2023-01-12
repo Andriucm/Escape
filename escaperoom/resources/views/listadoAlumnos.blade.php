@@ -3,5 +3,5 @@
         Listado alumnos
     </x-slot>
     
-    <h1>Listado alumnos</h1>
+    <h1 style="color: white; font-family:'Play', sans-serif">Listado alumnos</h1>
 </x-layout>
