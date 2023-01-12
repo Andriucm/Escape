@@ -38,17 +38,17 @@ class UsuarioController extends Controller
     {
 
         $request->validate([
-          'username' => ['required'],
+          'username' => ['required', 'min:4','max:30'],
           'email'=>['required'],
           'name'=>['required'],
         'surname'=>['required'],
         // 'telefono'=>
-        'password'=>['required'],
+        'password'=>['required', 'min:8','max:30'],
         ]);
 
         $usuario = new Usuario;
-        $usuario->usuario = $request->input('username')->unique();
-        $usuario->email = $request->input('email')->unique();
+        $usuario->usuario = $request->input('username');
+        $usuario->email = $request->input('email');
         $usuario->nombre = $request->input('name');
         $usuario->apellido = $request->input('surname');
         $usuario->telefono = $request->input('tel');

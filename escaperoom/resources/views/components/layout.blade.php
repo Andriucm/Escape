@@ -10,7 +10,8 @@
 
 </head>
 <body>
-    <div id="headerSection"></div>
+    @include('layouts.header')
+    {{-- <div id="headerSection"></div> --}}
 
     {{ $slot }}
 
