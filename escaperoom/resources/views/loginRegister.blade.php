@@ -3,7 +3,7 @@
         Ingrese su cuenta
     </x-slot>
 
-    <h1>Ingrese su cuenta</h1>
+    <h1 style="color: white; font-family:'Play', sans-serif">Ingrese su cuenta</h1>
     <div id="contenedor">
 
         {{-- <div id="login-box">
@@ -19,7 +19,7 @@
 
         <div id="register-box">
             <div id="register-header">
-                <h2>¿No tienes cuenta todavia?</h2>
+                <h2 style="color: white; font-family:'Play', sans-serif">¿No tienes cuenta todavia?</h2>
             </div>
             <form id="register-form" action="{{ route('login.store') }}" method="POST">
                 @csrf
