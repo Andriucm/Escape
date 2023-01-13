@@ -1,5 +1,4 @@
 #footerSection {
-    font-family: 'Play', sans-serif;
     font-size: 20px;
     text-align: center;
     border-top: 1px solid #FFC300;
@@ -10,10 +9,17 @@ ul li a {
 }
 
 .footer .row {
+    width: 100%;
     margin: 1% 0%;
     padding: 0.6% 0%;
     color: gray;
     font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .row ul {
+    width: 50%;
 }
 
 .footer .row a {
