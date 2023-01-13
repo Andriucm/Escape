@@ -1,15 +1,19 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+class Usuario extends Authenticatable
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
     protected $table = "usuarios";
     protected $primaryKey = "codUsuario";
     protected $fillable = ['usuario','contrasena','nombre','apellido','email','telefono','rol'];
     protected $hidden = "codUsuario";
 }
+

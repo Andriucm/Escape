@@ -6,60 +6,49 @@
     <h1>Ingrese su cuenta</h1>
     <div id="contenedor">
 
-        {{-- <div id="login-box">
-            <div id="login-header">
-                <h2>Ya nos conocemos...</h2>
-            </div>
-            <form id="login-form" action="{{ route('login.store') }}" method="POST">
-                <input type="text" name="username" id="login-username" placeholder="Usuario">
-                <input type="password" name="password" id="login-password" placeholder="Contraseña">
-                <button type="submit">Enviar</button>
-            </form>
-        </div> --}}
-
         <div id="register-box">
             <div id="register-header">
                 <h2>¿No tienes cuenta todavia?</h2>
             </div>
-            <form id="register-form" action="{{ route('login.store') }}" method="POST">
+            <form id="register-form" action="{{ route('register.store') }}" method="POST">
                 @csrf
-
-                <input type="text" name="username" id="register-username" placeholder="Usuario"> <br>
                 
-                @error('username')
-                <br>
+                <input type="text" name="usuario" id="register-username" placeholder="Usuario" value="{{ old('usuario') }}"> <br>
+                
+                @error('usuario')
+                
                 
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="text" name="email" id="register-email" placeholder="example@gmail.com"> <br>
+                <input type="email" name="email" id="register-email" placeholder="example@gmail.com" value="{{ old('email') }}"> <br>
                 
                 @error('email')
-                <br>
+                
                 
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="text" name="name" id="register-nombre" placeholder="Nombre"> <br>
+                <input type="text" name="name" id="register-nombre" placeholder="Nombre" value="{{ old('name') }}"> <br>
                 
                 @error('name')
-                <br>
+                
                 
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="text" name="surname" id="register-apellido" placeholder="Apellido"> <br>
+                <input type="text" name="surname" id="register-apellido" placeholder="Apellido" value="{{ old('surname') }}"> <br>
                 
                 @error('surname')
-                <br>
+                
                 
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="text" name="tel" id="register-telefono" placeholder="Telefono"> <br>
+                <input type="text" name="telefono" id="register-telefono" placeholder="Telefono" value="{{ old('telefono') }}"> <br>
                 
-                @error('tel')
-                <br>
+                @error('telefono')
+                
                 
                     <small style="color: red">{{ $message }}</small>
                     <br>
@@ -67,13 +56,13 @@
                 <input type="password" name="password" id="register-password" placeholder="Contraseña"> <br>
                 
                 @error('password')
-                <br>
+                
                 
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="password" name="password2" id="register-password2" placeholder="Segunda contraseña"> <br>
-                
+                <input type="password" name="password_confirmation" id="register-password2" placeholder="Segunda contraseña"> <br>
+                <a href="{{ route('login') }}">¿Ya tienes una cuenta?</a>
                 <button type="submit">Enviar</button>
                 
             </form>

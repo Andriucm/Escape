@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateUsuarioRequest;
+use Illuminate\Http\Response;
+use Illuminate\Http\RedirectResponse;
 
 class UsuarioController extends Controller
 {
@@ -36,31 +40,52 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-
-        $request->validate([
-          'username' => ['required', 'min:4','max:30'],
-          'email'=>['required'],
-          'name'=>['required'],
-        'surname'=>['required'],
-        // 'telefono'=>
-        'password'=>['required', 'min:8','max:30'],
+         $request->validate([
+            'usuario' => ['required', 'min:4', 'max:30', ],
+            'email' => ['required', 'email', ],
+            'name' => ['required', 'string',
+            ],
+            'surname' => ['required', 'string',
+            ],
+            'telefono' => ['required', 'integer', ],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $usuario = new Usuario;
-        $usuario->usuario = $request->input('username');
-        $usuario->email = $request->input('email');
-        $usuario->nombre = $request->input('name');
-        $usuario->apellido = $request->input('surname');
-        $usuario->telefono = $request->input('tel');
-        $usuario->contrasena = $request->input('password');
-        $usuario->rol = 'alumno';
-        $usuario->save();
+        $usuario = Usuario::create([
+            'usuario' => $request->usuario,
+            'email' => $request->email,
+            'nombre' => $request->name,
+            'apellido' => $request->surname,
+            'telefono' => $request->telefono,
+            'contrasena' => bcrypt($request->password),
+            'rol' => 'alumno'
+        ]);
 
-            return view('index');
-        
-        
+        // Autologin
+        // Auth::login($usuario);
+        // Iniciar sesion despues de haberse registrado
 
-        
+        return to_route('login')->with('status', 'Cuenta creada correctamente');
+
+        // $usuario = new Usuario;
+
+
+
+        // $usuario = new Usuario;
+        // $usuario->usuario = $request->input('username');
+        // $usuario->email = $request->input('email');
+        // $usuario->nombre = $request->input('name');
+        // $usuario->apellido = $request->input('surname');
+        // $usuario->telefono = $request->input('tel');
+        // $usuario->contrasena = $request->input('password');
+        // $usuario->rol = 'alumno';
+        // $usuario->save();
+
+        //     return view('index');
+
+
+
+
 
     }
 
