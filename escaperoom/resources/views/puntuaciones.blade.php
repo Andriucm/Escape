@@ -13,10 +13,10 @@
             @foreach ($usuarios as $usuario)
                 <tr>
                     <td>{{ $usuario->usuario }}</td>
-                    {{-- <td>{{ $usuario->puntuacion }}</td> --}}
+                    <td>{{ $usuario->puntos}}</td>
                 </tr>
                 
             @endforeach
         </table>
-        {{ $usuarios->links() }}
+        
 </x-layout>

@@ -47,7 +47,7 @@ class UsuarioController extends Controller
             ],
             'surname' => ['required', 'string',
             ],
-            'telefono' => ['required', 'integer', ],
+            'telefono' => ['required', 'integer','min:9' ],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
