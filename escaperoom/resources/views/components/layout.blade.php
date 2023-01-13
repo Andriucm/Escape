@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/index.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/grupos.css') }}" />
     <title>{{ $title }}</title>
-
     @vite('resources/js/app.js')
-
 </head>
 <body>
     <div id="headerSection"></div>
