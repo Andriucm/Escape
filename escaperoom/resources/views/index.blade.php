@@ -28,6 +28,20 @@
                 <img src="{{URL::asset('/imagenes/img5.png')}}" alt="img5" class="img5">
             </div>
         </div>
+        <div class="index3">
+            <h1 class="titulo"> <b> Bienvenido al escape room </b></h1>
+            <h3 class="desc1">Éste escape room está dirigido al departamento de electrónica con lo 
+                cual los retos a realizar estarán relacionados con dicha temática. A medida que vayas 
+                avanzando en la partida descifrarás información útil para las siguientes pruebas.
+            </h3><br><br>
+            <h3 class="desc2">Como investigador de nuestro centro de inteligencia tendrás que ir
+                descifrando la comunicación recibida y conseguir enviar la configuración del cuadro de
+                seguridad que nos piden.
+            </h3><br><br>
+            <h3 class="desc3">Tendrás que recibir una comunicación vía radio. En ella se te comunicará la
+                localización y orientación de una antena parabólica por la que tendrás que enviar la
+                configuración de un cuadro de seguridad.</h3>
+        </div>
     </div>
 </x-layout>
 <script>
