@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Puntuacion;
 use App\Http\Requests\StorePuntuacionRequest;
 use App\Http\Requests\UpdatePuntuacionRequest;
+use App\Models\Usuario;
 
 class PuntuacionController extends Controller
 {
@@ -15,7 +16,9 @@ class PuntuacionController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = Usuario::orderBy('puntos','desc')->paginate(15);
+    return view('puntuaciones', compact('usuarios'));
+
     }
 
     /**

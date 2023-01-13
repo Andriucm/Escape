@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PuntuacionController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
@@ -35,9 +36,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/puntuaciones', function () {
-    return view('puntuaciones');
-})->name('puntuaciones');
+Route::get('/puntuaciones', [PuntuacionController::class, 'index'])->name('puntuaciones');
 
 
 

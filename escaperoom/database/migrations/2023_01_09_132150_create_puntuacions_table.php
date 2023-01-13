@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('codUsuario')->unsigned();
             $table->bigInteger('codGrupo')->unsigned();
             $table->bigInteger('codPartida')->unsigned();
+            $table->integer('puntos')->default('0');
             $table->foreign('codUsuario')->references('codUsuario')->on('usuarios');
             $table->foreign('codGrupo')->references('codGrupo')->on('grupos');
             $table->foreign('codPartida')->references('codPartida')->on('partidas');
