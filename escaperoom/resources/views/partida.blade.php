@@ -3,5 +3,5 @@
         Partida
     </x-slot>
     
-    <h1>Partida</h1>
+    <h1 style="color: white; font-family:'Play', sans-serif">Partida</h1>
 </x-layout>
