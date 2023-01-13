@@ -10,8 +10,8 @@
 <template>
   <v-header class="header-container">
     <div class="header">
-      <div class="row">
         <img  src="../../public/imagenes/logo.png" alt="Logo" class="logo" v-on:click="index()">
+      <div class="row">
         <ul>
           <li><a href="./puntuaciones">Puntuaciones</a></li>
           <li><a href="./groups">Grupos</a></li>
