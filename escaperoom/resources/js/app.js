@@ -1,7 +1,7 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import Header from './Header.vue';
-import Footer from './Footer.vue'; //Ahí está el componente principal
+import Footer from './Footer.vue';
 
 createApp(Header).mount('#headerSection');
 

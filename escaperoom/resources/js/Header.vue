@@ -1,9 +1,9 @@
 <script setup>
   function index() {
-    window.location.href="/";
+    window.location.href="./";
   }
   function redirect() {
-    window.location.href="/play";
+    window.location.href="./play";
   }
 </script>
 
