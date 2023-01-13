@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,14 +28,7 @@ Route::get('/groups', function () {
 
 Route::get('/profile', function () {
     return view('perfil');
-})->name('perfil');
-
-Route::get('/login', function () {
-    return view('loginRegister');
-})->name('login');
-
-Route::post('/login', [UsuarioController::class,'store'])->name('login.store');
-
+})->name('perfil')->middleware('auth'); 
 
 
 Route::get('/', function () {
@@ -45,3 +39,15 @@ Route::get('/puntuaciones', function () {
     return view('puntuaciones');
 })->name('puntuaciones');
 
+
+
+
+
+
+Route::view('/login', 'auth.login')->name('login');
+Route::post('/login', [AuthenticatedSessionController::class,'store']);
+Route::post('/logout', [AuthenticatedSessionController::class,'destroy'])->name('logout');
+
+
+Route::view('/register', 'auth.register')->name('register');
+Route::post('/register', [UsuarioController::class,'store'])->name('register.store');
