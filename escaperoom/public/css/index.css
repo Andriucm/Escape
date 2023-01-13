@@ -2,14 +2,46 @@ body {
     background-color: #000814;
     /* background-color: goldenrod; */
 }
+.index-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.index1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-around; */
+    /* margin-left: 20%; */
+}
 
-.intro {
+.intro-texto {
     font-family: 'Play', sans-serif;
-    width: 45%;
+    /* width: 50%; */
     padding: 5%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+.index2 {
+    display: grid;
+    padding: 3%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    margin-bottom: 5%;
+    grid-template-areas: 
+    ". intro4 imgs imgs";
+    /* margin-left: 35%; */
+    /* width: 100%; */
+}
+.index-texto {
+    grid-column: 1/2;
+    grid-row: 1/1;
+}
+.imgPeque {
+    grid-area: imgs;
+    /* grid-column: 2/3;
+    grid-row: 1/1; */
 }
 .demo {
     display: grid;
@@ -34,8 +66,12 @@ body {
     margin-left: 3%;
 }
 .intro4 {
+    grid-area: intro4;
+
+    /* grid-column: 1/3;
+    grid-row: 1/1; */
     color: gray;
-    height: 10%;
+    /* height: 10%; */
     font-weight: lighter;
     margin-top: 10%;
     margin-left: 25%;
@@ -44,7 +80,7 @@ body {
     grid-column: 1/2;
     grid-row: 1/1;
     background-color: #FFC300;
-    width: 30%;
+    width: 40%;
     margin-top: 10%;
     border-radius: 20px;
     color: #000;
@@ -59,4 +95,19 @@ body {
 .button:not(:disabled):hover, .button:not(:disabled):focus {
     outline: 0;
     background: #FFD60A;
+}
+.img1 {
+    width: 85%;
+}
+.img2 {
+    width: 20%;
+}
+.img3 {
+    width: 20%;
+}
+.img4 {
+    width: 20%;
+}
+.img5 {
+    width: 20%;
 }
