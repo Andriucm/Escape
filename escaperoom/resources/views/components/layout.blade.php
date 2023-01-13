@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/index.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/grupos.css') }}" />
     <title>{{ $title }}</title>
 
     @vite('resources/js/app.js')
@@ -15,7 +16,9 @@
 <body>
     <div id="headerSection"></div>
 
-    {{ $slot }}
+    <div id="mainSection" style="width: 100%; height: 100%;">
+        {{ $slot }}
+    </div>
 
     <div id="footerSection"></div>
 </body>
