@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\PuntuacionController;
+use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,6 @@ Route::get('/play', function () {
     return view('partida');
 })->name('partida');
 
-// Route::get('/groups', function () {
-//     return view('listadoAlumnos');
-// })->name('listadoAlumnos');
 
 Route::get('/groups', function () {
     return view('grupos');
@@ -28,16 +26,14 @@ Route::get('/groups', function () {
 
 Route::get('/profile', function () {
     return view('perfil');
-})->name('perfil')->middleware('auth'); 
+})->name('perfil'); 
 
 
 Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/puntuaciones', function () {
-    return view('puntuaciones');
-})->name('puntuaciones');
+Route::get('/puntuaciones', [PuntuacionController::class, 'index'])->name('puntuaciones');
 
 
 
@@ -50,4 +46,4 @@ Route::post('/logout', [AuthenticatedSessionController::class,'destroy'])->name(
 
 
 Route::view('/register', 'auth.register')->name('register');
-Route::post('/register', [UsuarioController::class,'store'])->name('register.store');
+Route::post('/register', [RegisteredUserController::class,'store'])->name('register.store');

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->bigIncrements('codGrupo');
-            $table->bigInteger('cod_usuario')->unsigned();
-            $table->foreign('cod_usuario')->references('codUsuario')->on('usuarios');
+            $table->bigInteger('codUsuario')->unsigned();
+            $table->foreign('codUsuario')->references('codUsuario')->on('users');
             $table->timestamps();
         });
     }
