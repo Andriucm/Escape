@@ -2,5 +2,36 @@ main {
     width: 100vw;
     height: 100vh;
     display: grid;
+    grid-template-columns: 1fr 1.2fr 0.8fr;
+    grid-template-rows: 1fr 1.4fr 0.6fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Juego Juego Narrativa"
+        "Juego Juego Narrativa"
+        "Pistas Pistas Nav";
 
+    .juego {
+        grid-area: Juego;
+        border-right: 1px solid #212121;
+        border-bottom: 1px solid #212121;
+    }
+
+    .pistas {
+        grid-area: Pistas;
+        border-top: 1px solid #212121;
+        border-right: 1px solid #212121;
+    }
+
+    .navegacion {
+        grid-area: Nav;
+        border-top: 1px solid #212121;
+        border-left: 1px solid #212121;
+    }
+
+    .narrativa {
+        grid-area: Narrativa;
+        border-bottom: 1px solid #212121;
+        border-left: 1px solid #212121;
+    }
 }
