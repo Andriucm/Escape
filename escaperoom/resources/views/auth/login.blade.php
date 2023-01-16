@@ -20,7 +20,7 @@
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="password" name="password" id="register-password" placeholder="Contraseña"> <br>
+                <input type="password" name="password" id="login-password" placeholder="Contraseña"> <br>
 
                 @error('password')
                     <small style="color: red">{{ $message }}</small>
