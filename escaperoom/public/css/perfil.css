@@ -1,0 +1,150 @@
+.perfil-intro {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.informacion {
+    display: grid;
+    grid-gap: 8%;
+    text-align: center;
+    grid-template-areas:
+    "nombre apellido"
+    "rol rol";
+}
+.rol {
+    grid-area: rol;
+}
+.nombre {
+    grid-area: nombre;
+}
+.apellido {
+    grid-area: apellido;
+}
+#mainSection {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.perfil-body {
+    font-family: 'Play', sans-serif;
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    /* flex-wrap: wrap; */
+    grid-template-columns: 1fr 1fr;
+    /* padding-left: 8%; */
+    /* grid-column-gap: 0%;
+    grid-row-gap: 3%; */
+    margin-top: 3%;
+    /* grid-gap: 5%; */
+    width: 100%;
+    /* padding-left: 5%; */
+}
+.intro-datos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    font-size:larger;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.datos {
+    /* display: grid; */
+    flex-direction: column;
+    grid-column: 1/1;
+    grid-row: 1 / span 2;
+    background-color: lightgray;
+    /* border: 1px solid #001D3D; */
+    box-shadow: 0 0 6px 3px #FFD60A inset;
+    padding-top: 4%;
+    /* padding-left: 3%; */
+    /* width: 100%; */
+    /* height: 80%; */
+    /* border-radius: 4%; */
+    justify-content: center;
+    align-items: center;
+}
+.editarInfo {
+    background-color: #FFC300;
+    width: 20%;
+    border: 0;
+    padding: 3%;
+    font-weight: bold;
+    border-radius: 10%;
+}
+.editarInfo:hover {
+    background-color: #FFD60A;
+}
+table {
+    margin-top: 3%;
+}
+
+th, td {
+    padding: 8%;
+}
+.progreso {
+    grid-column: 2/2;
+    grid-row: 1 / span 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 9%;
+    align-items: center;
+    font-weight: bold;
+    padding: 3%;
+    background-color: lightgray;
+    /* border: 1px solid #001D3D; */
+    box-shadow: 0 0 6px 3px #FFD60A inset;
+    /* border-radius: 3%; */
+    /* width: 100%; */
+    /* height: 80%; */
+}
+.view {
+    background-color: #FFC300;
+    width: 20%;
+    border: 0;
+    padding: 3%;
+    font-weight: bold;
+    border-radius: 10%;
+}
+.view:hover {
+    background-color: #FFD60A;
+}
+.intro-cuenta {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 5%;
+}
+.cuenta {
+    grid-column: 2/2;
+    grid-row: 2/ span 1;
+    background-color: lightgray;
+    /* border: 1px solid #001D3D; */
+    box-shadow: 0 0 6px 3px #FFD60A inset;
+    /* border-radius: 4%; */
+    padding: 3%;
+    /* width: 100%; */
+}
+.editarAccount {
+    background-color: #FFC300;
+    width: 20%;
+    border: 0;
+    padding: 3%;
+    font-weight: bold;
+    border-radius: 10%;
+}
+.editarAccount:hover {
+    background-color: #FFD60A;
+}
