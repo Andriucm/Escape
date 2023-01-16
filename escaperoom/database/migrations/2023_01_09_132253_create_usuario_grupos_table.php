@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('usuario_grupos', function (Blueprint $table) {
             $table->unsignedBigInteger('codUsuario');
             $table->unsignedBigInteger('codGrupo');
-            $table->foreign('codUsuario')->references('codUsuario')->on('usuarios')->ononDelete('cascade');
+            $table->foreign('codUsuario')->references('codUsuario')->on('users')->ononDelete('cascade');
             $table->foreign('codGrupo')->references('codGrupo')->on('grupos')->ononDelete('cascade');
             $table->unique(['codUsuario','codGrupo']);
             $table->bigIncrements('codUsuarioGrupo');
