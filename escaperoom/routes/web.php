@@ -22,7 +22,7 @@ Route::get('/play', function () {
 
 Route::get('/groups', function () {
     return view('grupos');
-})->name('grupos');
+})->name('grupos')->middleware('auth');
 
 Route::get('/profile', function () {
     return view('perfil');
@@ -33,7 +33,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/puntuaciones', [PuntuacionController::class, 'index'])->name('puntuaciones');
+Route::get('/puntuaciones', [PuntuacionController::class, 'index'])->name('puntuaciones')->middleware('auth');
 
 
 

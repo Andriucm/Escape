@@ -14,16 +14,7 @@ class User extends Authenticatable
 
     protected $table = "users";
     protected $primaryKey = "codUsuario";
-    protected $fillable = ['usuario', 'contrasena', 'nombre', 'apellido', 'email', 'telefono', 'rol'];
-    protected $hidden = "codUsuario";
+    protected $fillable = ['usuario','password', 'nombre', 'apellido', 'email', 'telefono', 'rol','remember_token'];
+    protected $hidden = 'codUsuario';
 
-    public function obtenerAlumnos()
-    {
-        return User::all();
-    }
-
-    public function obtenerAlumnoPorId($id)
-    {
-        return User::find($id);
-    }
 }

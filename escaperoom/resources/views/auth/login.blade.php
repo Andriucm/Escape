@@ -13,14 +13,14 @@
             <form id="register-form" action="{{ route('login') }}" method="POST">
                 @csrf
 
-                <input type="text" name="usuario" id="register-username" placeholder="Usuario"
-                    value="{{ old('usuario') }}"> <br>
+                <input type="text" name="email" id="login-email" placeholder="Email"
+                    value="{{ old('email') }}"> <br>
 
-                @error('usuario')
+                @error('email')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="password" name="password" id="register-password" placeholder="Contraseña"> <br>
+                <input type="password" name="password" id="login-password" placeholder="Contraseña"> <br>
 
                 @error('password')
                     <small style="color: red">{{ $message }}</small>

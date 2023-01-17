@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-use App\Http\Requests\UpdateUsuarioRequest;
 use Illuminate\Validation\ValidationException;
+
+
 
 
 class AuthenticatedSessionController extends Controller
@@ -14,16 +14,15 @@ class AuthenticatedSessionController extends Controller
     public function store(Request $request)
     {
         $credenciales = $request->validate([
-            'usuario' => ['required'],
+            'email' => ['required'],
             'password' => ['required'],
         ]);
-
-        if (Auth::attempt($credenciales, $request->boolean('remember'))) {
+        if(Auth::attempt($credenciales, $request->boolean('remember'))) {
             $request->session()->regenerate();
-            return redirect()->view('index');
+            return to_route('index');
         } else {
             throw ValidationException::withMessages([
-                'usuario' => __('auth.failed')
+                'email' => __('auth.failed')
             ]);
         }
 

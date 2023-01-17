@@ -12,59 +12,53 @@
             </div>
             <form id="register-form" action="{{ route('register.store') }}" method="POST">
                 @csrf
-                
-                <input type="text" name="usuario" id="register-username" placeholder="Usuario" value="{{ old('usuario') }}"> <br>
-                
+
+                <input type="text" name="usuario" id="register-username" placeholder="Usuario"
+                    value="{{ old('usuario') }}"> <br>
+
                 @error('usuario')
-                
-                
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="email" name="email" id="register-email" placeholder="example@gmail.com" value="{{ old('email') }}"> <br>
-                
+                <input type="email" name="email" id="register-email" placeholder="example@gmail.com"
+                    value="{{ old('email') }}"> <br>
+
                 @error('email')
-                
-                
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="text" name="name" id="register-nombre" placeholder="Nombre" value="{{ old('name') }}"> <br>
-                
+                <input type="text" name="name" id="register-nombre" placeholder="Nombre"
+                    value="{{ old('name') }}"> <br>
+
                 @error('name')
-                
-                
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="text" name="surname" id="register-apellido" placeholder="Apellido" value="{{ old('surname') }}"> <br>
-                
+                <input type="text" name="surname" id="register-apellido" placeholder="Apellido"
+                    value="{{ old('surname') }}"> <br>
+
                 @error('surname')
-                
-                
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="text" name="telefono" id="register-telefono" placeholder="Telefono" value="{{ old('telefono') }}"> <br>
-                
+                <input type="text" name="telefono" id="register-telefono" placeholder="Telefono"
+                    value="{{ old('telefono') }}"> <br>
+
                 @error('telefono')
-                
-                
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
                 <input type="password" name="password" id="register-password" placeholder="Contraseña"> <br>
-                
+
                 @error('password')
-                
-                
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
-                <input type="password" name="password_confirmation" id="register-password2" placeholder="Segunda contraseña"> <br>
+                <input type="password" name="password_confirmation" id="register-password2"
+                    placeholder="Segunda contraseña"> <br>
                 <a href="{{ route('login') }}">¿Ya tienes una cuenta?</a>
                 <button type="submit">Enviar</button>
-                
+
             </form>
         </div>
 </x-layout>
