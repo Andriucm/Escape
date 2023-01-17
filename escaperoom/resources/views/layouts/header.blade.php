@@ -15,8 +15,9 @@
                 @else
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button>Logout</button>
+                        <button id="btn-logout">Logout</button>
                     </form>
+                    
                 @endauth
                 <button onclick="location.href='{{ route('partida') }}'" type="button" class="btn">Jugar</button>
             </ul>
