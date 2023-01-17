@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePuntuacionRequest;
 use App\Http\Requests\UpdatePuntuacionRequest;
 use App\Models\Puntuacion;
-use App\Models\Usuario;
-
 use Illuminate\Support\Facades\DB;
 
 class PuntuacionController extends Controller

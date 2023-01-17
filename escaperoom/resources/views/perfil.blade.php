@@ -5,9 +5,9 @@
     <div class="perfil-intro">
         <img src="{{URL::asset('/imagenes/logo.png')}}" class="fotoPerfil">
         <div class="informacion">
-            <h1 style="color: white;" class="nombre">Saray</h1>
-            <h1 style="color: white;" class="apellido">Uscola</h1>
-            <h2 style="color: gray;" class="rol">Alumno</h2>
+            <h1 style="color: white;" class="nombre">{{ Auth::user()->nombre }}</h1>
+            <h1 style="color: white;" class="apellido">{{ Auth::user()->apellido }}</h1>
+            <h2 style="color: gray;" class="rol">{{ Auth::user()->rol }}</h2>
         </div>
     </div>
         <div class="perfil-body">
@@ -20,15 +20,15 @@
                 <table>
                     <tr>
                         <td><b>Nombre:</b></td>
-                        <td>Saray</td>
+                        <td>{{ Auth::user()->nombre }}</td>
                     </tr>
                     <tr>
                         <td><b>Apellido:</b></td>
-                        <td>Uscola</td>
+                        <td>{{ Auth::user()->apellido }}</td>
                     </tr>
                     <tr>
                         <td><b>Telefono:</b></td>
-                        <td>685326876</td>
+                        <td>{{ Auth::user()->telefono }}</td>
                     </tr>
                     <tr>
 
@@ -51,11 +51,15 @@
                 <table>
                     <tr>
                         <td><b>Email:</b></td>
-                        <td>saray@gmail.com</td>
+                        <td>{{ Auth::user()->email }}</td>
                     </tr>
                     <tr>
-                        <td><b>Contraseña:</b></td>
-                        <td>saray123</td>
+                        <td><b>Usuario:</b></td>
+                        <td>{{ Auth::user()->usuario }}</td>
+                    </tr>
+                    <tr>
+                        <td>Cambiar contraseña</td>
+                        
                     </tr>
                 </table>
             </div>
