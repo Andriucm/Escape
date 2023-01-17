@@ -110,5 +110,47 @@ body {
 .img5 {
     width: 20%;
 }
+/* .index3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Play', sans-serif;
+    width: 50%;
+}
+.titulo {
+    color: gray;
+}
+.desc {
+    color: gray;
+} */
 
-
+.index3 {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    text-align: center;
+    grid-gap: 8%;
+    margin-bottom: 10%;
+}
+.titulo {
+    color: white;
+    grid-column: 2/3;
+    grid-row: 1/1;
+}
+.desc1 {
+    color: gray;
+    grid-column: 2/3;
+    grid-row: 2/2;
+    font-weight: lighter;
+}
+.desc2 {
+    color: gray;
+    grid-column: 2/3;
+    grid-row: 3/3;
+    font-weight: lighter;
+}
+.desc3 {
+    color: gray;
+    grid-column: 2/3;
+    grid-row: 4/4;
+    font-weight: lighter;
+}
