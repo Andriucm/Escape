@@ -19,11 +19,10 @@ return new class extends Migration
             $table->bigInteger('codGrupo')->unsigned();
             $table->bigInteger('codPartida')->unsigned();
             $table->integer('puntos')->default('0');
+            $table->timestamps();
             $table->foreign('codUsuario')->references('codUsuario')->on('users');
             $table->foreign('codGrupo')->references('codGrupo')->on('grupos');
             $table->foreign('codPartida')->references('codPartida')->on('partidas');
-
-            $table->timestamps();
         });
     }
 
