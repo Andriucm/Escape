@@ -31,7 +31,8 @@
 </head>
 <body>
     @if ($title != "Partida")
-        <div id="headerSection"></div>
+        {{-- <div id="headerSection"></div> --}}
+        @include('layouts.header')
     @endif
 
     <div id="mainSection" style="width: 100%; height: 100%;">

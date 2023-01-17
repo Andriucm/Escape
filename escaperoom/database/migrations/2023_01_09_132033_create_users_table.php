@@ -16,12 +16,13 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('codUsuario');
             $table->string('usuario', 30)->unique();
-            $table->string('contrasena', 255);
+            $table->string('password', 255);
             $table->string('nombre', 30);
             $table->string('apellido', 30);
             $table->string('email', 100)->unique();
             $table->integer('telefono')->nullable()->unique();
             $table->string('rol', 200);
+            $table->rememberToken();
             $table->timestamps();
         });
     }
