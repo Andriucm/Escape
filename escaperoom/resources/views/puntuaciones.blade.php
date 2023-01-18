@@ -1,6 +1,6 @@
-{{ $contador=1 }}
+{{ $contador = 1 }}
 <x-layout>
-   
+
     <x-slot name="title">
         Puntuaciones
     </x-slot>
@@ -13,11 +13,11 @@
             </div>
             @foreach ($usuarios as $usuario)
                 <div class="fila">
-                    
 
-                        <div class="columna">
-                            {{ $contador++ }}
-                        </div>
+
+                    <div class="columna">
+                        {{ $contador++ }}
+                    </div>
 
 
                     <div class="columna">

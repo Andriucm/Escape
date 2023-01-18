@@ -10,9 +10,9 @@
             <div id="form-header">
                 <h2>¿Ya tienes tu cuenta?</h2>
             </div>
+            
             <form id="form" action="{{ route('login') }}" method="POST">
                 @csrf
-
                 <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}"> <br>
 
                 @error('email')

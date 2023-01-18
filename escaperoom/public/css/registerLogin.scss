@@ -18,11 +18,13 @@
         
         margin-top: 1rem;
         width: 40%;
+        border:   3px #ffc300 inset;
         border-radius: 15px;
         padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: #000;
 
         #form {
             width: 80%;
