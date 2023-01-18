@@ -17,7 +17,8 @@ class AuthenticatedSessionController extends Controller
             'email' => ['required'],
             'password' => ['required'],
         ]);
-        if(Auth::attempt($credenciales, $request->boolean('remember'))) {
+        $remember = $request->has('remember') ? true : false;
+        if(Auth::attempt($credenciales, $remember)) {
             $request->session()->regenerate();
             return to_route('index');
         } else {

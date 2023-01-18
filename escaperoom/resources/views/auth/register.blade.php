@@ -3,9 +3,9 @@
         Register
     </x-slot>
 
-    <h1 style="color: white; font-family:'Play', sans-serif">Ingrese su cuenta</h1>
+    
     <div id="contenedor">
-
+        <img src="../public/imagenes/fondo1.jpg" alt="fondo">
         <div id="form-box">
             <div id="form-header">
                 <h2 style="color: white; font-family:'Play', sans-serif">¿No tienes cuenta todavia?</h2>

@@ -3,18 +3,17 @@
         Login
     </x-slot>
 
-    <h1>Ingrese su cuenta</h1>
-    <div id="contenedor">
 
+    <div id="contenedor">
+        <img src="../public/imagenes/fondo1.jpg" alt="fondo">
         <div id="form-box">
             <div id="form-header">
-                <h2>¿No tienes cuenta todavia?</h2>
+                <h2>¿Ya tienes tu cuenta?</h2>
             </div>
             <form id="form" action="{{ route('login') }}" method="POST">
                 @csrf
 
-                <input type="text" name="email" id="email" placeholder="Email"
-                    value="{{ old('email') }}"> <br>
+                <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}"> <br>
 
                 @error('email')
                     <small style="color: red">{{ $message }}</small>
@@ -27,10 +26,11 @@
                     <br>
                 @enderror
                 <a href="{{ route('register') }}">¿No tienes una cuenta?</a>
-            <div>
-                <input type="checkbox" name="remember"> <span for="#">Recuérdame</span>
-                <button id="form-btn" type="submit">Login</button>
-            </div>
+                <div>
+                    <label for="remember">Recuérdame</label>
+                    <input type="checkbox" id="check" name="remember" value="1">
+                    <button id="form-btn" type="submit">Login</button>
+                </div>
             </form>
         </div>
 </x-layout>

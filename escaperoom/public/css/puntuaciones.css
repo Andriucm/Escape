@@ -17,15 +17,13 @@ main {
   width: 80%;
   display: flex;
   flex-flow: column nowrap;
-  border: solid 0.2rem #003566;
   border-radius: 20px;
 }
 #tabla .fila-cabecera {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  background: #FFC300;
-  color: black;
+  color: white;
   text-transform: uppercase;
   text-align: center;
 }
