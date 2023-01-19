@@ -29,6 +29,9 @@ Route::get('/profile', function () {
 })->name('perfil'); 
 
 
+Route::PATCH('/profile/{id}',[AuthenticatedSessionController::class, 'updateDatos'])->name('editarDatos');
+
+
 Route::get('/', function () {
     return view('index');
 })->name('index');

@@ -26,24 +26,20 @@
 #mainSection {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+    justify-content: center;
 }
 .perfil-body {
     font-family: 'Play', sans-serif;
     display: grid;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    /* flex-wrap: wrap; */
-    grid-template-columns: 1fr 1fr;
-    /* padding-left: 8%; */
-    /* grid-column-gap: 0%;
-    grid-row-gap: 3%; */
+    justify-content: center;
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 80px 260px;
     margin-top: 3%;
-    /* grid-gap: 5%; */
     width: 100%;
-    /* padding-left: 5%; */
 }
+
 .intro-datos {
     display: flex;
     flex-wrap: wrap;
@@ -56,67 +52,57 @@
     margin-bottom: 5%;
 }
 .datos {
-    /* display: grid; */
+    display: flex;
     flex-direction: column;
     grid-column: 1/1;
     grid-row: 1 / span 2;
-    background-color: lightgray;
-    /* border: 1px solid #001D3D; */
-    box-shadow: 0 0 6px 3px #FFD60A inset;
-    padding-top: 4%;
-    /* padding-left: 3%; */
-    /* width: 100%; */
-    /* height: 80%; */
-    /* border-radius: 4%; */
+    background-color: #000814;
+    box-shadow: 0 0 5px 2px #FFD60A inset;
+    color: white;
     justify-content: center;
     align-items: center;
-}
-.editarInfo {
-    background-color: #FFC300;
-    width: 20%;
-    border: 0;
-    padding: 3%;
-    font-weight: bold;
-    border-radius: 10%;
-}
-.editarInfo:hover {
-    background-color: #FFD60A;
-}
-table {
-    margin-top: 3%;
-}
+    gap: 15px;
 
-th, td {
-    padding: 8%;
 }
+.formNombre, .formApe, .formTel, .formEmail, .formContra {
+    pointer-events:none; 
+    background-color:#000814; 
+    color:white; 
+    border:none  
+}
+form {
+    margin-top: 3%;
+    font-size: 18px;
+}
+input[type='text'] { font-size: 16px; }
+
+#submitDatos, #submitCuenta {
+    display: none;
+}
+hr {
+    position: relative;
+    background: lightgray;
+    width: 90%;
+    align-self: center;
+    margin: 0;
+  }
 .progreso {
     grid-column: 2/2;
     grid-row: 1 / span 1;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 9%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* gap: 12%; */
     align-items: center;
     font-weight: bold;
-    padding: 3%;
-    background-color: lightgray;
-    /* border: 1px solid #001D3D; */
-    box-shadow: 0 0 6px 3px #FFD60A inset;
-    /* border-radius: 3%; */
-    /* width: 100%; */
-    /* height: 80%; */
+    font-size: larger;
+    /* padding: 3%; */
+    background-color: #000814;
+    box-shadow: 0 0 5px 2px #FFD60A inset;
+    color: white;
 }
-.view {
-    background-color: #FFC300;
-    width: 20%;
-    border: 0;
-    padding: 3%;
-    font-weight: bold;
-    border-radius: 10%;
-}
-.view:hover {
-    background-color: #FFD60A;
-}
+
 .intro-cuenta {
     display: flex;
     flex-wrap: wrap;
@@ -125,26 +111,40 @@ th, td {
     align-items: center;
     font-weight: bold;
     font-size: larger;
+    width: 100%;
     margin-bottom: 5%;
+    margin-top: 3%;
 }
 .cuenta {
+    display: flex;
+    flex-direction: column;
     grid-column: 2/2;
     grid-row: 2/ span 1;
-    background-color: lightgray;
-    /* border: 1px solid #001D3D; */
-    box-shadow: 0 0 6px 3px #FFD60A inset;
-    /* border-radius: 4%; */
+    background-color: #000814;
+    box-shadow: 0 0 5px 2px #FFD60A inset;
     padding: 3%;
-    /* width: 100%; */
+    color: white;
+    align-items: center;
 }
-.editarAccount {
+
+#cancelar {
+    display: none;
+    background-color: darkred;
+    width: 20%;
+    border: 0;
+    padding: 3%;
+    font-weight: bold;
+    border-radius: 7%;
+}
+
+.perfil-body button, #submitDatos {
     background-color: #FFC300;
     width: 20%;
     border: 0;
     padding: 3%;
     font-weight: bold;
-    border-radius: 10%;
+    border-radius: 7%;
 }
-.editarAccount:hover {
+.perfil-body button:hover {
     background-color: #FFD60A;
 }
