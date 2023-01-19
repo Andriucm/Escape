@@ -23,6 +23,4 @@ class GestionUsuariosCotroller extends Controller
         return redirect()->back();
 
     }
-
-   
 }
