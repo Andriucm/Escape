@@ -66,7 +66,7 @@ $user_rol = $user->rol;
         Perfil
     </x-slot>
     <div class="perfil-intro">
-        <img src="{{URL::asset('/imagenes/logo.png')}}" class="fotoPerfil">
+        <img src="{{ URL::asset('/imagenes/logo.png') }}" class="fotoPerfil">
         <div class="informacion">
             <h1 style="color: white;" class="nombre"><?php echo $user_name?></h1>
             <h1 style="color: white;" class="apellido"><?php echo $user_surname ?></h1>

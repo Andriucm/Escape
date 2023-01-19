@@ -9,14 +9,16 @@
 
                     <li><a href="./profile">Perfil</a></li>
                 @endauth
-
+                <li><a href="./management">Usuarios</a></li>
+                
                 @guest
                     <li><a href="./login">Ingresa tu cuenta</a></li>
                 @else
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button>Logout</button>
+                        <button id="btn-logout">Logout</button>
                     </form>
+                    
                 @endauth
                 <button onclick="location.href='{{ route('partida') }}'" type="button" class="btn">Jugar</button>
             </ul>

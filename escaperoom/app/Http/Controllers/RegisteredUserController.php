@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Validation\Rules;
-use App\Http\Requests\UpdateUsuarioRequest;
-use Illuminate\Http\Response;
-use Illuminate\Http\RedirectResponse;
 
 class RegisteredUserController extends Controller
 {
@@ -31,7 +28,9 @@ class RegisteredUserController extends Controller
             'apellido' => $request->surname,
             'telefono' => $request->telefono,
             'password' => bcrypt($request->password),
-            'rol' => 'alumno'
+            'rol' => 'alumno',
+            'estado' => '1'
+
         ]);
 
         // Autologin

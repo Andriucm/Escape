@@ -15,7 +15,7 @@
                         </div>
 
                         <div class="row">
-                                <b>ESCAPE ROOM</b> - Copyright © 2021 - All rights reserved || <b>Diseñado por:</b>
+                                <b>ESCAPE ROOM</b> - Copyright © 2023 - All rights reserved || <b>Diseñado por:</b>
                                 Andrei, Saray,
                                 Mikel y Ainhoa
                         </div>

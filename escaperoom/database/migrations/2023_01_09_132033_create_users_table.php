@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -22,8 +21,11 @@ return new class extends Migration
             $table->string('email', 100)->unique();
             $table->integer('telefono')->nullable()->unique();
             $table->string('rol', 200);
+            $table->integer('estado')->default(1);
+            $table->bigInteger('codGrupo')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('codGrupo')->references('codGrupo')->on('grupos');
         });
     }
 

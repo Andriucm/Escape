@@ -6,3 +6,4 @@ import Footer from './Footer.vue';
 createApp(Header).mount('#headerSection');
 
 createApp(Footer).mount('#footerSection');
+createApp(BtnGestionarUsuarios).mount('#BtnGestionarUsuarios');

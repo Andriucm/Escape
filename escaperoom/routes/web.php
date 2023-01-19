@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PuntuacionController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\GestionUsuariosCotroller;
 use App\Http\Controllers\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,7 @@ Route::get('/', function () {
 
 Route::get('/puntuaciones', [PuntuacionController::class, 'index'])->name('puntuaciones')->middleware('auth');
 
+Route::get('/management', [GestionUsuariosCotroller::class, 'index'])->name('usuarios');
 
 
 
