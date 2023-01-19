@@ -28,7 +28,9 @@ class RegisteredUserController extends Controller
             'apellido' => $request->surname,
             'telefono' => $request->telefono,
             'password' => bcrypt($request->password),
-            'rol' => 'alumno'
+            'rol' => 'alumno',
+            'estado' => '1'
+
         ]);
 
         // Autologin

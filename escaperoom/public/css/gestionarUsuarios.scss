@@ -1,0 +1,40 @@
+main {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    
+#tabla-alumnos,
+#tabla-profesores {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    #fila-cabecera {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        text-align: center;
+        text-transform: uppercase;
+        div {
+            padding: 1rem;
+            border-bottom: solid 0.2rem #003566;
+            flex: 1;
+        }
+    }
+    #fila {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        text-align: center;
+
+        div {
+            padding: 1rem;
+            border-bottom: solid 0.2rem #003566;
+            flex: 1;
+        }
+    }
+}

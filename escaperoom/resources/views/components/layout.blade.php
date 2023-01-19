@@ -31,6 +31,9 @@
         @case("Login")
             <link rel="stylesheet" href="{{ URL::asset('css/registerLogin.css') }}" />
             @break
+        @case("Gestionar Usuarios")
+            <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
+            @break
     @endswitch
     <title>{{ $title }}</title>
     @vite('resources/js/app.js')

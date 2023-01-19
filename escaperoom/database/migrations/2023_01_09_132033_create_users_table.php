@@ -21,6 +21,7 @@ return new class extends Migration {
             $table->string('email', 100)->unique();
             $table->integer('telefono')->nullable()->unique();
             $table->string('rol', 200);
+            $table->integer('estado')->default(1);
             $table->bigInteger('codGrupo')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -9,7 +9,8 @@
 
                     <li><a href="./profile">Perfil</a></li>
                 @endauth
-
+                <li><a href="./management">Usuarios</a></li>
+                
                 @guest
                     <li><a href="./login">Ingresa tu cuenta</a></li>
                 @else
