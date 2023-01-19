@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/general.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/perfil.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome/css/font-awesome.min.css') }}">
+
     @switch($title)
         @case("Inicio")
             <link rel="stylesheet" href="{{ URL::asset('css/index.css') }}" />
@@ -42,5 +43,7 @@
     @if ($title != "Partida")
         <div id="footerSection"></div>
     @endif
+
+    @yield('scripts');
 </body>
 </html>

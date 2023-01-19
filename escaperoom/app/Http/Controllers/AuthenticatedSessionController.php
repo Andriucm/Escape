@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-
-
+use App\Models\User;
 
 
 class AuthenticatedSessionController extends Controller
@@ -36,4 +35,32 @@ class AuthenticatedSessionController extends Controller
         return to_route('login');
 
     }
+    public function updateDatos(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        $nombre = $request->input('formNombre');
+        $apellido = $request->input('formApe');
+        $tel = $request->input('formTel');
+
+        $user->nombre = $nombre;
+        $user->apellido = $apellido;
+        $user->telefono = $tel;
+
+        $user->save();
+        return redirect()->route('perfil');
+    }
+    // public function updateCuenta(Request $request, $id)
+    // {
+    //     $user = User::findOrFail($id);
+
+    //     $email = $request->input('formEmail');
+    //     $pw = $request->input('formContra');
+
+    //     $user->email = $email;
+    //     $user->contrasena = $pw;
+
+    //     $user->save();
+    //     return redirect()->route('perfil');
+    // }
 }
