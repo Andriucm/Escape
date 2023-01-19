@@ -20,63 +20,6 @@
         //Aparecer botón
         submitInfo.style.display = "block";
 
-
-        // inputNombre.addEventListener("change", function() {
-        //     // e.preventDefault();
-        //     submitInfo.addEventListener("click", function(e) {
-        //         e.preventDefault();
-        //         console.log("change");
-        //         let nombre = document.getElementById("formNombre").value;
-        //         let apellido = document.getElementById("formApe").value;
-        //         let tel = document.getElementById("formTel").value;
-
-        //         inputNombre.classList.add("formNombre");
-        //         inputApellido.classList.add("formApe");
-        //         inputTelefono.classList.add("formTel");
-
-        //         inputNombre.setAttribute('readonly', true);
-        //         inputApellido.setAttribute('readonly', true);
-        //         inputTelefono.setAttribute('readonly', true);
-        //     });
-        // });
-
-        // inputApellido.addEventListener("change", function() {
-        //     // e.preventDefault();
-        //     submitInfo.addEventListener("click", function(e) {
-        //         e.preventDefault();
-        //         console.log("change");
-        //         let nombre = document.getElementById("formNombre").value;
-        //         let apellido = document.getElementById("formApe").value;
-        //         let tel = document.getElementById("formTel").value;
-
-        //         inputNombre.classList.add("formNombre");
-        //         inputApellido.classList.add("formApe");
-        //         inputTelefono.classList.add("formTel");
-
-        //         inputNombre.setAttribute('readonly', true);
-        //         inputApellido.setAttribute('readonly', true);
-        //         inputTelefono.setAttribute('readonly', true);
-        //     });
-        // });
-
-        // inputTelefono.addEventListener("change", function() {
-        //     // e.preventDefault();
-        //     submitInfo.addEventListener("click", function(e) {
-        //         e.preventDefault();
-        //         console.log("change");
-        //         let nombre = document.getElementById("formNombre").value;
-        //         let apellido = document.getElementById("formApe").value;
-        //         let tel = document.getElementById("formTel").value;
-
-        //         inputNombre.classList.add("formNombre");
-        //         inputApellido.classList.add("formApe");
-        //         inputTelefono.classList.add("formTel");
-
-        //         inputNombre.setAttribute('readonly', true);
-        //         inputApellido.setAttribute('readonly', true);
-        //         inputTelefono.setAttribute('readonly', true);
-        //     });
-        // });
     }
 
     function editarCuenta() {
@@ -94,38 +37,6 @@
 
         //Aparecer botón
         submitCuenta.style.display = "block";
-
-        // inputEmail.addEventListener("change", function() {
-        //     // e.preventDefault();
-        //     submitCuenta.addEventListener("click", function(e) {
-        //         e.preventDefault();
-        //         console.log("change");
-        //         let email = document.getElementById("formEmail").value;
-        //         let contra = document.getElementById("formContra").value;
-
-        //         inputEmail.classList.add("formEmail");
-        //         inputContra.classList.add("formContra");
-
-        //         inputEmail.setAttribute('readonly', true);
-        //         inputContra.setAttribute('readonly', true);
-        //     });
-        // });
-
-        // inputContra.addEventListener("change", function() {
-        //     // e.preventDefault();
-        //     submitCuenta.addEventListener("click", function(e) {
-        //         e.preventDefault();
-        //         console.log("change");
-        //         let email = document.getElementById("formEmail").value;
-        //         let contra = document.getElementById("formContra").value;
-
-        //         inputEmail.classList.add("formEmail");
-        //         inputContra.classList.add("formContra");
-
-        //         inputEmail.setAttribute('readonly', true);
-        //         inputContra.setAttribute('readonly', true);
-        //     });
-        // });
     }
 
     function consultarProgreso() {
@@ -147,19 +58,6 @@ $user_tel = $user->telefono;
 $user_email = $user->email;
 $user_password = $user->password;
 $user_rol = $user->rol;
-
-// if (isset($_POST['submitDatos'])){
-//     var_dump("enviado");
-// } else {
-//     var_dump("Fallo");
-// }
-
-
-// if(isset($_POST['submitDatos'])){
-//     var_dump ("Hola");
-//     // var_dump ($_GET['formNombre']);
-// }
-
 
 ?>
 
@@ -207,12 +105,14 @@ $user_rol = $user->rol;
                 <button type="button" class="editarAccount" onclick="editarCuenta()">Editar</button>
             </div>
             <hr>
-            <form action="">
+            <form method="POST" action="{{ route('editarCuenta', [$id]) }}">
+                @method('PATCH')
+                @csrf
                 <label for="formEmail"><b>Email:</b></label>
                 <input type="text" id="formEmail" class="formEmail" name="formEmail" value="<?php echo $user_email; ?>" readonly><br><br>
                 <label for="formcontra"><b>Contraseña:</b></label>
-                <input type="text" id="formContra" class="formContra" name="formContra" value="saray123" readonly><br><br>
-                <button type="button" id="submitCuenta">Enviar</button>
+                <input type="text" id="formContra" class="formContra" name="formContra" value="<?php echo $user_password; ?>" readonly><br><br>
+                <input type="submit" id="submitCuenta" name="submitCuenta" value="Enviar">
             </form>
         </div>
     </div>

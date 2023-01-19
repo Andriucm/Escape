@@ -50,17 +50,18 @@ class AuthenticatedSessionController extends Controller
         $user->save();
         return redirect()->route('perfil');
     }
-    // public function updateCuenta(Request $request, $id)
-    // {
-    //     $user = User::findOrFail($id);
 
-    //     $email = $request->input('formEmail');
-    //     $pw = $request->input('formContra');
+    public function updateCuenta(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
 
-    //     $user->email = $email;
-    //     $user->contrasena = $pw;
+        $email = $request->input('formEmail');
+        $pw = $request->input('formContra');
 
-    //     $user->save();
-    //     return redirect()->route('perfil');
-    // }
+        $user->email = $email;
+        $user->password = $pw;
+
+        $user->save();
+        return redirect()->route('perfil');
+    }
 }
