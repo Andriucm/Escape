@@ -3,7 +3,7 @@
 </script>
 
 <template>
-        <v-footer class="footer-container">
+        <footer class="footer-container">
                 <div class="footer">
                         <div class="row">
                                 <ul>
@@ -20,7 +20,7 @@
                                 Mikel y Ainhoa
                         </div>
                 </div>
-        </v-footer>
+        </footer>
 
 </template>
 

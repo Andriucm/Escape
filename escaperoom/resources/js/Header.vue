@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <v-header class="header-container">
+  <header class="header-container">
     <div class="header">
         <img  src="../../public/imagenes/logo.png" alt="Logo" class="logo" v-on:click="index()">
       <div class="row">
@@ -21,5 +21,5 @@
         </ul>
       </div>
     </div>
-  </v-header>
+  </header>
 </template>
