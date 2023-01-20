@@ -193,13 +193,13 @@ $user_rol = $user->rol;
                 @csrf
                 <label for="formEmail"><b>Email:</b></label>
                 <input type="text" id="formEmail" class="formEmail" name="formEmail" value="<?php echo $user_email; ?>" readonly><br><br>
-                @error('email')
+                @error('formEmail')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
                 <div class="password">
                     <input type="password" id="formContra" class="formContra" name="formContra" placeholder="Nueva contraseña" readonly><br><br>
-                    @error('password')
+                    @error('formContra')
                         <small style="color: red">{{ $message }}</small>
                         <br>
                     @enderror
