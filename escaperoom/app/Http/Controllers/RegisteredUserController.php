@@ -29,7 +29,7 @@ class RegisteredUserController extends Controller
             'telefono' => $request->telefono,
             'password' => bcrypt($request->password),
             'rol' => 'alumno',
-            'estado' => '1'
+            'estado' => '0'
 
         ]);
 

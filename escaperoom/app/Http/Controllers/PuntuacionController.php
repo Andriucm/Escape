@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePuntuacionRequest;
 use App\Http\Requests\UpdatePuntuacionRequest;
-use App\Models\Puntuacion;
+
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class PuntuacionController extends Controller
@@ -18,7 +19,9 @@ class PuntuacionController extends Controller
     {
         $sql = 'SELECT users.usuario, puntuacions.puntos FROM users,puntuacions WHERE users.codUsuario like puntuacions.codUsuario  ORDER BY`puntos` DESC limit 15 OFFSET 0';
         $usuarios = DB::select($sql);
-    return view('puntuaciones', compact('usuarios'));
+        // $usuarios = User::all();
+
+        return view('puntuaciones', compact('usuarios'));
 
     }
 

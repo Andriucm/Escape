@@ -22,7 +22,7 @@
 
                     </div>
                     <div class="columna">
-                        {{ $usuario->puntos }}
+                        {{ $usuario->puntos}}
 
                     </div>
 
