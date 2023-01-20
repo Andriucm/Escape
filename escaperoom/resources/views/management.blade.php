@@ -8,7 +8,8 @@
         <div id="seleccion-usuarios">
             <button id="menu-alumnos" onclick="mostrarAlumnos()">Alumnos</button>
             <button id="menu-Profesores" onclick="mostrarProfesores()">Profesores</button>
-   
+            <button onclick="location.href='{{ route('solicitudes') }}'" type="button">Solicitudes</button>
+
         </div>
         <div id="tabla-alumnos" class="flex">
             <div id="fila-cabecera">
