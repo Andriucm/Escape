@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
             'password' => ['required'],
         ]);
         $remember = $request->has('remember') ? true : false;
-        if(Auth::attempt($credenciales, $remember)) {
+        if (Auth::attempt($credenciales, $remember)) {
             $request->session()->regenerate();
             return to_route('index');
         } else {
@@ -25,7 +25,6 @@ class AuthenticatedSessionController extends Controller
                 'email' => __('auth.failed')
             ]);
         }
-
     }
     public function destroy(Request $request)
     {
@@ -34,7 +33,6 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return to_route('login');
-
     }
     public function updateDatos(Request $request, $id)
     {
@@ -61,6 +59,26 @@ class AuthenticatedSessionController extends Controller
 
     public function updateCuenta(Request $request, $id)
     {
+        $user = User::findOrFail($id);
+
+        $request->validate([
+             'formEmail' => ['required','email'],
+        ]);
+
+
+        $email = $request->input('formEmail');
+        $pw = $request->input('formContra');
+
+        $user->email = $email;
+        $user->password = $pw;;
+
+        $user->save();
+
+        return redirect()->route('perfil');
+
+        /////////////////////////////////////////////////////////////////////
+
+
         // $user = User::findOrFail($id);
 
         // $request->validate([
@@ -70,23 +88,11 @@ class AuthenticatedSessionController extends Controller
         // $user->save();
         // return redirect()->route('perfil');
 
-        /////////////////////////////////////////////////////////////////////
 
-        // $user = User::findOrFail($id);
-
-        // $this->validate($request, [
-        //     'formEmail' => ['required','email'],
-        //     'formContra' => ['required']
-        // ]);
-
-        // $inputs = $request->all();
-        // $user->fill($inputs)->save();
-
-        // return redirect()->back();
- 
         //////////////////////////////////////////////////////////////////////
 
-            // public function updateCuenta(Request $request, User $id)
+
+        // public function updateCuenta(Request $request, User $id)
 
         // $request->validate([
         //     'formEmail' => ['required','email'],
@@ -96,6 +102,21 @@ class AuthenticatedSessionController extends Controller
         // $id->update($request->all());
 
         // return redirect()->route('perfil');
+
+
+        /////////////////////////////////////////////////////////////////////
+
+
+        // $user = User::findOrFail($id);
+
+        // $this->validate($request, [
+        //     'formEmail' => ['required', 'email'],
+        //     'formContra' => ['required']
+        // ]);
+
+        // $inputs = $request->all();
+        // $user->fill($inputs)->save();
+
+        // return redirect()->back();
     }
 }
-// bcrypt()
