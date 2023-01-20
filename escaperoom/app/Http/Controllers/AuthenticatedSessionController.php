@@ -40,6 +40,12 @@ class AuthenticatedSessionController extends Controller
     {
         $user = User::findOrFail($id);
 
+        $request->validate([
+            'formNombre' => ['required', 'string', 'max:100'],
+            'formApe' => ['required', 'string', 'max:200'],
+            'formTel' => ['required', 'numeric'],
+        ]);
+
         $nombre = $request->input('formNombre');
         $apellido = $request->input('formApe');
         $tel = $request->input('formTel');
@@ -49,20 +55,47 @@ class AuthenticatedSessionController extends Controller
         $user->telefono = $tel;
 
         $user->save();
+
         return redirect()->route('perfil');
     }
 
     public function updateCuenta(Request $request, $id)
     {
-        $user = User::findOrFail($id);
+        // $user = User::findOrFail($id);
 
-        $email = $request->input('formEmail');
-        $pw = $request->input('formContra');
+        // $request->validate([
+        //     'formEmail' => ['required','email'],
+        //     'formContra' => ['required']
+        // ]);
+        // $user->save();
+        // return redirect()->route('perfil');
 
-        $user->email = $email;
-        $user->password = $pw;
+        /////////////////////////////////////////////////////////////////////
 
-        $user->save();
-        return redirect()->route('perfil');
+        // $user = User::findOrFail($id);
+
+        // $this->validate($request, [
+        //     'formEmail' => ['required','email'],
+        //     'formContra' => ['required']
+        // ]);
+
+        // $inputs = $request->all();
+        // $user->fill($inputs)->save();
+
+        // return redirect()->back();
+ 
+        //////////////////////////////////////////////////////////////////////
+
+            // public function updateCuenta(Request $request, User $id)
+
+        // $request->validate([
+        //     'formEmail' => ['required','email'],
+        //     'formContra' => ['required'],
+        // ]);
+
+        // $id->update($request->all());
+
+        // return redirect()->route('perfil');
     }
 }
+// bcrypt()
