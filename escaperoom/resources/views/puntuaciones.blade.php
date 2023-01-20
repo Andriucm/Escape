@@ -1,4 +1,3 @@
-{{ $contador = 1 }}
 <x-layout>
 
     <x-slot name="title">
@@ -15,9 +14,7 @@
                 <div class="fila">
 
 
-                    <div class="columna">
-                        {{ $contador++ }}
-                    </div>
+                
 
 
                     <div class="columna">

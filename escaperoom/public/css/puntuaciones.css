@@ -14,7 +14,7 @@ main {
 }
 
 #tabla {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-flow: column nowrap;
   border-radius: 20px;
