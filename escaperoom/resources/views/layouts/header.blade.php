@@ -9,7 +9,14 @@
 
                     <li><a href="./profile">Perfil</a></li>
                 @endauth
+
+                @auth
+                @if (Auth::user()->rol=='admin')
                 <li><a href="./management">Usuarios</a></li>
+                @endif  
+                @endauth
+                
+                
                 
                 @guest
                     <li><a href="./login">Ingresa tu cuenta</a></li>
