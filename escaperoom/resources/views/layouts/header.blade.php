@@ -1,6 +1,6 @@
 <header class="header-container">
     <div class="header">
-        <a href="{{ route('index') }}"><img src="../public/imagenes/logo.png" alt="Logo" class="logo" ></a>
+        <a href="{{ route('index') }}"><img src="../public/imagenes/logo.png" alt="Logo" class="logo"></a>
         <div class="row">
             <ul>
                 <li><a href="./puntuaciones">Puntuaciones</a></li>
@@ -25,7 +25,7 @@
                         @csrf
                         <button id="btn-logout">Logout</button>
                     </form>
-                    
+
                 @endauth
                 <button onclick="location.href='{{ route('partida') }}'" type="button" class="btn">Jugar</button>
             </ul>
