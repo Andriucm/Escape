@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -10,14 +11,20 @@ class RegisteredUserController extends Controller
 {
     public function store(Request $request)
     {
-         $request->validate([
-            'usuario' => ['required', 'min:4', 'max:30', ],
-            'email' => ['required', 'email', ],
-            'name' => ['required', 'string',
+        $request->validate([
+            'usuario' => ['required', 'min:4', 'max:30',
             ],
-            'surname' => ['required', 'string',
+            'email' => ['required', 'email',
             ],
-            'telefono' => ['required', 'integer','min:9' ],
+            'name' => [
+                'required',
+                'string',
+            ],
+            'surname' => [
+                'required',
+                'string',
+            ],
+            'telefono' => ['required', 'integer', 'min:9'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
