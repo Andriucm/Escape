@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
+use Illuminate\Validation\Rules\Password;
+
 
 
 class AuthenticatedSessionController extends Controller
@@ -39,9 +41,9 @@ class AuthenticatedSessionController extends Controller
         $user = User::findOrFail($id);
 
         $request->validate([
-            'formNombre' => ['required', 'string', 'max:100'],
-            'formApe' => ['required', 'string', 'max:200'],
-            'formTel' => ['required', 'numeric'],
+            'formNombre' => ['required', 'alpha', 'max:100'],
+            'formApe' => ['required', 'alpha', 'max:200'],
+            'formTel' => ['required', 'numeric', 'digits:9'],
         ]);
 
         $nombre = $request->input('formNombre');
@@ -63,11 +65,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->validate([
              'formEmail' => ['required','email'],
+             'formContra' => ['required', 'confirmed' , Password::min(8)->numbers()]
         ]);
 
 
         $email = $request->input('formEmail');
-        $pw = $request->input('formContra');
+        $pw = bcrypt($request->input('formContra'));
 
         $user->email = $email;
         $user->password = $pw;;
@@ -75,48 +78,5 @@ class AuthenticatedSessionController extends Controller
         $user->save();
 
         return redirect()->route('perfil');
-
-        /////////////////////////////////////////////////////////////////////
-
-
-        // $user = User::findOrFail($id);
-
-        // $request->validate([
-        //     'formEmail' => ['required','email'],
-        //     'formContra' => ['required']
-        // ]);
-        // $user->save();
-        // return redirect()->route('perfil');
-
-
-        //////////////////////////////////////////////////////////////////////
-
-
-        // public function updateCuenta(Request $request, User $id)
-
-        // $request->validate([
-        //     'formEmail' => ['required','email'],
-        //     'formContra' => ['required'],
-        // ]);
-
-        // $id->update($request->all());
-
-        // return redirect()->route('perfil');
-
-
-        /////////////////////////////////////////////////////////////////////
-
-
-        // $user = User::findOrFail($id);
-
-        // $this->validate($request, [
-        //     'formEmail' => ['required', 'email'],
-        //     'formContra' => ['required']
-        // ]);
-
-        // $inputs = $request->all();
-        // $user->fill($inputs)->save();
-
-        // return redirect()->back();
     }
 }
