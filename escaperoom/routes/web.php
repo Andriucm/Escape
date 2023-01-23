@@ -44,9 +44,7 @@ Route::get('/puntuaciones', [PuntuacionController::class, 'index'])->name('puntu
 Route::get('/management', [GestionUsuariosCotroller::class, 'index'])->name('management.index');
 Route::delete('/management/{id}', [GestionUsuariosCotroller::class, 'destroy'])->name('management.destroy');
 
-Route::get('/solicitudesUsuarios', [SolicitudesController::class, 'index'])->name('solicitudes');
-Route::put('/solicitudesUsuarios/{id}', [SolicitudesController::class, 'aceptar'])->name('solicitudes.aceptar');
-Route::delete('/solicitudesUsuarios/{id}', [SolicitudesController::class, 'rechazar'])->name('solicitudes.rechazar');
+
 
 
 

@@ -10,11 +10,9 @@ class GestionUsuariosCotroller extends Controller
 {
     public function index()
     {
-        $sqlAl = 'SELECT * FROM users WHERE rol = "alumno" limit 15 OFFSET 0';
-        $alumnos = DB::select($sqlAl);
-        $sqlProf = 'SELECT * FROM users WHERE rol = "profesor" limit 15 OFFSET 0';
-        $profesores = DB::select($sqlProf);
-        return view('/management', compact('alumnos', 'profesores'));
+        $sqlAl = 'SELECT * FROM users WHERE rol != "admin" and estado = "1" limit 15 OFFSET 0';
+        $usuarios = DB::select($sqlAl);
+        return view('/management', compact('usuarios'));
     }
     public function destroy($id)
     {

@@ -14,48 +14,48 @@
                 @csrf
 
                 <input type="text" name="usuario" id="form-username" placeholder="Usuario"
-                    value="{{ old('usuario') }}"> <br>
+                    value="{{ old('usuario') }}"> 
 
                 @error('usuario')
                     <small style="color: red">{{ $message }}</small>
-                    <br>
+    
                 @enderror
                 <input type="email" name="email" id="form-email" placeholder="example@gmail.com"
-                    value="{{ old('email') }}"> <br>
+                    value="{{ old('email') }}"> 
 
                 @error('email')
                     <small style="color: red">{{ $message }}</small>
-                    <br>
+    
                 @enderror
                 <input type="text" name="name" id="form-nombre" placeholder="Nombre" value="{{ old('name') }}">
-                <br>
+                
 
                 @error('name')
                     <small style="color: red">{{ $message }}</small>
-                    <br>
+    
                 @enderror
                 <input type="text" name="surname" id="form-apellido" placeholder="Apellido"
-                    value="{{ old('surname') }}"> <br>
+                    value="{{ old('surname') }}"> 
 
                 @error('surname')
                     <small style="color: red">{{ $message }}</small>
-                    <br>
+    
                 @enderror
                 <input type="text" name="telefono" id="form-telefono" placeholder="Telefono"
-                    value="{{ old('telefono') }}"> <br>
+                    value="{{ old('telefono') }}">
 
                 @error('telefono')
                     <small style="color: red">{{ $message }}</small>
-                    <br>
+    
                 @enderror
-                <input type="password" name="password" id="form-password" placeholder="Contraseña"> <br>
+                <input type="password" name="password" id="form-password" placeholder="Contraseña">
 
                 @error('password')
                     <small style="color: red">{{ $message }}</small>
-                    <br>
+    
                 @enderror
                 <input type="password" name="password_confirmation" id="form-password2"
-                    placeholder="Segunda contraseña"> <br>
+                    placeholder="Segunda contraseña"> 
                 <a href="{{ route('login') }}">¿Ya tienes una cuenta?</a>
                 <div>
                     <button id="form-btn" type="submit">Enviar</button>

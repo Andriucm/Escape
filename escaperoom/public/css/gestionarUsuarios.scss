@@ -8,10 +8,9 @@ main {
 }
 
     
-#tabla-alumnos,
-#tabla-profesores {
+#tabla{
     width: 100%;
-    
+    display: flex;
     flex-direction: column;
     #fila-cabecera {
         width: 100%;
@@ -37,10 +36,4 @@ main {
             flex: 1;
         }
     }
-}
-.none{
-    display: none;
-}
-.flex{
-    display: flex;
 }

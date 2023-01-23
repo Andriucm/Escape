@@ -36,10 +36,7 @@
         @case("Gestionar Usuarios")
             <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
             @break
-        @case("Solicitudes")
-            <link rel="stylesheet" href="{{ URL::asset('css/puntuaciones.css') }}" />
-            <script src="./../resources/js/gestionarUsuariosBtn.js" defer></script>
-            @break
+        
     @endswitch
     <title>{{ $title }}</title>
     @vite('resources/js/app.js')
