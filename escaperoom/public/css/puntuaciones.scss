@@ -18,7 +18,7 @@ main{
 
 
 #tabla{
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-flow: column nowrap;
     
@@ -62,4 +62,6 @@ main{
 .fila:hover{
     background: #ffc400ba;;
 }
+.none{display: none;}
+.flex{display: flex;}
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Puntuacion extends Model
 {
@@ -12,4 +13,9 @@ class Puntuacion extends Model
             protected $primaryKey=('codPuntuacion');
            protected $foreignkey=['codUsuario','codGrupo','codPartida'];
             protected $fillable=('puntos');
+       
+        public function user()
+        {
+            return $this->belongsTo(User::class);
+        }
 }

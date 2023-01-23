@@ -28,10 +28,10 @@ Route::get('/groups', function () {
 
 Route::get('/profile', function () {
     return view('perfil');
-})->name('perfil'); 
+})->name('perfil');
 
 
-Route::PATCH('/profile/update/{id}',[AuthenticatedSessionController::class, 'updateDatos'])->name('editarDatos');
+Route::PATCH('/profile/update/{id}', [AuthenticatedSessionController::class, 'updateDatos'])->name('editarDatos');
 Route::PATCH('/profile/{id}', [AuthenticatedSessionController::class, 'updateCuenta'])->name('editarCuenta');
 
 Route::get('/', function () {
@@ -44,15 +44,17 @@ Route::get('/puntuaciones', [PuntuacionController::class, 'index'])->name('puntu
 Route::get('/management', [GestionUsuariosCotroller::class, 'index'])->name('management.index');
 Route::delete('/management/{id}', [GestionUsuariosCotroller::class, 'destroy'])->name('management.destroy');
 
-Route::get('/solicitudes', [SolicitudesController::class, 'index'])->name('solicitudes');
+Route::get('/solicitudesUsuarios', [SolicitudesController::class, 'index'])->name('solicitudes');
+Route::put('/solicitudesUsuarios/{id}', [SolicitudesController::class, 'aceptar'])->name('solicitudes.aceptar');
+Route::delete('/solicitudesUsuarios/{id}', [SolicitudesController::class, 'rechazar'])->name('solicitudes.rechazar');
 
 
 
 
 Route::view('/login', 'auth.login')->name('login');
-Route::post('/login', [AuthenticatedSessionController::class,'store']);
-Route::post('/logout', [AuthenticatedSessionController::class,'destroy'])->name('logout');
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 
 Route::view('/register', 'auth.register')->name('register');
-Route::post('/register', [RegisteredUserController::class,'store'])->name('register.store');
+Route::post('/register', [RegisteredUserController::class, 'store'])->name('register.store');

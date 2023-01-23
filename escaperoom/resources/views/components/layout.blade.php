@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ URL::asset('imagenes/logo.png') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/general.css') }}" />
@@ -34,6 +35,10 @@
             @break
         @case("Gestionar Usuarios")
             <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
+            @break
+        @case("Solicitudes")
+            <link rel="stylesheet" href="{{ URL::asset('css/puntuaciones.css') }}" />
+            <script src="./../resources/js/gestionarUsuariosBtn.js" defer></script>
             @break
     @endswitch
     <title>{{ $title }}</title>

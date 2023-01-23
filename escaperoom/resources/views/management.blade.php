@@ -8,9 +8,10 @@
         <div id="seleccion-usuarios">
             <button id="menu-alumnos" onclick="mostrarAlumnos()">Alumnos</button>
             <button id="menu-Profesores" onclick="mostrarProfesores()">Profesores</button>
-   
+            <button onclick="location.href='{{ route('solicitudes') }}'" type="button">Solicitudes</button>
+
         </div>
-        <div id="tabla-alumnos" class="flex">
+        <div id="tabla-alumnos" class="none">
             <div id="fila-cabecera">
                 <div>
                     Usuario
@@ -65,7 +66,8 @@
             @endforeach
 
         </div>
-        <div id="tabla-profesores" class="flex">
+        <div id="tabla-profesores" class="none
+        ">
             <div id="fila-cabecera">
                 <div>
                     Usuario
@@ -81,6 +83,9 @@
                 </div>
                 <div>
                     Telefono
+                </div>
+                <div>
+                    Eliminar
                 </div>
 
             </div>
@@ -101,7 +106,13 @@
                     <div>
                         {{ $alumno->telefono }}
                     </div>
-
+                    <div>
+                        <form action="{{ route('management.destroy', $alumno->codUsuario) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Eliminar">
+                        </form>
+                    </div>
                 </div>
             @endforeach
         </div>

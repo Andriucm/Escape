@@ -14,7 +14,7 @@ main {
 }
 
 #tabla {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-flow: column nowrap;
   border-radius: 20px;
@@ -47,4 +47,10 @@ main {
 }
 #tabla .fila:hover {
   background: rgba(255, 196, 0, 0.7294117647);
+}
+#tabla .none {
+  display: none;
+}
+#tabla .flex {
+  display: flex;
 }/*# sourceMappingURL=puntuaciones.css.map */
