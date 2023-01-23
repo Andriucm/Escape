@@ -153,19 +153,19 @@ $user_rol = $user->rol;
                 @csrf
                 <label for="formNombre"><b>Nombre:</b></label>
                 <input type="text" id="formNombre" class="formNombre" name="formNombre" value="<?php echo $user_name; ?>" readonly><br><br>
-                @error('nombre')
+                @error('formNombre')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
                 <label for="formApe"><b> Apellido:</b></label>
                 <input type="text" id="formApe" class="formApe" name="formApe" value="<?php echo $user_surname; ?>" readonly><br><br>
-                @error('apellido')
+                @error('formApe')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
                 <label for="formTel"><b>Telefono:</b></label>
                 <input type="text" id="formTel" class="formTel" name="formTel" value="<?php echo $user_tel; ?>" readonly><br><br>
-                @error('telefono')
+                @error('formTel')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
@@ -193,13 +193,13 @@ $user_rol = $user->rol;
                 @csrf
                 <label for="formEmail"><b>Email:</b></label>
                 <input type="text" id="formEmail" class="formEmail" name="formEmail" value="<?php echo $user_email; ?>" readonly><br><br>
-                @error('email')
+                @error('formEmail')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
                 <div class="password">
                     <input type="password" id="formContra" class="formContra" name="formContra" placeholder="Nueva contraseña" readonly><br><br>
-                    @error('password')
+                    @error('formContra')
                         <small style="color: red">{{ $message }}</small>
                         <br>
                     @enderror

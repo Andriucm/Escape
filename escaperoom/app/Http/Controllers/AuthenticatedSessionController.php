@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
+use Illuminate\Validation\Rules\Password;
+
 
 
 class AuthenticatedSessionController extends Controller
@@ -17,7 +19,7 @@ class AuthenticatedSessionController extends Controller
             'password' => ['required'],
         ]);
         $remember = $request->has('remember') ? true : false;
-        if(Auth::attempt($credenciales, $remember)) {
+        if (Auth::attempt($credenciales, $remember)) {
             $request->session()->regenerate();
             return to_route('index');
         } else {
@@ -25,7 +27,6 @@ class AuthenticatedSessionController extends Controller
                 'email' => __('auth.failed')
             ]);
         }
-
     }
     public function destroy(Request $request)
     {
@@ -34,16 +35,15 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return to_route('login');
-
     }
     public function updateDatos(Request $request, $id)
     {
         $user = User::findOrFail($id);
 
         $request->validate([
-            'formNombre' => ['required', 'string', 'max:100'],
-            'formApe' => ['required', 'string', 'max:200'],
-            'formTel' => ['required', 'numeric'],
+            'formNombre' => ['required', 'alpha', 'max:100'],
+            'formApe' => ['required', 'alpha', 'max:200'],
+            'formTel' => ['required', 'numeric', 'digits:9'],
         ]);
 
         $nombre = $request->input('formNombre');
@@ -61,41 +61,22 @@ class AuthenticatedSessionController extends Controller
 
     public function updateCuenta(Request $request, $id)
     {
-        // $user = User::findOrFail($id);
+        $user = User::findOrFail($id);
 
-        // $request->validate([
-        //     'formEmail' => ['required','email'],
-        //     'formContra' => ['required']
-        // ]);
-        // $user->save();
-        // return redirect()->route('perfil');
+        $request->validate([
+             'formEmail' => ['required','email'],
+             'formContra' => ['required', 'confirmed' , Password::min(8)->numbers()]
+        ]);
 
-        /////////////////////////////////////////////////////////////////////
 
-        // $user = User::findOrFail($id);
+        $email = $request->input('formEmail');
+        $pw = bcrypt($request->input('formContra'));
 
-        // $this->validate($request, [
-        //     'formEmail' => ['required','email'],
-        //     'formContra' => ['required']
-        // ]);
+        $user->email = $email;
+        $user->password = $pw;;
 
-        // $inputs = $request->all();
-        // $user->fill($inputs)->save();
+        $user->save();
 
-        // return redirect()->back();
- 
-        //////////////////////////////////////////////////////////////////////
-
-            // public function updateCuenta(Request $request, User $id)
-
-        // $request->validate([
-        //     'formEmail' => ['required','email'],
-        //     'formContra' => ['required'],
-        // ]);
-
-        // $id->update($request->all());
-
-        // return redirect()->route('perfil');
+        return redirect()->route('perfil');
     }
 }
-// bcrypt()
