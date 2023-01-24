@@ -1,16 +1,7 @@
-<script setup>
-  function index() {
-    window.location.href="./";
-  }
-  function redirect() {
-    window.location.href="./play";
-  }
-</script>
-
 <template>
   <header class="header-container">
     <div class="header">
-        <img  src="../../public/imagenes/logo.png" alt="Logo" class="logo" v-on:click="index()">
+        <img :src="'imagenes/logo.png'" alt="Logo" class="logo" v-on:click="index()">
       <div class="row">
         <ul>
           <li><a href="./puntuaciones">Puntuaciones</a></li>
@@ -23,3 +14,12 @@
     </div>
   </header>
 </template>
+
+<script>
+  function index() {
+    window.location.href="./";
+  }
+  function redirect() {
+    window.location.href="./play";
+  }
+</script>
