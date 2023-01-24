@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="{{ URL::asset('css/general.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/perfil.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome/css/font-awesome.min.css') }}">
+    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
+     <!-- Bootstrap CSS -->
+     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+       
+       <!-- Bootstrap Bundle with Popper -->
+       <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+   
 
     @switch($title)
         @case("Inicio")
@@ -42,6 +49,8 @@
     @vite('resources/js/app.js')
 </head>
 <body>
+@include('flash-message')
+
     @if ($title != "Partida")
         {{-- <div id="headerSection"></div> --}}
         @include('layouts.header')
@@ -51,10 +60,17 @@
         {{ $slot }}
     </div>
 
+
+
     @if ($title != "Partida")
         <div id="footerSection"></div>
     @endif
 
     @yield('scripts');
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 </html>

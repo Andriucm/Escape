@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Validation\Rules\Password;
 
 
@@ -21,13 +22,14 @@ class AuthenticatedSessionController extends Controller
         $remember = $request->has('remember') ? true : false;
         if (Auth::attempt($credenciales, $remember)) {
             $request->session()->regenerate();
-            return to_route('index');
+            return to_route('index')->with('success', 'Inicio de sesión correcto');
         } else {
             throw ValidationException::withMessages([
                 'email' => __('auth.failed')
             ]);
         }
     }
+    
     public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
@@ -36,6 +38,7 @@ class AuthenticatedSessionController extends Controller
 
         return to_route('login');
     }
+
     public function updateDatos(Request $request, $id)
     {
         $user = User::findOrFail($id);
@@ -56,27 +59,33 @@ class AuthenticatedSessionController extends Controller
 
         $user->save();
 
-        return redirect()->route('perfil');
+        return back()->with('success','Datos modificados correctamente!');
     }
 
     public function updateCuenta(Request $request, $id)
     {
         $user = User::findOrFail($id);
 
-        $request->validate([
-             'formEmail' => ['required','email'],
-             'formContra' => ['required', 'confirmed' , Password::min(8)->numbers()]
-        ]);
-
-
         $email = $request->input('formEmail');
         $pw = bcrypt($request->input('formContra'));
+        $pwSinEncriptar = $request->input('formContra');
 
-        $user->email = $email;
-        $user->password = $pw;;
+        if ($pwSinEncriptar=="") {
+            $request->validate([
+                'formEmail' => ['required', 'email']
+            ]);
+            $user->email = $email;
+        } else {
+            $request->validate([
+                'formEmail' => ['required', 'email'],
+                'formContra' => [Password::min(8)->numbers()]
+            ]);
+            $user->email = $email;
+            $user->password = $pw;
+        }
 
         $user->save();
 
-        return redirect()->route('perfil');
+        return back()->with('success', 'Datos modificados correctamente!');
     }
 }

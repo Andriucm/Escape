@@ -1,5 +1,5 @@
 <x-layout>
-    <script type="text/javascript" src="{{ URL::asset('../resources/js/gestionarUsuariosBtn.js') }}" defer></script>
+    <script type="text/javascript" src="{{ URL::asset('/js/gestionarUsuariosBtn.js') }}" defer></script>
     <x-slot name="title">
         Gestionar Usuarios
     </x-slot>
