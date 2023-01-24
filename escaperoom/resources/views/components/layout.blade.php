@@ -58,6 +58,6 @@
         <div id="footerSection"></div>
     @endif
 
-    @yield('scripts');
+    @yield('scripts')
 </body>
 </html>
