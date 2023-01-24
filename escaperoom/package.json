@@ -5,10 +5,14 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@popperjs/core": "^2.11.6",
         "axios": "^1.1.2",
+        "bootstrap": "^5.2.3",
+        "bootstrap-icons": "^1.10.3",
         "laravel-vite-plugin": "^0.7.2",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
+        "sass": "^1.56.1",
         "vite": "^4.0.0"
     },
     "dependencies": {
@@ -16,6 +20,8 @@
         "sass": "^1.57.1",
         "v-viewer": "^3.0.11",
         "vue": "^3.2.36",
+        "vue-carousel": "^0.18.0",
+        "vue-expandable-image": "^0.1.0",
         "vue-loader": "^17.0.1",
         "vue3-carousel": "^0.2.9"
     }
