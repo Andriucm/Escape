@@ -95,5 +95,26 @@ main {
         grid-area: Narrativa;
         border-bottom: 1px solid #212121;
         border-left: 1px solid #212121;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 3%;
+
+        h1 {
+            color: white;
+            font-size: 2em;
+
+            b {
+                color: #FFC300;
+                font-size: 1.5em;
+
+            }
+        }
+
+        h5 {
+            color: white;
+            text-align: start;
+            letter-spacing: 2px;
+            font-size: 1.1em;
+        }
     }
 }
