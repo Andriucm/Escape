@@ -6,28 +6,34 @@
     align-items: center;
     width: 100%;
 }
+
 .informacion {
     display: grid;
     grid-gap: 8%;
     text-align: center;
     grid-template-areas:
-    "nombre apellido"
-    "rol rol";
+        "nombre apellido"
+        "rol rol";
 }
+
 .rol {
     grid-area: rol;
 }
+
 .nombre {
     grid-area: nombre;
 }
+
 .apellido {
     grid-area: apellido;
 }
+
 #mainSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .perfil-body {
     font-family: 'Play', sans-serif;
     display: grid;
@@ -47,10 +53,11 @@
     justify-content: space-around;
     align-items: center;
     font-weight: bold;
-    font-size:larger;
+    font-size: larger;
     width: 100%;
     margin-bottom: 5%;
 }
+
 .datos {
     display: flex;
     flex-direction: column;
@@ -62,30 +69,41 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
+}
 
+.formNombre,
+.formApe,
+.formTel,
+.formEmail,
+.formContra {
+    pointer-events: none;
+    background-color: #000814;
+    color: white;
+    border: none
 }
-.formNombre, .formApe, .formTel, .formEmail, .formContra {
-    pointer-events:none; 
-    background-color:#000814; 
-    color:white; 
-    border:none  
-}
+
 form {
     margin-top: 3%;
     font-size: 18px;
 }
-input[type='text'] { font-size: 16px; }
 
-#submitDatos, #submitCuenta {
+input[type='text'] {
+    font-size: 16px;
+}
+
+#submitDatos,
+#submitCuenta {
     display: none;
 }
+
 hr {
     position: relative;
     background: lightgray;
     width: 90%;
     align-self: center;
     margin: 0;
-  }
+}
+
 .progreso {
     grid-column: 2/2;
     grid-row: 1 / span 1;
@@ -115,6 +133,7 @@ hr {
     margin-bottom: 5%;
     margin-top: 3%;
 }
+
 .cuenta {
     display: flex;
     flex-direction: column;
@@ -143,8 +162,10 @@ hr {
     font-weight: bold;
     border-radius: 7%;
 }
-#submitDatos:hover, #submitCuenta:hover {
-    transform: scale(1.1); 
+
+#submitDatos:hover,
+#submitCuenta:hover {
+    transform: scale(1.1);
 }
 
 #cambiarPW {
@@ -156,6 +177,7 @@ hr {
     font-weight: bold;
     border-radius: 7%;
 }
+
 #cambiarPW:hover {
     transform: scale(1.1);
 }
@@ -167,17 +189,23 @@ hr {
     border: 0;
     padding: 3%;
     font-weight: bold;
-    border-radius: 7%; 
+    border-radius: 7%;
 }
-#cancel:hover, #cancelar:hover {
-    transform: scale(1.1); 
+
+#cancel:hover,
+#cancelar:hover {
+    transform: scale(1.1);
 }
 
 .password {
     display: none;
 }
 
-.editarInfo, #submitDatos, .view, .editarAccount, #submitCuenta {
+.editarInfo,
+#submitDatos,
+.view,
+.editarAccount,
+#submitCuenta {
     background-color: #FFC300;
     width: 20%;
     border: 0;
@@ -185,6 +213,191 @@ hr {
     font-weight: bold;
     border-radius: 7%;
 }
+
 .perfil-body button:hover {
     background-color: #FFD60A;
+}
+
+@media screen and (min-width: 1250px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-row-gap: 5%;
+        grid-column-gap: 5%;
+        grid-template-columns: 500px 500px;
+        grid-template-rows: 80px 280px;
+    }
+    .datos {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-template-columns: 450px 450px;
+        grid-template-rows: 80px 250px;
+    }
+    .datos {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 985px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-template-columns: 400px 400px;
+        grid-template-rows: 80px 220px;
+    }
+    .datos {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 915px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-template-columns: 350px 350px;
+        grid-template-rows: 80px 200px;
+    }
+    .datos {
+        max-width: 400px;
+    }
+    .datos .buttons {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 80px 200px;
+    }
+    .datos {
+        max-width: 400px;
+    }
+    .datos .buttons {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-template-columns: 250px 250px;
+        grid-template-rows: 80px 180px;
+    }
+    .datos {
+        max-width: 400px;
+        font-size: medium;
+    }
+    .progreso {
+        font-size: medium;
+    }
+    .cuenta {
+        font-size: medium;
+    }
+    .datos .buttons {
+        justify-content: space-evenly;
+    }
+    .datos form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-template-columns: 170px 170px;
+        grid-template-rows: 260px 160px 230px;
+    }
+    .datos {
+        grid-column: 1/ span 2;
+        grid-row: 1 / 1;
+    }
+    .progreso {
+        grid-column: 1/ span 2;
+        grid-row: 2 / 2;
+    }
+    .cuenta {
+        grid-column: 1/ span 2;
+        grid-row: 3 / 3;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-template-columns: 140px 140px;
+        grid-template-rows: 330px 130px 230px;
+    }
+    .datos {
+        grid-column: 1/ span 2;
+        grid-row: 1 / 1;
+    }
+    .progreso {
+        grid-column: 1/ span 2;
+        grid-row: 2 / 2;
+    }
+    .cuenta {
+        grid-column: 1/ span 2;
+        grid-row: 3 / 3;
+    }
+    .datos .buttons {
+        justify-content: space-around;
+    }
+    .cuenta .buttons {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    body {
+        background-color: #101010;
+    }
+    .perfil-body {
+        grid-template-columns: 110px 110px;
+        grid-template-rows: 330px 130px 230px;
+    }
+    .datos {
+        grid-column: 1/ span 2;
+        grid-row: 1 / 1;
+    }
+    .progreso {
+        grid-column: 1/ span 2;
+        grid-row: 2 / 2;
+    }
+    .cuenta {
+        grid-column: 1/ span 2;
+        grid-row: 3 / 3;
+    }
+    .datos .buttons {
+        justify-content: space-around;
+    }
+    .cuenta .buttons {
+        justify-content: space-between;
+    }
+    .cuenta .buttons input, button {
+
+    }
+    .cuenta form {
+        margin-left: 0%;
+        width: 60%;
+    }
 }

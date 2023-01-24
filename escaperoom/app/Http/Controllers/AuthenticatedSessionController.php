@@ -57,7 +57,7 @@ class AuthenticatedSessionController extends Controller
 
         $user->save();
 
-        return redirect()->route('perfil');
+        return back()->with('success','Datos modificados correctamente!');
     }
 
     public function updateCuenta(Request $request, $id)
@@ -84,6 +84,6 @@ class AuthenticatedSessionController extends Controller
 
         $user->save();
 
-        return redirect()->route('perfil');
+        return back()->with('success', 'Datos modificados correctamente!');
     }
 }
