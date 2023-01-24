@@ -15,13 +15,9 @@ return new class extends Migration
     {
         Schema::create('puntuacions', function (Blueprint $table) {
             $table->bigIncrements('codPuntuacion');
-            $table->bigInteger('codUsuario')->unsigned();
-            $table->bigInteger('codGrupo')->unsigned();
             $table->bigInteger('codPartida')->unsigned();
             $table->integer('puntos')->default('0');
             $table->timestamps();
-            $table->foreign('codUsuario')->references('codUsuario')->on('users');
-            $table->foreign('codGrupo')->references('codGrupo')->on('grupos');
             $table->foreign('codPartida')->references('codPartida')->on('partidas');
         });
     }

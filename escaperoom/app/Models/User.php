@@ -28,5 +28,9 @@ public function puntuaciones()
 {
     return $this->hasMany(Puntuacion::class, 'codPuntuacion');
 }
+public function partidas()
+{
+    return $this->hasMany(Partida::class, 'codPartida');
+}
 
 }
