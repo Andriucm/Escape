@@ -22,13 +22,14 @@ class AuthenticatedSessionController extends Controller
         $remember = $request->has('remember') ? true : false;
         if (Auth::attempt($credenciales, $remember)) {
             $request->session()->regenerate();
-            return to_route('index');
+            return to_route('index')->with('success', 'Inicio de sesión correcto');
         } else {
             throw ValidationException::withMessages([
                 'email' => __('auth.failed')
             ]);
         }
     }
+    
     public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
@@ -37,6 +38,7 @@ class AuthenticatedSessionController extends Controller
 
         return to_route('login');
     }
+
     public function updateDatos(Request $request, $id)
     {
         $user = User::findOrFail($id);
