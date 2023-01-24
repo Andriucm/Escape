@@ -19,9 +19,9 @@ class User extends Authenticatable
     protected $fillable = ['usuario','password', 'nombre', 'apellido', 'email', 'telefono', 'rol','remember_token','estado'];
     protected $hidden = 'codUsuario';
 
-    public function group()
+    public function grupo()
 {
-    return $this->belongsTo(Group::class);
+    return $this->belongsTo(Grupo::class);
 }
 
 public function puntuaciones()
