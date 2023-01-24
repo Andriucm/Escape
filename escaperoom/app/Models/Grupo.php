@@ -12,9 +12,8 @@ class Grupo extends Model
     protected $primaryKey = "codGrupo";
     protected $fillable = 'nombre';
     protected $hidden = 'codGrupo';
-
     public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class,'codUsuario');
     }
 }

@@ -13,17 +13,17 @@
             
             <form id="form" action="{{ route('login') }}" method="POST">
                 @csrf
-                <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}"> <br>
+                <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}"> 
 
                 @error('email')
                     <small style="color: red">{{ $message }}</small>
-                    <br>
+
                 @enderror
-                <input type="password" name="password" id="password" placeholder="Contraseña"> <br>
+                <input type="password" name="password" id="password" placeholder="Contraseña"> 
 
                 @error('password')
                     <small style="color: red">{{ $message }}</small>
-                    <br>
+
                 @enderror
                 <a href="{{ route('register') }}">¿No tienes una cuenta?</a>
                 <div>

@@ -17,7 +17,7 @@ class PuntuacionController extends Controller
      */
     public function index()
     {
-        $sql = 'SELECT users.usuario, puntuacions.puntos FROM users,puntuacions WHERE users.codUsuario like puntuacions.codUsuario  ORDER BY`puntos` DESC limit 15 OFFSET 0';
+        $sql = 'SELECT users.usuario, SUM(puntuacions.puntos) FROM users,puntuacions,partidas WHERE users.codUsuario like partidas.codUsuario  ORDER BY`puntos` DESC limit 15 OFFSET 0';
         $usuarios = DB::select($sql);
         // $usuarios = User::all();
 

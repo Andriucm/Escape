@@ -47,9 +47,18 @@ body {
     align-items: center;
     width: 80%;
 }
-.intro1 {
+@font-face {
+    font-family: 'Gameplay';
+    src: url('../fonts/Gameplay.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+.intro1 b{
     font-size: 55px;
     color: white;
+    font-family: Gameplay;
+    letter-spacing: 3px;
 }
 .intro2 {
     width: 65%;
@@ -90,6 +99,7 @@ body {
     box-sizing: border-box;
     border: 0;
     font-size: 16px;
+    
 }
 .button:not(:disabled):hover, .button:not(:disabled):focus {
     outline: 0;
@@ -135,6 +145,11 @@ body {
     color: white;
     grid-column: 2/3;
     grid-row: 1/1;
+   
+}
+.titulo >b{
+    font-family: Gameplay;
+    letter-spacing: 3px;
 }
 .desc1 {
     color: gray;

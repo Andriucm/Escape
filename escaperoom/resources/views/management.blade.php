@@ -5,13 +5,7 @@
     </x-slot>
     <main>
         <h1>Gestionar usuarios</h1>
-        <div id="seleccion-usuarios">
-            <button id="menu-alumnos" onclick="mostrarAlumnos()">Alumnos</button>
-            <button id="menu-Profesores" onclick="mostrarProfesores()">Profesores</button>
-            <button onclick="location.href='{{ route('solicitudes') }}'" type="button">Solicitudes</button>
-
-        </div>
-        <div id="tabla-alumnos" class="none">
+        <div id="tabla" >
             <div id="fila-cabecera">
                 <div>
                     Usuario
@@ -35,28 +29,28 @@
                     Eliminar
                 </div>
             </div>
-            @foreach ($alumnos as $alumno)
+            @foreach ($usuarios as $usuario)
                 <div id="fila">
                     <div>
-                        {{ $alumno->usuario }}
+                        {{ $usuario->usuario }}
                     </div>
                     <div>
-                        {{ $alumno->nombre }}
+                        {{ $usuario->nombre }}
                     </div>
                     <div>
-                        {{ $alumno->apellido }}
+                        {{ $usuario->apellido }}
                     </div>
                     <div>
-                        {{ $alumno->email }}
+                        {{ $usuario->email }}
                     </div>
                     <div>
-                        {{ $alumno->telefono }}
+                        {{ $usuario->telefono }}
                     </div>
                     <div>
-                        {{ $alumno->codGrupo }}
+                        {{ $usuario->codGrupo }}
                     </div>
                     <div>
-                        <form action="{{ route('management.destroy', $alumno->codUsuario) }}" method="POST">
+                        <form action="{{ route('management.destroy', $usuario->codUsuario) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <input type="submit" value="Eliminar">
@@ -65,56 +59,6 @@
                 </div>
             @endforeach
 
-        </div>
-        <div id="tabla-profesores" class="none
-        ">
-            <div id="fila-cabecera">
-                <div>
-                    Usuario
-                </div>
-                <div>
-                    Nombre
-                </div>
-                <div>
-                    Apellido
-                </div>
-                <div>
-                    Email
-                </div>
-                <div>
-                    Telefono
-                </div>
-                <div>
-                    Eliminar
-                </div>
-
-            </div>
-            @foreach ($profesores as $profesor)
-                <div id="fila">
-                    <div>
-                        {{ $profesor->usuario }}
-                    </div>
-                    <div>
-                        {{ $profesor->nombre }}
-                    </div>
-                    <div>
-                        {{ $profesor->apellido }}
-                    </div>
-                    <div>
-                        {{ $alumno->email }}
-                    </div>
-                    <div>
-                        {{ $alumno->telefono }}
-                    </div>
-                    <div>
-                        <form action="{{ route('management.destroy', $alumno->codUsuario) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Eliminar">
-                        </form>
-                    </div>
-                </div>
-            @endforeach
         </div>
     </main>
 

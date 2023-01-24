@@ -80,4 +80,21 @@ main .narrativa {
   grid-area: Narrativa;
   border-bottom: 1px solid #212121;
   border-left: 1px solid #212121;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 3%;
+}
+main .narrativa h1 {
+  color: white;
+  font-size: 2em;
+}
+main .narrativa h1 b {
+  color: #FFC300;
+  font-size: 1.5em;
+}
+main .narrativa h5 {
+  color: white;
+  text-align: start;
+  letter-spacing: 2px;
+  font-size: 1.1em;
 }/*# sourceMappingURL=partida.css.map */

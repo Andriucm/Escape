@@ -14,8 +14,8 @@
     "dependencies": {
         "@vitejs/plugin-vue": "^4.0.0",
         "sass": "^1.57.1",
+        "v-viewer": "^3.0.11",
         "vue": "^3.2.36",
-        "vue-expandable-image": "^0.1.0",
         "vue-loader": "^17.0.1",
         "vue3-carousel": "^0.2.9"
     }
