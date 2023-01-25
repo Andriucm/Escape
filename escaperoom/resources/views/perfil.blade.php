@@ -39,23 +39,26 @@ $user_rol = $user->rol;
                 <button type="button" class="editarInfo" onclick="editarInfo()">Editar</button>
             </div>
             <hr>
-            <form method="POST" action="{{ route('editarDatos', [$id]) }}">
+            <form method="POST" onsubmit="return validarFormDatos()" action="{{ route('editarDatos', [$id]) }}">
                 @method('PATCH')
                 @csrf
                 <label for="formNombre"><b>Nombre:</b></label>
                 <input type="text" id="formNombre" class="formNombre" name="formNombre" value="<?php echo $user_name; ?>" readonly><br><br>
+                <div class="error" id="nameErr" style="color: red; font-size:16px;"></div>
                 @error('formNombre')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
                 <label for="formApe"><b> Apellido:</b></label>
                 <input type="text" id="formApe" class="formApe" name="formApe" value="<?php echo $user_surname; ?>" readonly><br><br>
+                <div class="error" id="surnameErr" style="color: red; font-size:16px;"></div>
                 @error('formApe')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
                 <label for="formTel"><b>Telefono:</b></label>
                 <input type="text" id="formTel" class="formTel" name="formTel" value="<?php echo $user_tel; ?>" readonly><br><br>
+                <div class="error" id="telErr" style="color: red; font-size:16px;"></div>
                 @error('formTel')
                     <small style="color: red">{{ $message }}</small>
                     <br>
@@ -79,17 +82,19 @@ $user_rol = $user->rol;
             </div>
             <hr>
 
-            <form method="POST" action="{{ route('editarCuenta', [$id]) }}">
+            <form method="POST" onsubmit="return validarFormCuenta()" action="{{ route('editarCuenta', [$id]) }}">
                 @method('PATCH')
                 @csrf
                 <label for="formEmail"><b>Email:</b></label>
                 <input type="text" id="formEmail" class="formEmail" name="formEmail" value="<?php echo $user_email; ?>" readonly><br><br>
+                <div class="error" id="emailErr" style="color: red; font-size:16px;"></div>
                 @error('formEmail')
                     <small style="color: red">{{ $message }}</small>
                     <br>
                 @enderror
                 <div class="password">
                     <input type="password" id="formContra" class="formContra" name="formContra" placeholder="Nueva contraseña" readonly><br><br>
+                    <div class="error" id="pwErr" style="color: red; font-size:16px;"></div>
                     @error('formContra')
                         <small style="color: red">{{ $message }}</small>
                         <br>
