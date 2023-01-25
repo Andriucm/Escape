@@ -3,36 +3,21 @@
         Grupos
     </x-slot>
     <main>
-        <article>
-            <h1>+</h1>
-        </article>
-        <article>
-            <h1>Grupo 1</h1>
-            <b>12 usuarios</b>
-        </article>
-        <article>
-            <h1>Grupo 2</h1>
-            <b>12 usuarios</b>
-        </article>
-        <article>
-            <h1>Grupo 3</h1>
-            <b>12 usuarios</b>
-        </article>
-        <article>
-            <h1>Grupo 4</h1>
-            <b>12 usuarios</b>
-        </article>
-        <article>
-            <h1>Grupo 5</h1>
-            <b>12 usuarios</b>
-        </article>
-        <article>
-            <h1>Grupo 6</h1>
-            <b>12 usuarios</b>
-        </article>
-        <article>
-            <h1>Grupo 7</h1>
-            <b>12 usuarios</b>
-        </article>
+        @auth
+            @if (Auth::User()->rol != 'alumno')
+                           <article id="aticulo">
+                    <h1>+</h1>
+                </article>
+            @endif
+        @endauth
+
+        @foreach ($grupos as $grupo)
+            <article>
+                <h1>{{ $grupo->nombre }}</h1>
+                <b>12 usuarios</b>
+                <form action="" method="POST"></form>
+            </article>
+        @endforeach
+
     </main>
 </x-layout>

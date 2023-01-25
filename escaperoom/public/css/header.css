@@ -8,7 +8,7 @@
 .header {
 display: flex;
 flex-flow: row nowrap;
-justify-content: space;
+justify-content: space-between;
 align-items: center;
 background-color: #101010;
 }
