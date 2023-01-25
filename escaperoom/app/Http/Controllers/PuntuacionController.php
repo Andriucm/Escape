@@ -21,7 +21,7 @@ class PuntuacionController extends Controller
         $sql = 'SELECT users.usuario, sum(partidas.puntos) as puntos from users, partidas where partidas.codUsuario = users.codUsuario group by partidas.codUsuario, users.usuario';
         $usuarios = DB::select($sql);
 
-    
+
         return view('puntuaciones', compact('usuarios'));
     }
 

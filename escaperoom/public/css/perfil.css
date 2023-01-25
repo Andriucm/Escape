@@ -65,10 +65,10 @@
 
 }
 .formNombre, .formApe, .formTel, .formEmail, .formContra {
-    pointer-events:none; 
-    background-color:#000814; 
-    color:white; 
-    border:none  
+    pointer-events:none;
+    background-color:#000814;
+    color:white;
+    border:none
 }
 form {
     margin-top: 3%;
@@ -144,7 +144,7 @@ hr {
     border-radius: 7%;
 }
 #submitDatos:hover, #submitCuenta:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 #cambiarPW {
@@ -167,10 +167,10 @@ hr {
     border: 0;
     padding: 3%;
     font-weight: bold;
-    border-radius: 7%; 
+    border-radius: 7%;
 }
 #cancel:hover, #cancelar:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 .password {

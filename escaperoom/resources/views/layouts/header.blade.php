@@ -13,15 +13,15 @@
                 @auth
                 @if (Auth::user()->rol=='admin')
                 <li><a href="./management">Usuarios</a></li>
-                @endif  
+                @endif
                 @endauth
-                
-                
-                
+
+
+
                 @guest
                     <li><a href="./login">Ingresa tu cuenta</a></li>
                 @else
-                    <form action="{{ route('logout') }}" method="POST">
+                    <form id="logout" action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button id="btn-logout">Logout</button>
                     </form>

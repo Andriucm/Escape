@@ -47,6 +47,6 @@
 </x-layout>
 <script>
     function index() {
-        window.location.href = "/play";
+        window.location.href = "./play";
     }
 </script>
