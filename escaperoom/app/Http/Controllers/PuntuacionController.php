@@ -17,9 +17,11 @@ class PuntuacionController extends Controller
      */
     public function index()
     {
-        $sql = 'SELECT * from puntuacion  order by puntos desc LIMIT 15 OFFSET 0;';
+
+        $sql = 'SELECT users.usuario, sum(partidas.puntos) as puntos from users, partidas where partidas.codUsuario = users.codUsuario group by partidas.codUsuario, users.usuario';
         $usuarios = DB::select($sql);
 
+    
         return view('puntuaciones', compact('usuarios'));
     }
 

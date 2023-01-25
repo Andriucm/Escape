@@ -20,7 +20,7 @@ class UserFactory extends Factory
         return [
             'nombre' => fake()->name(),
             'apellido' => fake()->lastName(),
-            'usuario' => fake()->unique()->name (),
+            'usuario' => fake()->unique()->name(),
             'rol' => fake()->randomElement(['admin','alumno','profesor']),
             'email' => fake()->unique()->safeEmail(),
             'password' => '$2y$10$iyD2FwfX6irzn8PL0tjnZuj0lwfuA7S5opkAZ/Q/3TvaFwh32BBWG', // password
@@ -28,5 +28,5 @@ class UserFactory extends Factory
         ];
     }
 
-    
+
 }
