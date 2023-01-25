@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('apellido', 30);
             $table->string('email', 100)->unique();
             $table->integer('telefono')->nullable()->unique();
-            $table->string('rol', 200);
+            $table->enum('rol', array('admin', 'profesor','alumno'));
             $table->integer('estado')->default(1);
             $table->bigInteger('codGrupo')->unsigned()->nullable();
             $table->rememberToken();
