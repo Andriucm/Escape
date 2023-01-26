@@ -10,13 +10,6 @@
     <link rel="stylesheet" href="{{ URL::asset('css/general.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/perfil.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome/css/font-awesome.min.css') }}">
-    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
-     <!-- Bootstrap CSS -->
-     <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-       
-       <!-- Bootstrap Bundle with Popper -->
-       <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-   
 
     @switch($title)
         @case("Inicio")
@@ -43,7 +36,7 @@
         @case("Gestionar Usuarios")
             <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
             @break
-        
+
     @endswitch
     <title>{{ $title }}</title>
     @vite('resources/js/app.js')
@@ -66,11 +59,8 @@
         <div id="footerSection"></div>
     @endif
 
-    @yield('scripts');
+    @yield('scripts')
 
-     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </body>
 </html>
