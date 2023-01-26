@@ -25,7 +25,7 @@ Route::get('/play', function () {
 Route::get('/groups', [GrupoController::class,'index'])->name('grupos.index')->middleware('auth');
 Route::get('/groupsCreate', [GrupoController::class,'create'])->name('grupos.create')->middleware('auth');
 Route::post('/groups', [GrupoController::class,'store'])->name('grupos.store')->middleware('auth');
-Route::delete('/groups{id}', [GrupoController::class,'destroy'])->name('grupos.destroy');
+Route::delete('/groups/{id}', [GrupoController::class,'destroy'])->name('grupos.destroy');
 
 Route::get('/profile', function () {
     return view('perfil');
