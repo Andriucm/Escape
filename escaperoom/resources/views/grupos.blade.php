@@ -5,7 +5,7 @@
     <main>
         @auth
             @if (Auth::User()->rol != 'alumno')
-                           <article id="aticulo">
+                <article id="aticulo">
                     <h1>+</h1>
                 </article>
             @endif
