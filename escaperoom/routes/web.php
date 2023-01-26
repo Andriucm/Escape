@@ -34,6 +34,7 @@ Route::get('/groups', [GrupoController::class,'index'])->name('grupos.index')->m
 
 Route::get('/groupsCreate', [GrupoController::class,'create'])->name('grupos.create')->middleware('auth');
 Route::post('/groups', [GrupoController::class,'store'])->name('grupos.store')->middleware('auth');
+Route::delete('/groups/{id}', [GrupoController::class,'destroy'])->name('grupos.destroy');
 
 Route::get('/profile', function () {
     return view('perfil');
