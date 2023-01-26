@@ -10,7 +10,7 @@
                 <h3 class="intro2">Tendrás que descubrir el secreto detrás de todas las pistas que están ocultas por el
                     edificio.</h3>
                 <div class="demo">
-                    <button type="button" class="button" onclick="index()">Jugar</button>
+                    <button type="button" class="button" onclick="location.href='{{ route('partida') }}'">Jugar</button>
                     <h5 class="intro3">Juega la demo como invitado</h5>
                 </div>
             </div>
@@ -45,8 +45,3 @@
         </div>
     </div>
 </x-layout>
-<script>
-    function index() {
-        window.location.href = "/play";
-    }
-</script>
