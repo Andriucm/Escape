@@ -17,7 +17,7 @@ class GrupoFactory extends Factory
     public function definition()
     {
         return [
-            //
-        ];
+            'nombre' => fake()->city(),
+                    ];
     }
 }

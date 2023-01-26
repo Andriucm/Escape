@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('partidas', function (Blueprint $table) {
             $table->bigIncrements('codPartida');
-            $table->string('nombre', 255);
             $table->string('dificultad', 100);
             $table->bigInteger('codUsuario')->unsigned();
-            
+            $table->bigInteger('puntos')->default('0');
+            $table->enum('nivel', ['0','1','2','3','4','5','6'])->default('0');
             $table->timestamps();
             $table->foreign('codUsuario')->references('codUsuario')->on('users');
         });

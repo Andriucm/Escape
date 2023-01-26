@@ -81,7 +81,12 @@
     color: white;
     border: none
 }
-
+.formNombre, .formApe, .formTel, .formEmail, .formContra {
+    pointer-events:none;
+    background-color:#000814;
+    color:white;
+    border:none
+}
 form {
     margin-top: 3%;
     font-size: 18px;
@@ -162,9 +167,7 @@ hr {
     font-weight: bold;
     border-radius: 7%;
 }
-
-#submitDatos:hover,
-#submitCuenta:hover {
+#submitDatos:hover, #submitCuenta:hover {
     transform: scale(1.1);
 }
 
@@ -191,9 +194,7 @@ hr {
     font-weight: bold;
     border-radius: 7%;
 }
-
-#cancel:hover,
-#cancelar:hover {
+#cancel:hover, #cancelar:hover {
     transform: scale(1.1);
 }
 

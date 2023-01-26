@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\PuntuacionController;
-use App\Http\Controllers\SolicitudesController;
+use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\GestionUsuariosCotroller;
 use App\Http\Controllers\AuthenticatedSessionController;
@@ -22,9 +22,7 @@ Route::get('/play', function () {
 })->name('partida');
 
 
-Route::get('/groups', function () {
-    return view('grupos');
-})->name('grupos')->middleware('auth');
+Route::get('/groups', [GrupoController::class,'index'])->name('grupos.index')->middleware('auth');
 
 Route::get('/profile', function () {
     return view('perfil');
