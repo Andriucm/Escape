@@ -4,7 +4,10 @@
         Gestionar Usuarios
     </x-slot>
     <main>
-        <h1>Gestionar usuarios</h1>
+        <div class="intro">
+            <h1>Gestionar usuarios</h1>
+            <button type="button" class="profes" onclick="window.location.href='./profesores'">Añadir profesor</button>
+        </div>
         <div id="tabla" >
             <div id="fila-cabecera">
                 <div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\GestionUsuariosCotroller;
 use App\Http\Controllers\AuthenticatedSessionController;
+use App\Http\Controllers\ProfesorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,16 @@ Route::get('/play', function () {
     return view('partida');
 })->name('partida');
 
+Route::get('/profesores', function () {
+    return view('profesores');
+})->name('/profesores');
+
+Route::post('/profesor/store', [ProfesorController::class, 'store'])->name('profesor.store');
+
+
 
 Route::get('/groups', [GrupoController::class,'index'])->name('grupos.index')->middleware('auth');
+
 Route::get('/groupsCreate', [GrupoController::class,'create'])->name('grupos.create')->middleware('auth');
 Route::post('/groups', [GrupoController::class,'store'])->name('grupos.store')->middleware('auth');
 
