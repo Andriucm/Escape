@@ -4,8 +4,12 @@ function printError(elemento, mensaje) {
 
 function validarFormDatos() {
     let nombre = document.getElementById("formNombre").value;
+    let inputNombre = document.getElementById("formNombre");
     let apellido = document.getElementById("formApe").value;
+    let inputApellido = document.getElementById("formApe");
     let telefono = document.getElementById("formTel").value;
+    let inputTelefono = document.getElementById("formTel");
+
     let nameErr = document.getElementById("nameErr");
     let surnameErr = document.getElementById("surnameErr");
     let telErr = document.getElementById("telErr");
@@ -16,11 +20,15 @@ function validarFormDatos() {
 
     //Validate name
     if (nombre == "") {
-        printError("nameErr", "Please enter your name");
+        inputNombre.style.border = "medium solid red";
+        // inputNombre.style.borderRadius = "5%";
+        printError("nameErr", "Por favor, introduce un nombre");
     } else {
-        var pattern = /^[a-zA-Z]/;
+        var pattern = /^[a-zA-Z]/;  //Solo letras
         if (pattern.test(nombre) === false) {
-            printError("nameErr", "Please enter a valid name");
+            inputNombre.style.border="medium solid red";
+            // inputNombre.style.borderRadius = "5%";
+            printError("nameErr", "Por favor, introduce un nombre valido");
         } else {
             printError("nameErr", "");
             nameErr = false;
@@ -29,11 +37,15 @@ function validarFormDatos() {
 
     //Validate surname
     if (apellido == "") {
-        printError("surnameErr", "Please enter your surname");
+        inputApellido.style.border = "medium solid red";
+        // inputApellido.style.borderRadius = "5%";
+        printError("surnameErr", "Por favor, introduce un apellido");
     } else {
-        var pattern = /^[a-zA-Z]/;
+        var pattern = /^[a-zA-Z]/;  //Solo letras
         if (pattern.test(apellido) === false) {
-            printError("surnameErr", "Please enter a valid surname");
+            inputApellido.style.border = "medium solid red";
+            // inputApellido.style.borderRadius = "5%";
+            printError("surnameErr", "Por favor, introduce un apellido valido");
         } else {
             printError("surnameErr", "");
             surnameErr = false;
@@ -42,18 +54,22 @@ function validarFormDatos() {
 
     //Validate telefono
     if (telefono == "") {
-        printError("telErr", "Please enter a phone number");
+        inputTelefono.style.border = "medium solid red";
+        // inputTelefono.style.borderRadius = "5%";
+        printError("telErr", "Por favor, introduce un numero de telefono");
     } else {
-        var pattern = /^\d{9}$/;
+        var pattern = /^\d{9}$/;  //9 digitos
         if (pattern.test(telefono) === false) {
-            printError("telErr", "Please enter a valid phone number");
+            inputTelefono.style.border = "medium solid red";
+            // inputTelefono.style.borderRadius = "5%";
+            printError("telErr", "Por favor, introduce un numero de telefono valido");
         } else {
             printError("telErr", "");
             telErr = false;
         }
     }
 
-
+    //Comprobar si hay errores y en caso de que no hubiese mandar a php
     if (nameErr == true || surnameErr == true || telErr == true) {
         return false;
 
@@ -66,10 +82,13 @@ function validarFormDatos() {
 
 function validarFormCuenta() {
     let email = document.getElementById("formEmail").value;
+    let inputEmail = document.getElementById("formEmail");
     let pw = document.getElementById("formContra").value;
+    let inputPW = document.getElementById("formContra");
     let emailErr = document.getElementById("emailErr");
     let pwErr = document.getElementById("pwErr");
 
+    //valores por defecto
     emailErr = true;
     pwErr = true;
 
@@ -77,11 +96,15 @@ function validarFormCuenta() {
     if (pw == "") {
         //Validate email
         if (email == "") {
-            printError("emailErr", "Please enter your email");
+            inputEmail.style.border = "medium solid red";
+            inputEmail.style.borderRadius = "5%";
+            printError("emailErr", "Por favor, introduce tu email");
         } else {
-            var pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            var pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;   //email
             if (pattern.test(email) === false) {
-                printError("emailErr", "Please enter a valid email");
+                inputEmail.style.border = "medium solid red";
+                inputEmail.style.borderRadius = "5%";
+                printError("emailErr", "Por favor, introduce un email valido");
             } else {
                 printError("emailErr", "");
                 emailErr = false;
@@ -99,11 +122,15 @@ function validarFormCuenta() {
     } else {
         //Validate email
         if (email == "") {
-            printError("emailErr", "Please enter your email");
+            inputEmail.style.border = "medium solid red";
+            inputEmail.style.borderRadius = "5%";
+            printError("emailErr", "Por favor, introduce tu email");
         } else {
-            var pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            var pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;  //email
             if (pattern.test(email) === false) {
-                printError("emailErr", "Please enter a valid email");
+                inputEmail.style.border = "medium solid red";
+                inputEmail.style.borderRadius = "5%";
+                printError("emailErr", "Por favor, introduce un email valido");
             } else {
                 printError("emailErr", "");
                 emailErr = false;
@@ -111,23 +138,25 @@ function validarFormCuenta() {
         }
         //Validate password
         if (pw == "") {
-            printError("pwErr", "Please enter your password");
+            inputPW.style.border = "medium solid red";
+            inputPW.style.borderRadius = "5%";
+            printError("pwErr", "Por favor, introduce una contraseña");
         } else {
-            var pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            var pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;  //minimo 8 caracteres, 1 letra y 1 número
             if (pattern.test(pw) === false) {
-                printError("pwErr", "Please enter a valid password");
+                inputPW.style.border = "medium solid red";
+                inputPW.style.borderRadius = "5%";
+                printError("pwErr", "Por favor, introduce una contraseña valida");
             } else {
                 printError("pwErr", "");
                 pwErr = false;
             }
         }
-        //Comprobar si hay errores
+        //Comprobar si hay errores y en caso de que no hubiese mandar a php
         if (emailErr == true || pwErr == true) {
-            console.log("Hay errores");
             return false;
 
         } else {
-            console.log("No hay errores");
             return true;
         }
     }
@@ -186,59 +215,65 @@ function editarCuenta() {
 }
 
 function consultarProgreso() {
-    // btn = document.getElementsByClassName("buttons")[1];
     window.location.href = '/puntuaciones';
 }
 
 function cancelDatos() {
-    let inputNombre = document.getElementById("formNombre");
-    let inputApellido = document.getElementById("formApe");
-    let inputTelefono = document.getElementById("formTel");
-    let submitInfo = document.getElementById("submitDatos");
-    let btnCancelar = document.getElementById("cancelar");
-    let btnEditarInfo = document.getElementsByClassName("editarInfo")[0];
+    history.go();
+    
+    // let inputNombre = document.getElementById("formNombre");
+    // let inputApellido = document.getElementById("formApe");
+    // let inputTelefono = document.getElementById("formTel");
+    // let submitInfo = document.getElementById("submitDatos");
+    // let btnCancelar = document.getElementById("cancelar");
+    // let btnEditarInfo = document.getElementsByClassName("editarInfo")[0];
+    // document.getElementById("nameErr").innerHTML = "";
+    // document.getElementById("surnameErr").innerHTML = "";
+    // document.getElementById("telErr").innerHTML = "";
 
+    // //Añadir clases
+    // inputNombre.classList.add("formNombre");
+    // inputApellido.classList.add("formApe");
+    // inputTelefono.classList.add("formTel");
 
-    //Añadir clases
-    inputNombre.classList.add("formNombre");
-    inputApellido.classList.add("formApe");
-    inputTelefono.classList.add("formTel");
+    // //Quitar editable
+    // inputNombre.setAttribute('readonly', false);
+    // inputApellido.setAttribute('readonly', false);
+    // inputTelefono.setAttribute('readonly', false);
 
-    //Quitar editable
-    inputNombre.setAttribute('readonly', false);
-    inputApellido.setAttribute('readonly', false);
-    inputTelefono.setAttribute('readonly', false);
-
-    //Desaparecer botón
-    submitInfo.style.display = "none";
-    btnCancelar.style.display = "none";
-    btnEditarInfo.style.display = "block";
+    // //Desaparecer botón
+    // submitInfo.style.display = "none";
+    // btnCancelar.style.display = "none";
+    // btnEditarInfo.style.display = "block";
 }
 
 function cancelCuenta() {
-    let inputEmail = document.getElementById("formEmail");
-    let inputContra = document.getElementById("formContra");
-    let submitCuenta = document.getElementById("submitCuenta");
-    let btnCancelar = document.getElementById("cancel");
-    let btnCambiar = document.getElementById("cambiarPW");
-    let btnEditarCuenta = document.getElementsByClassName("editarAccount")[0];
-    let pw = document.getElementsByClassName("password")[0].style.display = "none";
+    history.go();
 
-    // console.log(btnCambiar.value);
+    // let inputEmail = document.getElementById("formEmail");
+    // let inputContra = document.getElementById("formContra");
+    // let submitCuenta = document.getElementById("submitCuenta");
+    // let btnCancelar = document.getElementById("cancel");
+    // let btnCambiar = document.getElementById("cambiarPW");
+    // let btnEditarCuenta = document.getElementsByClassName("editarAccount")[0];
+    // document.getElementById("emailErr").innerHTML = "";
+    // document.getElementById("pwErr").innerHTML = "";
 
-    //Añadir clases
-    inputEmail.classList.add("formEmail");
-    inputContra.style.display = "none";
+    // // console.log(btnCambiar.value);
 
-    //Quitar editable
-    inputEmail.setAttribute('readonly', false);
-    inputContra.setAttribute('readonly', false);
+    // //Añadir clases
+    // inputEmail.classList.add("formEmail");
+    // inputContra.style.display = "none";
 
-    //Desaparecer botones
-    submitCuenta.style.display = "none";
-    btnCancelar.style.display = "none";
-    btnCambiar.style.display = "none";
-    btnEditarCuenta.style.display = "block";
+    // //Quitar editable
+    // inputEmail.setAttribute('readonly', false);
+    // inputContra.setAttribute('readonly', false);
+
+    // //Desaparecer botones
+    // submitCuenta.style.display = "none";
+    // btnCancelar.style.display = "none";
+    // btnCambiar.style.display = "none";
+    // btnEditarCuenta.style.display = "block";
 }
 
 function password() {
