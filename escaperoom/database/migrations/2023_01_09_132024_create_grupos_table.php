@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->bigIncrements('codGrupo');
-            $table->string('nombre',255);
-           $table->timestamps();
+            $table->string('nombre',255)->unique();
+            $table->string('codigo',255);
+            $table->timestamps();
         });
     }
 

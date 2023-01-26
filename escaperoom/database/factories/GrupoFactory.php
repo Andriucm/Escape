@@ -18,6 +18,7 @@ class GrupoFactory extends Factory
     {
         return [
             'nombre' => fake()->city(),
+            'codigo' => fake()->unique()->numberBetween(999,99999),
                     ];
     }
 }

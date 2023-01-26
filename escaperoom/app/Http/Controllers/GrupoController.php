@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grupo;
 use App\Http\Requests\StoreGrupoRequest;
 use App\Http\Requests\UpdateGrupoRequest;
+use Illuminate\Http\Request;
 
 class GrupoController extends Controller
 {
@@ -17,7 +18,7 @@ class GrupoController extends Controller
     {
         $grupos = Grupo::all();
 
-        return view('grupos', compact('grupos'));
+        return view('grupos/index', compact('grupos'));
     }
 
     /**
@@ -27,7 +28,7 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        //
+        return view('grupos/create');
     }
 
     /**
@@ -36,9 +37,27 @@ class GrupoController extends Controller
      * @param  \App\Http\Requests\StoreGrupoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreGrupoRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'nombre' => [
+                    'required',
+                    'min:4',
+                    'max:30',
+                ],
+                'codigo' => [
+                    'required',
+                    'min:4',
+                    'max:30',
+                ],
+            ]
+        );
+        Grupo::create([
+            'nombre' => $request->nombre,
+            'codigo' => $request->codigo,
+        ]);
+        return redirect('/groups');
     }
 
     /**

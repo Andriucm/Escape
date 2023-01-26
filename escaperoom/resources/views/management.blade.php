@@ -26,6 +26,9 @@
                     codGrupo
                 </div>
                 <div>
+                    Rol
+                </div>
+                <div>
                     Eliminar
                 </div>
             </div>
@@ -45,6 +48,9 @@
                     </div>
                     <div>
                         {{ $usuario->telefono }}
+                    </div>
+                    <div>
+                        {{ $usuario->rol }}
                     </div>
                     <div>
                         {{ $usuario->codGrupo }}
