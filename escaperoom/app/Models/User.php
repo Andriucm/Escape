@@ -23,10 +23,15 @@ class User extends Authenticatable
 {
     return $this->belongsTo(Grupo::class);
 }
+public function grupos()
+{
+    return $this->belongsTo(Grupo::class);
+}
 
 public function partidas()
 {
-    return $this->hasMany(Partida::class);
+    return $this->hasMany(Partida::class,'codPartida');
 }
+
 
 }

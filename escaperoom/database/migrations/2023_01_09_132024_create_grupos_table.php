@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('codGrupo');
             $table->string('nombre',255)->unique();
             $table->string('codigo',255);
+            $table->bigInteger('codUsuario')->unsigned();
             $table->timestamps();
         });
     }

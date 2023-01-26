@@ -19,6 +19,7 @@ class GrupoFactory extends Factory
         return [
             'nombre' => fake()->city(),
             'codigo' => fake()->unique()->numberBetween(999,99999),
+            'codUsuario' => fake()->unique()->numberBetween(0,10),
                     ];
     }
 }
