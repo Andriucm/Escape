@@ -16,4 +16,5 @@ class Grupo extends Model
     {
         return $this->hasMany(User::class,'codUsuario');
     }
+    
 }

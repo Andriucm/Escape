@@ -12,7 +12,9 @@ justify-content: space-between;
 align-items: center;
 background-color: #101010;
 }
-
+#logout{
+    margin: 0;
+}
 .row {
     width: 60%;
 }
@@ -70,10 +72,10 @@ background: #FFD60A;
     border: #FFC300 solid 1.5px;
     font-size: 16px;
     }
-    
+
 #btn-logout:not(:disabled):hover, .btn:not(:disabled):focus {
     outline: 0;
     background: rgb(39, 37, 37);
     /* box-shadow: 0 0 0 5px #001D3D, 0 10px 15px 0 #001D3D; */
     }
-    
+

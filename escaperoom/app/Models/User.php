@@ -16,7 +16,7 @@ class User extends Authenticatable
     protected $table = "users";
     protected $primaryKey = "codUsuario";
     protected $foreignKey = "codGrupo";
-    protected $fillable = ['usuario','password', 'nombre', 'apellido', 'email', 'telefono', 'rol','remember_token','estado'];
+    protected $fillable = ['usuario','password', 'nombre', 'apellido', 'email', 'telefono', 'rol','remember_token'];
     protected $hidden = 'codUsuario';
 
     public function grupo()
@@ -24,13 +24,9 @@ class User extends Authenticatable
     return $this->belongsTo(Grupo::class);
 }
 
-public function puntuaciones()
-{
-    return $this->hasMany(Puntuacion::class, 'codPuntuacion');
-}
 public function partidas()
 {
-    return $this->hasMany(Partida::class, 'codPartida');
+    return $this->hasMany(Partida::class);
 }
 
 }

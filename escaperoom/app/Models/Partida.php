@@ -10,10 +10,10 @@ class Partida extends Model
     use HasFactory;
     protected $table = 'partidas';
     protected $primaryKey = 'codPartida';
-    protected $fillable = ['dificultad','nombre'];
+    protected $fillable = ['dificultad','puntos','nivel'];
     protected $foreignkey='codUsuario';
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

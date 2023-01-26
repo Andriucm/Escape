@@ -12,20 +12,12 @@
             </div>
             @foreach ($usuarios as $usuario)
                 <div class="fila">
-
-
-                
-
-
                     <div class="columna">
                         {{ $usuario->usuario }}
-
                     </div>
                     <div class="columna">
-                        {{ $usuario->puntos}}
-
+                        {{ $usuario->puntos }}
                     </div>
-
                 </div>
             @endforeach
         </div>
