@@ -18,7 +18,10 @@ class PuntuacionController extends Controller
     public function index()
     {
 
-        $sql = 'SELECT users.usuario, sum(partidas.puntos) as puntos from users, partidas where partidas.codUsuario = users.codUsuario group by partidas.codUsuario, users.usuario';
+        $sql = 'SELECT users.usuario, sum(partidas.puntos) as puntos 
+            from users, partidas 
+            where partidas.codUsuario = users.codUsuario 
+            group by partidas.codUsuario, users.usuario';
         $usuarios = DB::select($sql);
 
 
