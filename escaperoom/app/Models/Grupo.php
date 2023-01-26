@@ -10,6 +10,7 @@ class Grupo extends Model
     use HasFactory;
     protected $table = "grupos";
     protected $primaryKey = "codGrupo";
+    protected $fillable = ["nombre","codigo"];
 
     protected $hidden = 'codGrupo';
     public function users()

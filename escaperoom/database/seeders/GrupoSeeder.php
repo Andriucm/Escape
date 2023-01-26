@@ -17,14 +17,17 @@ class GrupoSeeder extends Seeder
     {
         $informatica = new Grupo();
         $informatica->nombre = 'Informatica';
+        $informatica->codigo = '12345';
         $informatica->save();
 
         $quimica = new Grupo();
         $quimica->nombre = 'Quimica';
+        $quimica->codigo = '12345';
         $quimica->save();
 
         $marqueting = new Grupo();
         $marqueting->nombre = 'Marketing';
+        $quimica->codigo = '12345';
         $marqueting->save();
     }
 }
