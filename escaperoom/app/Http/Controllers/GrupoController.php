@@ -6,6 +6,7 @@ use App\Models\Grupo;
 use App\Http\Requests\StoreGrupoRequest;
 use App\Http\Requests\UpdateGrupoRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GrupoController extends Controller
 {
@@ -16,7 +17,12 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        $grupos = Grupo::all();
+        if (Auth::user()->rol == 'admin' || Auth::user()->rol == 'alumno') {
+            $grupos = Grupo::all();
+        } else if (Auth::user()->rol == 'profesor') {
+            $grupos = Grupo::where('codUsuario', Auth::user()->codUsuario)->get();
+        }
+
 
         return view('grupos/index', compact('grupos'));
     }
@@ -56,6 +62,7 @@ class GrupoController extends Controller
         Grupo::create([
             'nombre' => $request->nombre,
             'codigo' => $request->codigo,
+            'codUsuario' => Auth::user()->codUsuario,
         ]);
         return redirect('/groups');
     }
