@@ -4,9 +4,17 @@
     </x-slot>
 
     <main>
-        <section class="juego"></section>
-        <section class="pistas"></section>
-        <nav class="navegacion"></nav>
+        <button onclick="location.href='{{ route('index') }}'" type="button" id="salir">X</button>
+        <section class="juego">
+            <img src="{{URL::asset('/imagenes/3droom POV.jpg')}}" alt="">
+        </section>
+        <section id="pistaSection" class="pistas">
+
+        </section>
+        <nav class="navegacion">
+            <a><p><</p></a>
+            <a><p>></p></a>
+        </nav>
         <aside class="narrativa"></aside>
     </main>
 
