@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grupo;
 use App\Http\Requests\StoreGrupoRequest;
 use App\Http\Requests\UpdateGrupoRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,10 +18,14 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->rol == 'admin' || Auth::user()->rol == 'alumno') {
+        if (Auth::user()->rol == 'admin') {
             $grupos = Grupo::all();
         } else if (Auth::user()->rol == 'profesor') {
             $grupos = Grupo::where('codUsuario', Auth::user()->codUsuario)->get();
+        } else if (Auth::user()->rol == 'alumno') {
+            if (Auth::user()->codGrupo == null) {
+                $grupos = Grupo::all();
+            } else $grupos = Grupo::where('codGrupo', Auth::user()->codGrupo)->get();
         }
 
 
@@ -59,11 +64,17 @@ class GrupoController extends Controller
                 ],
             ]
         );
-        Grupo::create([
-            'nombre' => $request->nombre,
-            'codigo' => $request->codigo,
-            'codUsuario' => Auth::user()->codUsuario,
-        ]);
+        // Grupo::create([
+        //     'codUsuario' => Auth::user()->codUsuario,
+        //     'nombre' => $request->nombre,
+        //     'codigo' => $request->codigo,
+            
+        // ]);
+        $grupo = new Grupo;
+        $grupo->codUsuario = Auth::user()->codUsuario;
+        $grupo->nombre = $request->nombre;
+        $grupo->codigo = $request->codigo;
+        $grupo->save();
         return redirect('/groups');
     }
 
@@ -73,9 +84,13 @@ class GrupoController extends Controller
      * @param  \App\Models\Grupo  $grupo
      * @return \Illuminate\Http\Response
      */
-    public function show(Grupo $grupo)
+    public function show($id)
     {
-        //
+        if (Grupo::findorfail($id)) {
+            $alumnos = User::where('codUsuario', $id);
+            return view('grupos/show', compact('alumnos'));
+        }
+
     }
 
     /**
@@ -96,9 +111,15 @@ class GrupoController extends Controller
      * @param  \App\Models\Grupo  $grupo
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateGrupoRequest $request, Grupo $grupo)
+    public function update($id)
     {
-        //
+        if (Grupo::findorfail($id)) {
+            $usuario = Auth::user();
+            $usuario->codGrupo = $id;
+            $usuario->save();
+
+        }
+        return redirect('/groups');
     }
 
     /**

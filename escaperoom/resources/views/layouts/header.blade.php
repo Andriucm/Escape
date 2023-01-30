@@ -3,8 +3,8 @@
         <a href="{{ route('index') }}"><img src="../public/imagenes/logo.png" alt="Logo" class="logo"></a>
         <div class="row">
             <ul>
-                <li><a href="./puntuaciones">Puntuaciones</a></li>
-                <li><a href="./groups">Grupos</a></li>
+                <li><a href="{{route('puntuaciones')}}">Puntuaciones</a></li>
+                <li><a href="{{route('grupos.index')}}">Grupos</a></li>
                 @auth
 
                     <li><a href="./profile">Perfil</a></li>
