@@ -64,11 +64,17 @@ class GrupoController extends Controller
                 ],
             ]
         );
-        Grupo::create([
-            'nombre' => $request->nombre,
-            'codigo' => $request->codigo,
-            'codUsuario' => Auth::user()->codUsuario,
-        ]);
+        // Grupo::create([
+        //     'codUsuario' => Auth::user()->codUsuario,
+        //     'nombre' => $request->nombre,
+        //     'codigo' => $request->codigo,
+            
+        // ]);
+        $grupo = new Grupo;
+        $grupo->codUsuario = Auth::user()->codUsuario;
+        $grupo->nombre = $request->nombre;
+        $grupo->codigo = $request->codigo;
+        $grupo->save();
         return redirect('/groups');
     }
 
