@@ -31,10 +31,38 @@ body {
 .index-texto {
     grid-column: 1/2;
     grid-row: 1/1;
+    animation-duration: 3s;
+    animation-name: texto;
+    animation-iteration-count: initial;
 }
 .imgPeque {
     grid-area: imgs;
+    animation-duration: 2s;
+    animation-name: foto;
+    animation-iteration-count: initial;
+
 }
+
+@keyframes foto {
+    from {
+      margin-left: 100%;
+      width: 150%
+    }
+
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+@keyframes texto {
+    from {
+      opacity: 0%;
+    }
+
+    to {
+      opacity: 100%;
+    }
+  }
 .demo {
     display: grid;
     align-items: center;
@@ -88,7 +116,7 @@ body {
     box-sizing: border-box;
     border: 0;
     font-size: 16px;
-    
+
 }
 .button:not(:disabled):hover, .button:not(:disabled):focus {
     outline: 0;
@@ -115,12 +143,15 @@ body {
     text-align: center;
     grid-gap: 8%;
     margin-bottom: 10%;
+    animation-duration: 3s;
+    animation-name: texto;
+    animation-iteration-count: initial;
 }
 .titulo {
     color: white;
     grid-column: 2/3;
     grid-row: 1/1;
-   
+
 }
 .titulo >b{
     font-family: Gameplay;
