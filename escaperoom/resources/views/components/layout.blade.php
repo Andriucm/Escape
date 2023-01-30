@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/general.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/perfil.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome/css/font-awesome.min.css') }}">
 
     @switch($title)
