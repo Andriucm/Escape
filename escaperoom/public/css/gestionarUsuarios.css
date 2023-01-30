@@ -5,35 +5,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3%;
 }
-
-.intro {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 50%;
-}
-
-.profes {
-  background-color: #FFC300;
-  border: 0;
-  padding: 3%;
-  font-weight: bold;
-  border-radius: 7%;
-}
-
-.profes:hover {
-  background-color: #FFD60A;
-}
-
 
 #tabla {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 3%;
 }
 #tabla #fila-cabecera {
   width: 100%;

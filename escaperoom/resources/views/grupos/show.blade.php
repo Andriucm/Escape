@@ -6,57 +6,57 @@
         <h1>Alumnos de grupo
         </h1>
         <div id="tabla" >
-            <div id="fila-cabecera">
-                <div>
+            <div class="fila-cabecera">
+                <div class="columna">
                     alumno
                 </div>
-                <div>
+                <div class="columna">
                     Nombre
                 </div>
-                <div>
+                <div class="columna">
                     Apellido
                 </div>
-                <div>
+                <div class="columna">
                     Email
                 </div>
-                <div>
+                <div class="columna">
                     Telefono
                 </div>
-                <div>
+                <div class="columna">
                     Rol
                 </div>
-                <div>
+                <div class="columna">
                     codGrupo
                 </div>
                 
-                <div>
+                <div class="columna">
                     Eliminar
                 </div>
             </div>
             @foreach ($alumnos as $alumno)
-                <div id="fila">
-                    <div>
+                <div class="fila">
+                    <div class="columna">
                         {{ $alumno->usuario }}
                     </div>
-                    <div>
+                    <div class="columna">
                         {{ $alumno->nombre }}
                     </div>
-                    <div>
+                    <div class="columna">
                         {{ $alumno->apellido }}
                     </div>
-                    <div>
+                    <div class="columna">
                         {{ $alumno->email }}
                     </div>
-                    <div>
+                    <div class="columna">
                         {{ $alumno->telefono }}
                     </div>
-                    <div>
+                    <div class="columna">
                         {{ $alumno->rol }}
                     </div>
-                    <div>
+                    <div class="columna">
                         {{ $alumno->codGrupo }}
                     </div>
-                    <div>
+                    <div class="columna">
                         {{--  --}}
                     </div>
                 </div>

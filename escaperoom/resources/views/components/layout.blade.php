@@ -37,7 +37,7 @@
             <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
             @break
         @case("Listado alumnos")
-            <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('css/participantes.css') }}" />
             @break
         @case("Crear Grupo")
             <link rel="stylesheet" href="{{ URL::asset('css/.css') }}" />
@@ -55,7 +55,7 @@
         @include('layouts.header')
     @endif
 
-    <div id="mainSection" style="width: 100%; height: 100%;">
+    <div id="mainSection">
         {{ $slot }}
     </div>
 
