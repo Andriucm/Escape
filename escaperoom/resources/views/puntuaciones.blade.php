@@ -6,7 +6,7 @@
     <main>
         <h1>Puntuaciones</h1>
         <div id="tabla">
-            <div id="fila-cabecera">
+            <div class="fila-cabecera">
                 <div class="columna"> Usuario</div>
                 <div class="columna"> Puntos</div>
             </div>
