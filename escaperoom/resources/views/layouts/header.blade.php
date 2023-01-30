@@ -7,7 +7,7 @@
                 <li><a href="{{route('grupos.index')}}">Grupos</a></li>
                 @auth
 
-                    <li><a href="./profile">Perfil</a></li>
+                    <li><a href="{{route('perfil')}}">Perfil</a></li>
                 @endauth
 
                 @auth

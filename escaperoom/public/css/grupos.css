@@ -47,4 +47,10 @@ main article:hover {
 }
 main article:active {
   transform: scale(0.95);
+}
+main .hide {
+  display: none;
+}
+main .show {
+  display: block;
 }/*# sourceMappingURL=grupos.css.map */
