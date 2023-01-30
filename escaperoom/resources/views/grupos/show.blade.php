@@ -23,11 +23,12 @@
                     Telefono
                 </div>
                 <div>
-                    codGrupo
-                </div>
-                <div>
                     Rol
                 </div>
+                <div>
+                    codGrupo
+                </div>
+                
                 <div>
                     Eliminar
                 </div>

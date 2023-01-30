@@ -36,6 +36,12 @@
         @case("Gestionar Usuarios")
             <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
             @break
+        @case("Listado alumnos")
+            <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
+            @break
+        @case("Crear Grupo")
+            <link rel="stylesheet" href="{{ URL::asset('css/.css') }}" />
+            @break
 
     @endswitch
     <title>{{ $title }}</title>

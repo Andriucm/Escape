@@ -11,11 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class GrupoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         if (Auth::user()->rol == 'admin') {
@@ -25,29 +21,19 @@ class GrupoController extends Controller
         } else if (Auth::user()->rol == 'alumno') {
             if (Auth::user()->codGrupo == null) {
                 $grupos = Grupo::all();
-            } else $grupos = Grupo::where('codGrupo', Auth::user()->codGrupo)->get();
+            } else
+                $grupos = Grupo::where('codGrupo', Auth::user()->codGrupo)->get();
         }
-
-
         return view('grupos/index', compact('grupos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('grupos/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreGrupoRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $request->validate(
@@ -64,12 +50,7 @@ class GrupoController extends Controller
                 ],
             ]
         );
-        // Grupo::create([
-        //     'codUsuario' => Auth::user()->codUsuario,
-        //     'nombre' => $request->nombre,
-        //     'codigo' => $request->codigo,
-            
-        // ]);
+
         $grupo = new Grupo;
         $grupo->codUsuario = Auth::user()->codUsuario;
         $grupo->nombre = $request->nombre;
@@ -78,39 +59,15 @@ class GrupoController extends Controller
         return redirect('/groups');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Grupo  $grupo
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         if (Grupo::findorfail($id)) {
-            $alumnos = User::where('codUsuario', $id);
+            $alumnos = User::where('codGrupo', $id)->get();
             return view('grupos/show', compact('alumnos'));
         }
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Grupo  $grupo
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Grupo $grupo)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateGrupoRequest  $request
-     * @param  \App\Models\Grupo  $grupo
-     * @return \Illuminate\Http\Response
-     */
     public function update($id)
     {
         if (Grupo::findorfail($id)) {
@@ -122,12 +79,6 @@ class GrupoController extends Controller
         return redirect('/groups');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Grupo  $grupo
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $grupo = Grupo::findOrFail($id);

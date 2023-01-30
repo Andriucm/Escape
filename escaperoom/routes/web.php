@@ -24,26 +24,26 @@ Route::get('/play', function () {
 
 Route::get('/profesores', function () {
     return view('profesores');
-})->name('/profesores');
+})->name('/profesores')->middleware('auth');
 
-Route::post('/profesor/store', [ProfesorController::class, 'store'])->name('profesor.store');
+Route::post('/profesor/store', [ProfesorController::class, 'store'])->name('profesor.store')->middleware('auth');
 
 
 
 Route::get('/groups', [GrupoController::class, 'index'])->name('grupos.index')->middleware('auth');
-Route::get('/groups/{id}/ver', [GrupoController::class, 'show'])->name('grupos.show');
+Route::get('/groups/{id}/show', [GrupoController::class, 'show'])->name('grupos.show');
 Route::get('/groupsCreate', [GrupoController::class, 'create'])->name('grupos.create')->middleware('auth');
 Route::post('/groups', [GrupoController::class, 'store'])->name('grupos.store')->middleware('auth');
-Route::put('/groups/{id}', [GrupoController::class, 'update'])->name('grupos.update');
-Route::delete('/groups/{id}', [GrupoController::class, 'destroy'])->name('grupos.destroy');
+Route::put('/groups/{id}', [GrupoController::class, 'update'])->name('grupos.update')->middleware('auth');
+Route::delete('/groups/{id}', [GrupoController::class, 'destroy'])->name('grupos.destroy')->middleware('auth');
 
 Route::get('/profile', function () {
     return view('perfil');
-})->name('perfil');
+})->name('perfil')->middleware('auth');
 
 
-Route::PATCH('/profile/update/{id}', [AuthenticatedSessionController::class, 'updateDatos'])->name('editarDatos');
-Route::PATCH('/profile/{id}', [AuthenticatedSessionController::class, 'updateCuenta'])->name('editarCuenta');
+Route::PATCH('/profile/update/{id}', [AuthenticatedSessionController::class, 'updateDatos'])->name('editarDatos')->middleware('auth');
+Route::PATCH('/profile/{id}', [AuthenticatedSessionController::class, 'updateCuenta'])->name('editarCuenta')->middleware('auth');
 
 Route::get('/', function () {
     return view('index');
@@ -52,8 +52,8 @@ Route::get('/', function () {
 Route::get('/puntuaciones', [PuntuacionController::class, 'index'])->name('puntuaciones')->middleware('auth');
 
 
-Route::get('/management', [GestionUsuariosCotroller::class, 'index'])->name('management.index');
-Route::delete('/management/{id}', [GestionUsuariosCotroller::class, 'destroy'])->name('management.destroy');
+Route::get('/management', [GestionUsuariosCotroller::class, 'index'])->name('management.index')->middleware('auth');
+Route::delete('/management/{id}', [GestionUsuariosCotroller::class, 'destroy'])->name('management.destroy')->middleware('auth');
 
 
 
