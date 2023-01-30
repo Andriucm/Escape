@@ -5,16 +5,19 @@
             <ul>
                 <li><a href="{{route('puntuaciones')}}">Puntuaciones</a></li>
                 <li><a href="{{route('grupos.index')}}">Grupos</a></li>
-                @auth
 
-                    <li><a href="{{route('perfil')}}">Perfil</a></li>
-                @endauth
+
 
                 @auth
+
                 @if (Auth::user()->rol=='admin')
                 <li><a href="./management">Usuarios</a></li>
                 @endif
+     
+                    <li><a href="{{route('perfil')}}">Perfil</a></li>
                 @endauth
+
+
 
 
 
