@@ -1,11 +1,12 @@
 <x-layout>
+
     <x-slot name="title">
         Listado alumnos
     </x-slot>
     <main>
         <h1>Alumnos de grupo
         </h1>
-        <div id="tabla" >
+        <div id="tabla">
             <div class="fila-cabecera">
                 <div class="columna">
                     alumno
@@ -28,7 +29,7 @@
                 <div class="columna">
                     codGrupo
                 </div>
-                
+
                 <div class="columna">
                     Eliminar
                 </div>
@@ -57,7 +58,11 @@
                         {{ $alumno->codGrupo }}
                     </div>
                     <div class="columna">
-                        {{--  --}}
+                        <form action="{{ route('grupos.eliminarGrupo', $alumno->codUsuario) }}" method ="POST">
+                            @csrf
+                            {{ method_field('PUT') }}
+                            <input type="submit" value="Eliminar">
+                        </form>
                     </div>
                 </div>
             @endforeach

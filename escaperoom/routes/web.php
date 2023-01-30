@@ -35,6 +35,7 @@ Route::get('/groups/{id}/show', [GrupoController::class, 'show'])->name('grupos.
 Route::get('/groupsCreate', [GrupoController::class, 'create'])->name('grupos.create')->middleware('auth');
 Route::post('/groups', [GrupoController::class, 'store'])->name('grupos.store')->middleware('auth');
 Route::put('/groups/{id}', [GrupoController::class, 'update'])->name('grupos.update')->middleware('auth');
+Route::put('/groups/{id}/show', [GrupoController::class, 'eliminarGrupo'])->name('grupos.eliminarGrupo')->middleware('auth');
 Route::delete('/groups/{id}', [GrupoController::class, 'destroy'])->name('grupos.destroy')->middleware('auth');
 
 Route::get('/profile', function () {

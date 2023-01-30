@@ -6,18 +6,45 @@
 
 main {
   width: 100%;
-  height: 80vh;
+  min-height: 80vh;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+@-webkit-keyframes slide {
+  from {
+    margin-top: 100%;
+    width: 300%;
+  }
+  to {
+    margin-top: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slide {
+  from {
+    margin-top: 100%;
+    width: 300%;
+  }
+  to {
+    margin-top: 0%;
+    width: 100%;
+  }
+}
 #tabla {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
 }
 #tabla .fila-cabecera {
   width: 100%;
