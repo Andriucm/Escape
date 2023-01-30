@@ -30,11 +30,12 @@ Route::post('/profesor/store', [ProfesorController::class, 'store'])->name('prof
 
 
 
-Route::get('/groups', [GrupoController::class,'index'])->name('grupos.index')->middleware('auth');
-
-Route::get('/groupsCreate', [GrupoController::class,'create'])->name('grupos.create')->middleware('auth');
-Route::post('/groups', [GrupoController::class,'store'])->name('grupos.store')->middleware('auth');
-Route::delete('/groups/{id}', [GrupoController::class,'destroy'])->name('grupos.destroy');
+Route::get('/groups', [GrupoController::class, 'index'])->name('grupos.index')->middleware('auth');
+Route::get('/groups/{id}/ver', [GrupoController::class, 'show'])->name('grupos.show');
+Route::get('/groupsCreate', [GrupoController::class, 'create'])->name('grupos.create')->middleware('auth');
+Route::post('/groups', [GrupoController::class, 'store'])->name('grupos.store')->middleware('auth');
+Route::put('/groups/{id}', [GrupoController::class, 'update'])->name('grupos.update');
+Route::delete('/groups/{id}', [GrupoController::class, 'destroy'])->name('grupos.destroy');
 
 Route::get('/profile', function () {
     return view('perfil');
