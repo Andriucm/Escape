@@ -70,7 +70,7 @@ class GrupoController extends Controller
 
     public function update(Request $request, $id)
     {
-        if ($grupo= Grupo::findorfail($id)) {
+        if ($grupo = Grupo::findorfail($id)) {
             $request->validate(
                 [
                     'codigo' => [
@@ -80,12 +80,13 @@ class GrupoController extends Controller
                     ],
                 ]
             );
-            if($grupo->codigo == $request->codigo){
+            if ($grupo->codigo == $request->codigo) {
                 $usuario = Auth::user();
                 $usuario->codGrupo = $id;
                 $usuario->save();
-                return redirect('/groups')->with('success','Has entrado al grupo');
-            }return redirect('/groups')->with('warning','Codigo incorrecto');
+                return redirect('/groups')->with('success', 'Has entrado al grupo');
+            }
+            return redirect('/groups')->with('warning', 'Codigo incorrecto');
 
 
         }
@@ -93,7 +94,7 @@ class GrupoController extends Controller
     }
     public function eliminarGrupo($id)
     {
-        if ($usuario= User::findorfail($id)) {
+        if ($usuario = User::findorfail($id)) {
             $usuario->codGrupo = null;
             $usuario->save();
 

@@ -3,67 +3,70 @@
     margin: 0% 0 0 4%;
     box-sizing: border-box;
     padding: 1%;
- 
+
 
 }
 
 
 .header {
-display: flex;
-flex-flow: row nowrap;
-justify-content: space-between;
-align-items: center;
-background-color: #101010;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #101010;
 }
-#logout{
+
+#logout {
     margin: 0;
 }
+
 .row {
     width: 60%;
 }
 
 ul {
-display: flex;
-flex-direction: row;
-justify-content: space-evenly;
-list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
 }
 
 .header .row ul li a {
-font-size: 15px;
-display: block;
-color: #fff;
-font-weight: bold;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
+    font-size: 15px;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 .header .row ul li a:hover {
-color: #FFD60A;
+    color: #FFD60A;
 }
 
 .btn {
-background-color: #FFC300;
-width: 15%;
-border-radius: 20px;
-color: #000;
-cursor: pointer;
-font-weight: bold;
-padding: 10px 15px;
-text-align: center;
-box-sizing: border-box;
-border: 0;
-font-size: 16px;
+    background-color: #FFC300;
+    width: 15%;
+    border-radius: 20px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
 }
 
-.btn:not(:disabled):hover, .btn:not(:disabled):focus {
-outline: 0;
-background: #FFD60A;
-/* box-shadow: 0 0 0 5px #001D3D, 0 10px 15px 0 #001D3D; */
+.btn:not(:disabled):hover,
+.btn:not(:disabled):focus {
+    outline: 0;
+    background: #FFD60A;
+    /* box-shadow: 0 0 0 5px #001D3D, 0 10px 15px 0 #001D3D; */
 }
 
-#btn-logout{
+#btn-logout {
     background-color: black;
     border-radius: 20px;
     color: #FFC300;
@@ -74,11 +77,11 @@ background: #FFD60A;
     box-sizing: border-box;
     border: #FFC300 solid 1.5px;
     font-size: 16px;
-    }
+}
 
-#btn-logout:not(:disabled):hover, .btn:not(:disabled):focus {
+#btn-logout:not(:disabled):hover,
+.btn:not(:disabled):focus {
     outline: 0;
     background: rgb(39, 37, 37);
     /* box-shadow: 0 0 0 5px #001D3D, 0 10px 15px 0 #001D3D; */
-    }
-
+}

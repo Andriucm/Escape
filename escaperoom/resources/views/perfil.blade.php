@@ -3,19 +3,19 @@
     <?php
     use Illuminate\Support\Facades\Auth;
     use Symfony\Component\VarDumper\VarDumper;
-
+    
     // Get the currently authenticated user...
     $user = Auth::user();
-
+    
     $id = $user->codUsuario;
     $user_name = $user->nombre;
     $user_surname = $user->apellido;
     $user_tel = $user->telefono;
-
+    
     $user_email = $user->email;
     $user_password = $user->password;
     $user_rol = $user->rol;
-
+    
     ?>
 
     <x-layout>

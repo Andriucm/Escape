@@ -1,7 +1,7 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Play', sans-serif;
+    font-family: "Play", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -12,25 +12,25 @@ body {
     background-color: #101010;
 }
 
-button:active, .logo:active {
+button:active,
+.logo:active {
     transform: scale(0.95);
 }
 
 @font-face {
-    font-family: 'Gameplay';
-    src: url('../fonts/Gameplay.ttf');
+    font-family: "Gameplay";
+    src: url("../fonts/Gameplay.ttf");
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
-    font-family: 'Display';
-    src: url('../fonts/Display.ttf');
+    font-family: "Display";
+    src: url("../fonts/Display.ttf");
     font-style: normal;
     font-weight: normal;
 }
-button{
+button {
     font-family: Display;
     letter-spacing: 3px;
 }
-

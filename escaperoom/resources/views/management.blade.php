@@ -1,14 +1,18 @@
 <x-layout>
-    <script type="text/javascript" src="{{ URL::asset('/js/gestionarUsuariosBtn.js') }}" defer></script>
     <x-slot name="title">
         Gestionar Usuarios
     </x-slot>
     <main>
         <div class="intro">
             <h1>Gestionar usuarios</h1>
-            <button type="button" class="profes" onclick="window.location.href='./profesores'">Añadir profesor</button>
+            @auth
+                @if (Auth::user()->rol == 'admin')
+                    <button type="button" class="profes" onclick="window.location.href='./profesores'">Añadir
+                        profesor</button>
+                @endif
+            @endauth
         </div>
-        <div id="tabla" >
+        <div id="tabla">
             <div id="fila-cabecera">
                 <div>
                     Usuario
@@ -26,11 +30,12 @@
                     Telefono
                 </div>
                 <div>
-                    codGrupo
-                </div>
-                <div>
                     Rol
                 </div>
+                <div>
+                    codGrupo
+                </div>
+
                 <div>
                     Eliminar
                 </div>

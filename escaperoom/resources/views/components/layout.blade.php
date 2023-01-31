@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,45 +13,62 @@
     <link rel="stylesheet" href="{{ URL::asset('./css/font-awesome/./css/font-awesome.min.css') }}">
 
     @switch($title)
-        @case("Inicio")
+        @case('Inicio')
             <link rel="stylesheet" href="{{ URL::asset('./css/index.css') }}" />
-            @break
-        @case("Puntuaciones")
-            <link rel="stylesheet" href="{{ URL::asset('./css/puntuaciones.css') }}" />
-            @break
-        @case("Grupos")
-            <link rel="stylesheet" href="{{ URL::asset('./css/grupos.css') }}" />
-            @break
-        @case("Perfil")
-            <link rel="stylesheet" href="{{ URL::asset('./css/perfil.css') }}" />
-            @break
-        @case("Partida")
-            <link rel="stylesheet" href="{{ URL::asset('./css/partida.css') }}" />
-            @break
-        @case("Register")
-            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
-            @break
-        @case("Login")
-            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
-            @break
-        @case("Gestionar Usuarios")
-            <link rel="stylesheet" href="{{ URL::asset('./css/gestionarUsuarios.css') }}" />
-            @break
-        @case("Listado alumnos")
-            <link rel="stylesheet" href="{{ URL::asset('./css/participantes.css') }}" />
-            @break
-        @case("Crear Grupo")
-            <link rel="stylesheet" href="{{ URL::asset('./css/.css') }}" />
-            @break
+        @break
 
+        @case('Puntuaciones')
+            <link rel="stylesheet" href="{{ URL::asset('./css/puntuaciones.css') }}" />
+        @break
+
+        @case('Grupos')
+            <link rel="stylesheet" href="{{ URL::asset('./css/grupos.css') }}" />
+        @break
+
+        @case('Perfil')
+            <link rel="stylesheet" href="{{ URL::asset('./css/perfil.css') }}" />
+        @break
+
+        @case('Partida')
+            <link rel="stylesheet" href="{{ URL::asset('./css/partida.css') }}" />
+        @break
+
+        @case('Register')
+            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
+        @break
+
+        @case('Añadir Profesor')
+            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
+        @break
+
+        @case('Crear Grupo')
+            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
+        @break
+
+        @case('Login')
+            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
+        @break
+
+        @case('Gestionar Usuarios')
+            <link rel="stylesheet" href="{{ URL::asset('./css/gestionarUsuarios.css') }}" />
+        @break
+
+        @case('Listado alumnos')
+            <link rel="stylesheet" href="{{ URL::asset('./css/participantes.css') }}" />
+        @break
+
+        @case('Crear Grupo')
+            <link rel="stylesheet" href="{{ URL::asset('./css/.css') }}" />
+        @break
     @endswitch
     <title>{{ $title }}</title>
     @vite('resources/js/app.js')
 </head>
-<body>
-@include('flash-message')
 
-    @if ($title != "Partida")
+<body>
+    @include('flash-message')
+
+    @if ($title != 'Partida')
         {{-- <div id="headerSection"></div> --}}
         @include('layouts.header')
     @endif
@@ -61,7 +79,7 @@
 
 
 
-    @if ($title != "Partida")
+    @if ($title != 'Partida')
         <div id="footerSection"></div>
     @endif
 
@@ -69,4 +87,5 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </body>
+
 </html>

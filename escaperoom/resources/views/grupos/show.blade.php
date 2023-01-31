@@ -58,7 +58,7 @@
                         {{ $alumno->codGrupo }}
                     </div>
                     <div class="columna">
-                        <form action="{{ route('grupos.eliminarGrupo', $alumno->codUsuario) }}" method ="POST">
+                        <form action="{{ route('grupos.eliminarGrupo', $alumno->codUsuario) }}" method="POST">
                             @csrf
                             {{ method_field('PUT') }}
                             <input type="submit" value="Eliminar">

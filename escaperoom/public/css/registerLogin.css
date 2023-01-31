@@ -1,4 +1,4 @@
-#contenedor {
+main {
   width: 100%;
   display: flex;
   align-items: center;
@@ -6,13 +6,15 @@
   color: white;
   min-height: 120vh;
 }
-#contenedor img {
+
+main img {
   position: fixed;
   width: 100%;
   opacity: 0.5;
   z-index: -1;
 }
-#contenedor #form-box {
+
+main #form-box {
   margin-top: 1rem;
   margin: bottom 1rem;
   width: 40%;
@@ -24,35 +26,42 @@
   align-items: center;
   background-color: #000;
 }
-#contenedor #form-box #form {
+
+main #form-box #form {
   width: 80%;
   margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#contenedor #form-box #form input {
+
+main #form-box #form input {
   width: 100%;
   height: 2rem;
   border: 0;
   margin: 0.4rem;
 }
-#contenedor #form-box #form input:focus {
+
+main #form-box #form input:focus {
   height: 3rem;
 }
-#contenedor #form-box #form a {
+
+main #form-box #form a {
   color: #ffc300;
   transition: 0.3s ease-in-out;
 }
-#contenedor #form-box #form a:hover {
+
+main #form-box #form a:hover {
   color: rgb(124, 183, 242);
 }
-#contenedor #form-box #form div {
+
+main #form-box #form div {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-#contenedor #form-box #form div button {
+
+main #form-box #form div button {
   margin: 1rem;
   background-color: #ffc300;
   border-radius: 20px;
@@ -65,8 +74,11 @@
   border: 0;
   font-size: 16px;
 }
-#contenedor #form-box #form div button:not(:disabled):hover,
-#contenedor #form-box #form div button:not(:disabled):focus {
+
+main #form-box #form div button:not(:disabled):hover,
+main #form-box #form div button:not(:disabled):focus {
   outline: 0;
   background: #ffd60a;
-}/*# sourceMappingURL=registerLogin.css.map */
+}
+
+/*# sourceMappingURL=registerLogin.css.map */
