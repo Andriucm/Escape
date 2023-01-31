@@ -12,68 +12,67 @@
                 @endif
             @endauth
         </div>
-        <div id="tabla">
-            <div id="fila-cabecera">
-                <div>
+        <table id="tabla">
+            <tr id="fila-cabecera">
+                <th>
                     Usuario
-                </div>
-                <div>
+                </th>
+                <th>
                     Nombre
-                </div>
-                <div>
+                </th>
+                <th>
                     Apellido
-                </div>
-                <div>
+                </th>
+                <th>
                     Email
-                </div>
-                <div>
+                </th>
+                <th>
                     Telefono
-                </div>
-                <div>
-                    Rol
-                </div>
-                <div>
+                </th>
+                <th>
                     codGrupo
-                </div>
-
-                <div>
+                </th>
+                <th>
+                    Rol
+                </th>
+                <th>
                     Eliminar
-                </div>
-            </div>
+                </th>
+            </tr>
             @foreach ($usuarios as $usuario)
-                <div id="fila">
-                    <div>
-                        {{ $usuario->usuario }}
-                    </div>
-                    <div>
-                        {{ $usuario->nombre }}
-                    </div>
-                    <div>
-                        {{ $usuario->apellido }}
-                    </div>
-                    <div>
-                        {{ $usuario->email }}
-                    </div>
-                    <div>
-                        {{ $usuario->telefono }}
-                    </div>
-                    <div>
-                        {{ $usuario->rol }}
-                    </div>
-                    <div>
-                        {{ $usuario->codGrupo }}
-                    </div>
-                    <div>
-                        <form action="{{ route('management.destroy', $usuario->codUsuario) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input class="drop" type="submit" value="Eliminar">
-                        </form>
-                    </div>
-                </div>
+            <tr id="fila">
+                <td>
+                    {{ $usuario->usuario }}
+                </td>
+                <td>
+                    {{ $usuario->nombre }}
+                </td>
+                <td>
+                    {{ $usuario->apellido }}
+                </td>
+                <td>
+                    {{ $usuario->email }}
+                </td>
+                <td>
+                    {{ $usuario->telefono }}
+                </td>
+                <td>
+                    {{ $usuario->rol }}
+                </td>
+                <td>
+                    {{ $usuario->codGrupo }}
+                </td>
+                <td>
+                    <form action="{{ route('management.destroy', $usuario->codUsuario) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input class="drop" type="submit" value="Eliminar">
+                    </form>
+                </td>
+            </tr>
             @endforeach
 
-        </div>
+        </table>
     </main>
 
 

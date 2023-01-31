@@ -35,8 +35,8 @@ main .intro {
 
 #tabla {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
   -webkit-animation-name: slide;
@@ -47,8 +47,8 @@ main .intro {
 
 #tabla #fila-cabecera {
   width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
+  /* display: flex; */
+  /* flex-flow: row nowrap; */
   text-align: center;
   text-transform: uppercase;
 }
@@ -61,8 +61,8 @@ main .intro {
 
 #tabla #fila {
   width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
+  /* display: flex; */
+  /* flex-flow: row nowrap; */
   text-align: center;
 }
 
@@ -84,6 +84,7 @@ main .intro {
   justify-content: space-around;
   align-items: center;
   width: 50%;
+  margin-bottom: 5%;
 }
 
 .profes {
