@@ -67,7 +67,7 @@
                         <form action="{{ route('management.destroy', $usuario->codUsuario) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input type="submit" value="Eliminar">
+                            <input class="drop" type="submit" value="Eliminar">
                         </form>
                     </div>
                 </div>

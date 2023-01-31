@@ -13,8 +13,7 @@
 
         @foreach ($grupos as $grupo)
             <article>
-                <button
-                    onclick="window.location.href='{{ route('grupos.show', $grupo->codGrupo) }}'">Participantes</button>
+                <button class="part" onclick="window.location.href='{{ route('grupos.show', $grupo->codGrupo) }}'">Participantes</button>
 
                 <h1>{{ $grupo->nombre }}</h1>
                 <b>usuarios</b>
@@ -23,7 +22,7 @@
                         <form action="{{ route('grupos.destroy', $grupo->codGrupo) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input type="submit" value="Eliminar">
+                            <input class="drop" type="submit" value="Eliminar">
                         </form>
                     @else
                         @if (Auth::User()->codGrupo == null)
@@ -31,7 +30,7 @@
                                 @csrf
                                 {{ method_field('PUT') }}
                                 <input type="text" name="codigo" placeholder="Codigo">
-                                <input type="submit" value="Entrar">
+                                <input style="background-color: #FFC300;" type="submit" value="Entrar">
                             </form>
                         @endif
                     @endif

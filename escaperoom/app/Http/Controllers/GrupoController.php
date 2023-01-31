@@ -56,7 +56,7 @@ class GrupoController extends Controller
         $grupo->nombre = $request->nombre;
         $grupo->codigo = $request->codigo;
         $grupo->save();
-        return redirect('/groups');
+        return redirect('/groups')->with('success', 'Grupo creado correctamente');
     }
 
     public function show($id)
@@ -106,6 +106,6 @@ class GrupoController extends Controller
     {
         $grupo = Grupo::findOrFail($id);
         $grupo->delete();
-        return redirect('/groups');
+        return redirect('/groups')->with('destroy', 'Se ha eliminado el grupo');
     }
 }
