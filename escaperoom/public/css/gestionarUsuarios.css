@@ -5,35 +5,35 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3%;
 }
 
-.intro {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 50%;
+@-webkit-keyframes slide {
+  from {
+    margin-top: 100%;
+  }
+  to {
+    margin-top: 0%;
+  }
 }
 
-.profes {
-  background-color: #FFC300;
-  border: 0;
-  padding: 3%;
-  font-weight: bold;
-  border-radius: 7%;
+@keyframes slide {
+  from {
+    margin-top: 100%;
+  }
+  to {
+    margin-top: 0%;
+  }
 }
-
-.profes:hover {
-  background-color: #FFD60A;
-}
-
-
 #tabla {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 3%;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
 }
 #tabla #fila-cabecera {
   width: 100%;

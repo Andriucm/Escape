@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tabla {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#tabla .fila-cabecera {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  text-align: center;
+  text-transform: uppercase;
+}
+#tabla .fila-cabecera div {
+  padding: 1rem;
+  border-bottom: solid 0.2rem #003566;
+  flex: 1;
+}
+#tabla .fila {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  text-align: center;
+}
+#tabla .fila div {
+  padding: 1rem;
+  border-bottom: solid 0.2rem #003566;
+  flex: 1;
+}
+#tabla .fila:hover {
+  background: rgba(255, 196, 0, 0.7294117647);
+}/*# sourceMappingURL=participantes.css.map */

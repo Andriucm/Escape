@@ -68,15 +68,37 @@ class GrupoController extends Controller
 
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        if (Grupo::findorfail($id)) {
-            $usuario = Auth::user();
-            $usuario->codGrupo = $id;
+        if ($grupo= Grupo::findorfail($id)) {
+            $request->validate(
+                [
+                    'codigo' => [
+                        'required',
+                        'min:4',
+                        'max:30',
+                    ],
+                ]
+            );
+            if($grupo->codigo == $request->codigo){
+                $usuario = Auth::user();
+                $usuario->codGrupo = $id;
+                $usuario->save();
+                return redirect('/groups')->with('success','Has entrado al grupo');
+            }return redirect('/groups')->with('warning','Codigo incorrecto');
+
+
+        }
+
+    }
+    public function eliminarGrupo($id)
+    {
+        if ($usuario= User::findorfail($id)) {
+            $usuario->codGrupo = null;
             $usuario->save();
 
         }
-        return redirect('/groups');
+        return redirect()->back();
     }
 
     public function destroy($id)

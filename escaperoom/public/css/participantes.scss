@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 main {
     width: 100%;
     min-height: 100vh;
@@ -6,26 +12,13 @@ main {
     flex-direction: column;
     align-items: center;
 }
-@keyframes slide {
-    from {
-      margin-top: 100%;
 
-    }
-
-    to {
-      margin-top: 0%;
     
-    }
-  }
-
 #tabla{
     width: 100%;
     display: flex;
     flex-direction: column;
-    animation-duration: 1.5s;
-    animation-name: slide;
-    animation-iteration-count: initial;
-    #fila-cabecera {
+    .fila-cabecera {
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
@@ -37,7 +30,7 @@ main {
             flex: 1;
         }
     }
-    #fila {
+    .fila {
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
@@ -49,4 +42,7 @@ main {
             flex: 1;
         }
     }
+    .fila:hover{
+    background: #ffc400ba;;
+}
 }

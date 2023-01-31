@@ -4,43 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{ URL::asset('imagenes/logo.png') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/header.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/footer.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/general.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/perfil.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="shortcut icon" href="{{ URL::asset('./imagenes/logo.png') }}">
+    <link rel="stylesheet" href="{{ URL::asset('./css/header.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('./css/footer.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('./css/general.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('./css/font-awesome/css/font-awesome.min.css') }}">
 
     @switch($title)
         @case("Inicio")
-            <link rel="stylesheet" href="{{ URL::asset('css/index.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/index.css') }}" />
             @break
         @case("Puntuaciones")
-            <link rel="stylesheet" href="{{ URL::asset('css/puntuaciones.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/puntuaciones.css') }}" />
             @break
         @case("Grupos")
-            <link rel="stylesheet" href="{{ URL::asset('css/grupos.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/grupos.css') }}" />
             @break
         @case("Perfil")
-            <link rel="stylesheet" href="{{ URL::asset('css/perfil.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/perfil.css') }}" />
             @break
         @case("Partida")
-            <link rel="stylesheet" href="{{ URL::asset('css/partida.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/partida.css') }}" />
             @break
         @case("Register")
-            <link rel="stylesheet" href="{{ URL::asset('css/registerLogin.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
             @break
         @case("Login")
-            <link rel="stylesheet" href="{{ URL::asset('css/registerLogin.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
             @break
         @case("Gestionar Usuarios")
-            <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/gestionarUsuarios.css') }}" />
             @break
         @case("Listado alumnos")
-            <link rel="stylesheet" href="{{ URL::asset('css/gestionarUsuarios.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/participantes.css') }}" />
             @break
         @case("Crear Grupo")
-            <link rel="stylesheet" href="{{ URL::asset('css/.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/.css') }}" />
             @break
 
     @endswitch
@@ -55,7 +54,7 @@
         @include('layouts.header')
     @endif
 
-    <div id="mainSection" style="width: 100%; height: 100%;">
+    <div id="mainSection">
         {{ $slot }}
     </div>
 

@@ -20,7 +20,6 @@ class UserSeeder extends Seeder
         $admin->nombre = 'admin';
         $admin->apellido = 'root';
         $admin->email = 'admin@gmail.com';
-        $admin->telefono = '675689789';
         $admin->password = bcrypt('12345678');
         $admin->rol = 'admin';
         $admin->save();
@@ -30,7 +29,6 @@ class UserSeeder extends Seeder
         $profesor->nombre = 'profesor';
         $profesor->apellido = 'root';
         $profesor->email = 'profesor@gmail.com';
-        $profesor->telefono = '675389789';
         $profesor->password = bcrypt('12345678');
         $profesor->rol = 'profesor';
         $profesor->save();
@@ -40,7 +38,6 @@ class UserSeeder extends Seeder
         $alumno->nombre = 'alumno';
         $alumno->apellido = 'root';
         $alumno->email = 'alumno@gmail.com';
-        $alumno->telefono = '675689989';
         $alumno->password = bcrypt('12345678');
         $alumno->rol = 'alumno';
         $alumno->save();
