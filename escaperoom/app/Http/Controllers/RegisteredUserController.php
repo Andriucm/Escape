@@ -46,25 +46,26 @@ class RegisteredUserController extends Controller
             ],
         ]);
 
-        $usuario = User::create([
-            'usuario' => $request->usuario,
-            'email' => $request->email,
-            'nombre' => $request->name,
-            'apellido' => $request->surname,
-            'telefono' => $request->telefono,
-            'password' => bcrypt($request->password),
-            'rol' => 'alumno',
-            'foto'=>$request->usuario. '.' .pathinfo($_FILES['foto']['name'],PATHINFO_EXTENSION),
-
-        ]);
-
-        move_uploaded_file($request->foto, 'imagenes/perfil/' . $request->usuario . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION));
-
+        if (User::where('usuario', $request->usuario)->get() || User::where('email', $request->email)->get()) {
+            return to_route('register')->with('warning', 'Este usuario ya existe');
+        } else {
+            $usuario = User::create([
+                'usuario' => $request->usuario,
+                'email' => $request->email,
+                'nombre' => $request->name,
+                'apellido' => $request->surname,
+                'telefono' => $request->telefono,
+                'password' => bcrypt($request->password),
+                'rol' => 'alumno',
+                'foto' => $request->usuario . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION),
+            ]);
+            move_uploaded_file($request->foto, 'imagenes/perfil/' . $request->usuario . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION));
+            return to_route('login')->with('status', 'Cuenta creada correctamente');
+        }
         // Autologin
         // Auth::login($usuario);
         // Iniciar sesion despues de haberse registrado
 
-        return to_route('login')->with('status', 'Cuenta creada correctamente');
 
 
 
