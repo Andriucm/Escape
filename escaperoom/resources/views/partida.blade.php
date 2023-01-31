@@ -4,9 +4,12 @@
     </x-slot>
 
     <main>
-        <button onclick="location.href='{{ route('index') }}'" type="button" id="salir">X</button>
         <section class="juego">
-            <img src="{{URL::asset('/imagenes/3droom POV.jpg')}}" alt="">
+            <div>
+                <button onclick="location.href='{{ route('index') }}'" type="button" id="salir">X</button>
+                <button id="pista1Btn" class="pistaButton"><i class="fa-solid fa-circle-info"></i></button>
+                <button id="pista2Btn" class="pistaButton"><i class="fa-solid fa-circle-question"></i></button>
+            </div>
         </section>
         <section id="pistaSection" class="pistas">
 
