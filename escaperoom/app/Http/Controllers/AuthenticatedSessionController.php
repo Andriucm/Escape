@@ -36,7 +36,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return to_route('login');
+        return to_route('login')->with('success', 'Se ha cerrado la sesión');
     }
 
     public function updateDatos(Request $request, $id)

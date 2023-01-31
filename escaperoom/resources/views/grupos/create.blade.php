@@ -5,7 +5,7 @@
     <main>
         <div id="form-box">
             <div id="form-header">
-                <h2>Nuevo grupo</h2>
+                <h2 style="color: white;">Nuevo grupo</h2>
             </div>
             <form id="form" action="{{ route('grupos.store')}}" method="POST">
                 @csrf
@@ -20,7 +20,7 @@
                 @error('codigo')
                     <small style="color: red">{{ $message }}</small>
                 @enderror
-                <button id="form-btn" type="submit">Crear</button>
+                <button style="background-color: #FFC300; padding:0.5%;" id="form-btn" type="submit">Crear</button>
         </div>
         </form>
 

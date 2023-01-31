@@ -58,3 +58,30 @@ main {
   border-bottom: solid 0.2rem #003566;
   flex: 1;
 }/*# sourceMappingURL=gestionarUsuarios.css.map */
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+.profes {
+  background-color: #FFC300;
+  border: 0;
+  padding: 3%;
+  font-weight: bold;
+  border-radius: 7%;
+}
+
+.profes:hover {
+  background-color: #FFD60A;
+}
+.drop {
+  background-color: red;
+  padding: 10%;
+}
+.drop:hover {
+  background-color: rgb(252, 51, 51);
+}
