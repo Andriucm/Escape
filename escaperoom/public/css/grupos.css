@@ -54,3 +54,17 @@ main .hide {
 main .show {
   display: block;
 }/*# sourceMappingURL=grupos.css.map */
+.part {
+  background-color: #FFC300;
+  padding: 2%;
+}
+.part:hover {
+  background-color: #FFD60A;
+}
+.drop {
+  background-color: rgb(197, 16, 16);
+  padding: 10%;
+}
+.drop:hover {
+  background-color: red;
+}

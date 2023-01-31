@@ -61,7 +61,7 @@
                         <form action="{{ route('grupos.eliminarGrupo', $alumno->codUsuario) }}" method ="POST">
                             @csrf
                             {{ method_field('PUT') }}
-                            <input type="submit" value="Eliminar">
+                            <input style="background-color: red; padding: 5%;" type="submit" value="Eliminar">
                         </form>
                     </div>
                 </div>

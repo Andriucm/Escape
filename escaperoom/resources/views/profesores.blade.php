@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        Register
+        Profesores
     </x-slot>
     
     <main id="contenedor">

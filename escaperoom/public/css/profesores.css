@@ -1,0 +1,72 @@
+#contenedor {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    min-height: 120vh;
+  }
+  #contenedor img {
+    position: fixed;
+    width: 100%;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  #contenedor #form-box {
+    margin-top: 1rem;
+    margin: bottom 1rem;
+    width: 40%;
+    border: 3px #ffc300 inset;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+  }
+  #contenedor #form-box #form {
+    width: 80%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #contenedor #form-box #form input {
+    width: 100%;
+    height: 2rem;
+    border: 0;
+    margin: 0.4rem;
+  }
+  #contenedor #form-box #form input:focus {
+    height: 3rem;
+  }
+  #contenedor #form-box #form a {
+    color: #ffc300;
+    transition: 0.3s ease-in-out;
+  }
+  #contenedor #form-box #form a:hover {
+    color: rgb(124, 183, 242);
+  }
+  #contenedor #form-box #form div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #contenedor #form-box #form div button {
+    margin: 1rem;
+    background-color: #ffc300;
+    border-radius: 20px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
+  }
+  #contenedor #form-box #form div button:not(:disabled):hover,
+  #contenedor #form-box #form div button:not(:disabled):focus {
+    outline: 0;
+    background: #ffd60a;
+  }/*# sourceMappingURL=registerLogin.css.map */
