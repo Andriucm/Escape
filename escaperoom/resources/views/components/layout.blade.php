@@ -34,8 +34,11 @@
         @case("Partida")
             <link rel="stylesheet" href="{{ URL::asset('./css/partida.css') }}" />
             @break
-            @case("Profesores")
+        @case("Profesores")
             <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
+            @break
+        @case("Progreso")
+            <link rel="stylesheet" href="{{ URL::asset('./css/puntuaciones.css') }}" />
             @break
         @case("Register")
             <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />

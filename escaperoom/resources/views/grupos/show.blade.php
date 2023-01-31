@@ -4,69 +4,69 @@
         Listado alumnos
     </x-slot>
     <main>
-        <h1>Alumnos de grupo
+        <h1>Alumnos del grupo
         </h1>
-        <div id="tabla">
-            <div class="fila-cabecera">
-                <div class="columna">
+        <table id="tabla">
+            <tr class="fila-cabecera">
+                <th class="columna">
                     alumno
-                </div>
-                <div class="columna">
+                </th>
+                <th class="columna">
                     Nombre
-                </div>
-                <div class="columna">
+                </th>
+                <th class="columna">
                     Apellido
-                </div>
-                <div class="columna">
+                </th>
+                <th class="columna">
                     Email
-                </div>
-                <div class="columna">
+                </th>
+                <th class="columna">
                     Telefono
-                </div>
-                <div class="columna">
+                </th>
+                <th class="columna">
                     Rol
-                </div>
-                <div class="columna">
+                </th>
+                <th class="columna">
                     codGrupo
-                </div>
+                </th>
 
-                <div class="columna">
+                <th class="columna">
                     Eliminar
-                </div>
-            </div>
+                </th>
+            </tr>
             @foreach ($alumnos as $alumno)
-                <div class="fila">
-                    <div class="columna">
-                        {{ $alumno->usuario }}
-                    </div>
-                    <div class="columna">
-                        {{ $alumno->nombre }}
-                    </div>
-                    <div class="columna">
-                        {{ $alumno->apellido }}
-                    </div>
-                    <div class="columna">
-                        {{ $alumno->email }}
-                    </div>
-                    <div class="columna">
-                        {{ $alumno->telefono }}
-                    </div>
-                    <div class="columna">
-                        {{ $alumno->rol }}
-                    </div>
-                    <div class="columna">
-                        {{ $alumno->codGrupo }}
-                    </div>
-                    <div class="columna">
-                        <form action="{{ route('grupos.eliminarGrupo', $alumno->codUsuario) }}" method ="POST">
-                            @csrf
-                            {{ method_field('PUT') }}
-                            <input style="background-color: red; padding: 5%;" type="submit" value="Eliminar">
-                        </form>
-                    </div>
-                </div>
+            <tr class="fila">
+                <td class="columna">
+                    {{ $alumno->usuario }}
+                </td>
+                <td class="columna">
+                    {{ $alumno->nombre }}
+                </td>
+                <td class="columna">
+                    {{ $alumno->apellido }}
+                </td>
+                <td class="columna">
+                    {{ $alumno->email }}
+                </td>
+                <td class="columna">
+                    {{ $alumno->telefono }}
+                </td>
+                <td class="columna">
+                    {{ $alumno->rol }}
+                </td>
+                <td class="columna">
+                    {{ $alumno->codGrupo }}
+                </td>
+                <td class="columna">
+                    <form action="{{ route('grupos.eliminarGrupo', $alumno->codUsuario) }}" method="POST">
+                        @csrf
+                        {{ method_field('PUT') }}
+                        <input style="background-color: red; padding: 5%;" type="submit" value="Eliminar">
+                    </form>
+                </td>
+            </tr>
             @endforeach
 
-        </div>
+        </table>
     </main>
 </x-layout>

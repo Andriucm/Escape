@@ -5,7 +5,7 @@
 
     
     <main id="contenedor">
-        <img src="{{ URL::asset('/imagenes/fondo1.png') }" alt="fondo">
+        <img src="{{ URL::asset('/imagenes/fondo1.png') }}" alt="fondo">
         <div id="form-box">
             <div id="form-header">
                 <h2>¿No tienes cuenta todavia?</h2>
