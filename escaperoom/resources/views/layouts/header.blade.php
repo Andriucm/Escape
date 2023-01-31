@@ -1,6 +1,6 @@
 <header class="header-container">
     <div class="header">
-        <a href="{{ route('index') }}"><img src="../public/imagenes/logo.png" alt="Logo" class="logo"></a>
+        <a href="{{ route('index') }}"><img src="{{ URL::asset('imagenes/logo.png') }}" alt="Logo" class="logo"></a>
         <div class="row">
             <ul>
                 <li><a href="{{route('puntuaciones')}}">Puntuaciones</a></li>

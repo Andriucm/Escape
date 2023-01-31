@@ -37,19 +37,20 @@ body {
 }
 .imgPeque {
     grid-area: imgs;
-   
-
+    animation-duration: 3s;
+    animation-name: foto;
+    animation-iteration-count: initial;
 }
 
 @keyframes foto {
     from {
       margin-left: 100%;
-
+      opacity: 0%;
     }
 
     to {
       margin-left: 0%;
-
+      opacity: 100%;
     }
   }
 @keyframes texto {
