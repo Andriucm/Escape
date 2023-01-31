@@ -76,7 +76,9 @@
                 <br><br>
                 <div class="progreso">
                     <p>Consultar progreso</p>
-                    <button type="button" class="view" onclick="consultarProgreso()">Ver</button>
+                    <form action="{{ route('progreso.index', [$id]) }}">
+                        <input type="submit" class="view" value="Ver">
+                    </form>
                 </div>
                 <br><br>
                 <div class="cuenta">

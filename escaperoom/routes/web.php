@@ -6,6 +6,8 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\GestionUsuariosCotroller;
 use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\ProgresoController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +30,7 @@ Route::get('/profesores', function () {
 
 Route::post('/profesor/store', [ProfesorController::class, 'store'])->name('profesor.store')->middleware('auth');
 
-
+Route::get('/progreso/{id}', [ProgresoController::class, 'index'])->name('progreso.index');
 
 Route::get('/groups', [GrupoController::class, 'index'])->name('grupos.index')->middleware('auth');
 Route::get('/groups/{id}/show', [GrupoController::class, 'show'])->name('grupos.show');
