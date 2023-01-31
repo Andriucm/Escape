@@ -13,8 +13,8 @@ main #salir {
   top: 25px;
   left: 25px;
   color: #000000;
-  background-color: #FFC300;
-  border: #FFC300;
+  background-color: #ffc300;
+  border: #ffc300;
   padding: 15px 20px;
   border-radius: 100%;
   font-weight: bold;
@@ -22,7 +22,7 @@ main #salir {
 }
 main #salir:hover {
   background-color: #121212;
-  color: #FFC300;
+  color: #ffc300;
 }
 main .juego {
   grid-area: Juego;
@@ -118,7 +118,7 @@ main .narrativa h1 {
   flex: 1;
 }
 main .narrativa h1 b {
-  color: #FFC300;
+  color: #ffc300;
   font-size: 1.5em;
 }
 main .narrativa h5 {

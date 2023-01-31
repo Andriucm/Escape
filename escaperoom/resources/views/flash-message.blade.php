@@ -27,7 +27,7 @@
   <input type="button" class="closebtn" data-bs-dismiss="alert" aria-label="Close" value="X">
 </div>
 @endif
-    
+
 @if ($errors->any())
 <div class="alert" role="alert">
   <strong>Por favor revise el formulario para ver si hay errores</strong>

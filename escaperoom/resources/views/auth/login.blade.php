@@ -4,26 +4,24 @@
     </x-slot>
 
 
-    <div id="contenedor">
+    <main>
         <img src="{{ URL::asset('/imagenes/fondo1.jpg') }}" alt="fondo">
         <div id="form-box">
             <div id="form-header">
                 <h2>¿Ya tienes tu cuenta?</h2>
             </div>
-            
+
             <form id="form" action="{{ route('login') }}" method="POST">
                 @csrf
-                <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}"> 
+                <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}">
 
                 @error('email')
                     <small style="color: red">{{ $message }}</small>
-
                 @enderror
-                <input type="password" name="password" id="password" placeholder="Contraseña"> 
+                <input type="password" name="password" id="password" placeholder="Contraseña">
 
                 @error('password')
                     <small style="color: red">{{ $message }}</small>
-
                 @enderror
                 <a href="{{ route('register') }}">¿No tienes una cuenta?</a>
                 <div>

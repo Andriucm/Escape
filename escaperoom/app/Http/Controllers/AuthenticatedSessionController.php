@@ -22,21 +22,21 @@ class AuthenticatedSessionController extends Controller
         $remember = $request->has('remember') ? true : false;
         if (Auth::attempt($credenciales, $remember)) {
             $request->session()->regenerate();
-            return to_route('index')->with('success', 'Inicio de sesión correcto');
+            return to_route('index')->with('success', 'Inicio de sesión correcto!');
         } else {
             throw ValidationException::withMessages([
                 'email' => __('auth.failed')
             ]);
         }
     }
-    
+
     public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return to_route('login')->with('success', 'Se ha cerrado la sesión');
+        return to_route('login')->with('success', 'Se ha cerrado la sesion!');
     }
 
     public function updateDatos(Request $request, $id)
@@ -59,7 +59,7 @@ class AuthenticatedSessionController extends Controller
 
         $user->save();
 
-        return back()->with('success','Datos modificados correctamente!');
+        return back()->with('success', 'Datos modificados correctamente!');
     }
 
     public function updateCuenta(Request $request, $id)
@@ -70,7 +70,7 @@ class AuthenticatedSessionController extends Controller
         $pw = bcrypt($request->input('formContra'));
         $pwSinEncriptar = $request->input('formContra');
 
-        if ($pwSinEncriptar=="") {
+        if ($pwSinEncriptar == "") {
             $request->validate([
                 'formEmail' => ['required', 'email']
             ]);

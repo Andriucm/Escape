@@ -1,4 +1,4 @@
-main{
+main {
     width: 100%;
     min-height: 100vh;
 }
@@ -51,6 +51,11 @@ main{
     width: 100%;
 }
 
+.fotoPerfil{
+    width: 15rem;
+    height: auto;
+}
+
 .intro-datos {
     display: flex;
     flex-wrap: wrap;
@@ -86,12 +91,18 @@ main{
     color: white;
     border: none
 }
-.formNombre, .formApe, .formTel, .formEmail, .formContra {
-    pointer-events:none;
-    background-color:#000814;
-    color:white;
-    border:none
+
+.formNombre,
+.formApe,
+.formTel,
+.formEmail,
+.formContra {
+    pointer-events: none;
+    background-color: #000814;
+    color: white;
+    border: none
 }
+
 form {
     margin-top: 3%;
     font-size: 18px;
@@ -172,7 +183,9 @@ hr {
     font-weight: bold;
     border-radius: 7%;
 }
-#submitDatos:hover, #submitCuenta:hover {
+
+#submitDatos:hover,
+#submitCuenta:hover {
     transform: scale(1.1);
 }
 
@@ -199,7 +212,9 @@ hr {
     font-weight: bold;
     border-radius: 7%;
 }
-#cancel:hover, #cancelar:hover {
+
+#cancel:hover,
+#cancelar:hover {
     transform: scale(1.1);
 }
 
@@ -209,11 +224,17 @@ hr {
 
 .editarInfo,
 #submitDatos,
-.view,
 .editarAccount,
 #submitCuenta {
     background-color: #FFC300;
     width: 20%;
+    border: 0;
+    padding: 3%;
+    font-weight: bold;
+    border-radius: 7%;
+}
+.view {
+    background-color: #FFC300;
     border: 0;
     padding: 3%;
     font-weight: bold;
@@ -228,12 +249,14 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-row-gap: 5%;
         grid-column-gap: 5%;
         grid-template-columns: 500px 500px;
         grid-template-rows: 80px 280px;
     }
+
     .datos {
         max-width: 500px;
     }
@@ -243,10 +266,12 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-template-columns: 450px 450px;
         grid-template-rows: 80px 250px;
     }
+
     .datos {
         max-width: 400px;
     }
@@ -256,10 +281,12 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-template-columns: 400px 400px;
         grid-template-rows: 80px 220px;
     }
+
     .datos {
         max-width: 400px;
     }
@@ -269,13 +296,16 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-template-columns: 350px 350px;
         grid-template-rows: 80px 200px;
     }
+
     .datos {
         max-width: 400px;
     }
+
     .datos .buttons {
         justify-content: space-around;
     }
@@ -285,13 +315,16 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-template-columns: 300px 300px;
         grid-template-rows: 80px 200px;
     }
+
     .datos {
         max-width: 400px;
     }
+
     .datos .buttons {
         justify-content: space-around;
     }
@@ -301,23 +334,29 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-template-columns: 250px 250px;
         grid-template-rows: 80px 180px;
     }
+
     .datos {
         max-width: 400px;
         font-size: medium;
     }
+
     .progreso {
         font-size: medium;
     }
+
     .cuenta {
         font-size: medium;
     }
+
     .datos .buttons {
         justify-content: space-evenly;
     }
+
     .datos form {
         width: 80%;
     }
@@ -327,18 +366,22 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-template-columns: 170px 170px;
         grid-template-rows: 260px 160px 230px;
     }
+
     .datos {
         grid-column: 1/ span 2;
         grid-row: 1 / 1;
     }
+
     .progreso {
         grid-column: 1/ span 2;
         grid-row: 2 / 2;
     }
+
     .cuenta {
         grid-column: 1/ span 2;
         grid-row: 3 / 3;
@@ -349,25 +392,31 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-template-columns: 140px 140px;
         grid-template-rows: 330px 130px 230px;
     }
+
     .datos {
         grid-column: 1/ span 2;
         grid-row: 1 / 1;
     }
+
     .progreso {
         grid-column: 1/ span 2;
         grid-row: 2 / 2;
     }
+
     .cuenta {
         grid-column: 1/ span 2;
         grid-row: 3 / 3;
     }
+
     .datos .buttons {
         justify-content: space-around;
     }
+
     .cuenta .buttons {
         justify-content: space-around;
     }
@@ -377,31 +426,38 @@ hr {
     body {
         background-color: #101010;
     }
+
     .perfil-body {
         grid-template-columns: 110px 110px;
         grid-template-rows: 330px 130px 230px;
     }
+
     .datos {
         grid-column: 1/ span 2;
         grid-row: 1 / 1;
     }
+
     .progreso {
         grid-column: 1/ span 2;
         grid-row: 2 / 2;
     }
+
     .cuenta {
         grid-column: 1/ span 2;
         grid-row: 3 / 3;
     }
+
     .datos .buttons {
         justify-content: space-around;
     }
+
     .cuenta .buttons {
         justify-content: space-between;
     }
-    .cuenta .buttons input, button {
 
-    }
+    .cuenta .buttons input,
+    button {}
+
     .cuenta form {
         margin-left: 0%;
         width: 60%;

@@ -6,6 +6,11 @@ main {
   flex-direction: column;
   align-items: center;
 }
+main .intro {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
 
 @-webkit-keyframes slide {
   from {
@@ -26,8 +31,6 @@ main {
 }
 #tabla {
   width: 100%;
-  display: flex;
-  flex-direction: column;
   -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;
   -webkit-animation-name: slide;
@@ -37,24 +40,37 @@ main {
 }
 #tabla #fila-cabecera {
   width: 100%;
+<<<<<<< HEAD
   display: flex;
   flex-flow: row nowrap;
   text-align: center;
+=======
+>>>>>>> e83b0888c6369d9f17cc53d19d0e3ff7fe70f3be
   text-transform: uppercase;
 }
 #tabla #fila-cabecera div {
+  width: 100%;
   padding: 1rem;
   border-bottom: solid 0.2rem #003566;
-  flex: 1;
 }
 #tabla #fila {
   width: 100%;
+<<<<<<< HEAD
   display: flex;
   flex-flow: row nowrap;
+=======
+>>>>>>> e83b0888c6369d9f17cc53d19d0e3ff7fe70f3be
   text-align: center;
 }
 #tabla #fila div {
+  width: 100%;
   padding: 1rem;
   border-bottom: solid 0.2rem #003566;
+<<<<<<< HEAD
   flex: 1;
+=======
+}
+#tabla #fila:hover {
+  background: rgba(255, 196, 0, 0.7294117647);
+>>>>>>> e83b0888c6369d9f17cc53d19d0e3ff7fe70f3be
 }/*# sourceMappingURL=gestionarUsuarios.css.map */

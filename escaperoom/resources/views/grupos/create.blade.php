@@ -7,7 +7,7 @@
             <div id="form-header">
                 <h2 style="color: white;">Nuevo grupo</h2>
             </div>
-            <form id="form" action="{{ route('grupos.store')}}" method="POST">
+            <form id="form" action="{{ route('grupos.store') }}" method="POST">
                 @csrf
                 <input type="text" name="nombre" id="nombre" placeholder="nombre" value="{{ old('nombre') }}">
 
