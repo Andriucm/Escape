@@ -6,7 +6,6 @@ main {
   flex-direction: column;
   align-items: center;
 }
-
 main .intro {
   width: 90%;
   display: flex;
@@ -17,7 +16,6 @@ main .intro {
   from {
     margin-top: 100%;
   }
-
   to {
     margin-top: 0%;
   }
@@ -27,81 +25,37 @@ main .intro {
   from {
     margin-top: 100%;
   }
-
   to {
     margin-top: 0%;
   }
 }
-
 #tabla {
   width: 100%;
-  /* display: flex; */
-  /* flex-direction: column; */
   -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-name: slide;
-  animation-name: slide;
+          animation-name: slide;
   -webkit-animation-iteration-count: initial;
-  animation-iteration-count: initial;
+          animation-iteration-count: initial;
 }
-
 #tabla #fila-cabecera {
   width: 100%;
-  /* display: flex; */
-  /* flex-flow: row nowrap; */
-  text-align: center;
   text-transform: uppercase;
 }
-
 #tabla #fila-cabecera div {
   width: 100%;
   padding: 1rem;
   border-bottom: solid 0.2rem #003566;
 }
-
 #tabla #fila {
   width: 100%;
-  /* display: flex; */
-  /* flex-flow: row nowrap; */
   text-align: center;
 }
-
 #tabla #fila div {
   width: 100%;
   padding: 1rem;
   border-bottom: solid 0.2rem #003566;
 }
-
 #tabla #fila:hover {
   background: rgba(255, 196, 0, 0.7294117647);
-}
-
-/*# sourceMappingURL=gestionarUsuarios.css.map */
-
-.intro {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 50%;
-  margin-bottom: 5%;
-}
-
-.profes {
-  background-color: #FFC300;
-  border: 0;
-  padding: 3%;
-  font-weight: bold;
-  border-radius: 7%;
-}
-
-.profes:hover {
-  background-color: #FFD60A;
-}
-.drop {
-  background-color: red;
-  padding: 10%;
-}
-.drop:hover {
-  background-color: rgb(252, 51, 51);
-}
+}/*# sourceMappingURL=gestionarUsuarios.css.map */

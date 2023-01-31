@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
         $admin->email = 'admin@gmail.com';
         $admin->password = bcrypt('12345678');
         $admin->rol = 'admin';
+        $admin->foto = 'logo.png';
         $admin->save();
 
         $profesor = new User();
@@ -31,6 +32,7 @@ class UserSeeder extends Seeder
         $profesor->email = 'profesor@gmail.com';
         $profesor->password = bcrypt('12345678');
         $profesor->rol = 'profesor';
+        $profesor->foto = 'logo.png';
         $profesor->save();
 
         $alumno = new User();
@@ -40,6 +42,7 @@ class UserSeeder extends Seeder
         $alumno->email = 'alumno@gmail.com';
         $alumno->password = bcrypt('12345678');
         $alumno->rol = 'alumno';
+        $alumno->foto = 'logo.png';
         $alumno->save();
     }
 }

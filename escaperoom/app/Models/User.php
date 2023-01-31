@@ -16,7 +16,7 @@ class User extends Authenticatable
     protected $table = "users";
     protected $primaryKey = "codUsuario";
     protected $foreignKey = "codGrupo";
-    protected $fillable = ['usuario','password', 'nombre', 'apellido', 'email', 'telefono', 'rol','remember_token'];
+    protected $fillable = ['usuario','password', 'nombre', 'apellido', 'email', 'telefono', 'rol','remember_token','foto'];
     protected $hidden = 'codUsuario';
 
     public function grupo()

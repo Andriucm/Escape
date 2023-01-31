@@ -23,17 +23,13 @@ button:active,
   font-style: normal;
   font-weight: normal;
 }
-
 @font-face {
   font-family: "Display";
   src: url("../fonts/Display.ttf");
   font-style: normal;
   font-weight: normal;
 }
-
 button {
   font-family: Display;
   letter-spacing: 3px;
-}
-
-/*# sourceMappingURL=general.css.map */
+}/*# sourceMappingURL=general.css.map */

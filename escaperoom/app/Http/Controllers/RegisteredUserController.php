@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
@@ -29,8 +30,20 @@ class RegisteredUserController extends Controller
                 'required',
                 'string',
             ],
-            'telefono' => ['required', 'integer', 'min:9'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'telefono' => [
+                'required',
+                'integer',
+                'min:9'
+            ],
+            'password' => [
+                'required',
+                'confirmed',
+                Rules\Password::defaults()
+            ],
+            'foto' => [
+                'required',
+                'max:2048'
+            ],
         ]);
 
         $usuario = User::create([
@@ -41,9 +54,11 @@ class RegisteredUserController extends Controller
             'telefono' => $request->telefono,
             'password' => bcrypt($request->password),
             'rol' => 'alumno',
-            'estado' => '0'
+            'foto'=>$request->usuario. '.' .pathinfo($_FILES['foto']['name'],PATHINFO_EXTENSION),
 
         ]);
+
+        move_uploaded_file($request->foto, 'imagenes/perfil/' . $request->usuario . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION));
 
         // Autologin
         // Auth::login($usuario);

@@ -26,7 +26,7 @@
         </x-slot>
         <main>
             <div class="perfil-intro">
-                <img src="{{ URL::asset('/imagenes/logo.png') }}" class="fotoPerfil">
+                <img class="fotoPerfil" src="{{ URL::asset('/imagenes/perfil/'.Auth::User()->foto) }}" alt="perfil">
                 <div class="informacion">
                     <h1 style="color: white;" class="nombre"><?php echo $user_name; ?></h1>
                     <h1 style="color: white;" class="apellido"><?php echo $user_surname; ?></h1>

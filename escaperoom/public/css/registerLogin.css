@@ -6,14 +6,12 @@ main {
   color: white;
   min-height: 120vh;
 }
-
 main img {
   position: fixed;
   width: 100%;
   opacity: 0.5;
   z-index: -1;
 }
-
 main #form-box {
   margin-top: 1rem;
   margin: bottom 1rem;
@@ -26,7 +24,6 @@ main #form-box {
   align-items: center;
   background-color: #000;
 }
-
 main #form-box #form {
   width: 80%;
   margin: 1rem;
@@ -34,33 +31,27 @@ main #form-box #form {
   flex-direction: column;
   align-items: center;
 }
-
 main #form-box #form input {
   width: 100%;
   height: 2rem;
   border: 0;
   margin: 0.4rem;
 }
-
 main #form-box #form input:focus {
   height: 3rem;
 }
-
 main #form-box #form a {
   color: #ffc300;
   transition: 0.3s ease-in-out;
 }
-
 main #form-box #form a:hover {
   color: rgb(124, 183, 242);
 }
-
 main #form-box #form div {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 main #form-box #form div button {
   margin: 1rem;
   background-color: #ffc300;
@@ -74,11 +65,8 @@ main #form-box #form div button {
   border: 0;
   font-size: 16px;
 }
-
 main #form-box #form div button:not(:disabled):hover,
 main #form-box #form div button:not(:disabled):focus {
   outline: 0;
   background: #ffd60a;
-}
-
-/*# sourceMappingURL=registerLogin.css.map */
+}/*# sourceMappingURL=registerLogin.css.map */

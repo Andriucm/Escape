@@ -11,20 +11,16 @@ main {
   padding: 5%;
   box-sizing: border-box;
 }
-
 main #articulo {
   border: 2px solid rgba(255, 196, 0, 0.5960784314);
 }
-
 main #articulo h1 {
   font-size: 8em;
   font-weight: lighter;
 }
-
 main #articulo:hover {
   border: 2px solid #ffc400;
 }
-
 main article {
   flex-basis: 18%;
   height: 200px;
@@ -42,38 +38,19 @@ main article {
   transition: all 500ms;
   cursor: pointer;
 }
-
 main article b {
   color: rgb(117, 117, 117);
 }
-
 main article:hover {
   border: 2px solid #356687;
   background-color: #151515;
 }
-
 main article:active {
   transform: scale(0.95);
 }
-
 main .hide {
   display: none;
 }
-
 main .show {
   display: block;
 }/*# sourceMappingURL=grupos.css.map */
-.part {
-  background-color: #FFC300;
-  padding: 2%;
-}
-.part:hover {
-  background-color: #FFD60A;
-}
-.drop {
-  background-color: rgb(197, 16, 16);
-  padding: 10%;
-}
-.drop:hover {
-  background-color: red;
-}

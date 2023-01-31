@@ -51,6 +51,11 @@ main {
     width: 100%;
 }
 
+.fotoPerfil{
+    width: 15rem;
+    height: auto;
+}
+
 .intro-datos {
     display: flex;
     flex-wrap: wrap;

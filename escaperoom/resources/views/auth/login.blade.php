@@ -4,7 +4,7 @@
     </x-slot>
 
 
-    <div id="contenedor">
+    <main>
         <img src="{{ URL::asset('/imagenes/fondo1.jpg') }}" alt="fondo">
         <div id="form-box">
             <div id="form-header">
