@@ -224,11 +224,17 @@ hr {
 
 .editarInfo,
 #submitDatos,
-.view,
 .editarAccount,
 #submitCuenta {
     background-color: #FFC300;
     width: 20%;
+    border: 0;
+    padding: 3%;
+    font-weight: bold;
+    border-radius: 7%;
+}
+.view {
+    background-color: #FFC300;
     border: 0;
     padding: 3%;
     font-weight: bold;
