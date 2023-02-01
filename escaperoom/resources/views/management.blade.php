@@ -7,11 +7,11 @@
             <h1>Gestionar usuarios</h1>
             @auth
                 @if (Auth::user()->rol == 'admin')
-                    <button type="button" class="profes" onclick="window.location.href='./profesores'">Añadir
-                        profesor</button>
+                    <button type="button" class="profes" onclick="window.location.href='./profesores'">Añadir profesor</button>
                 @endif
             @endauth
         </div>
+        <br><br>
         <table id="tabla">
             <tr id="fila-cabecera">
                 <th>

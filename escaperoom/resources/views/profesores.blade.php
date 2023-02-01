@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        Añadir Profesor
+        Profesores
     </x-slot>
 
     <main id="contenedor">

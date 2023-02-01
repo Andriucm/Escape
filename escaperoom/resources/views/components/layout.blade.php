@@ -11,13 +11,6 @@
     <link rel="stylesheet" href="{{ URL::asset('./css/general.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('./css/flash-message.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('./css/font-awesome/css/font-awesome.min.css') }}">
-    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
-     <!-- Bootstrap CSS -->
-     <!-- <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"> -->
-       
-       <!-- Bootstrap Bundle with Popper -->
-       
-    <!-- <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script> -->
 
     @switch($title)
         @case('Inicio')
