@@ -5,7 +5,12 @@
     </x-slot>
     <main>
         <h1>Alumnos del grupo
-        </h1>
+        </h1><br><br>
+        @if (count($alumnos) == 0)
+        <h4>No hay alumnos en este grupo</h4>
+        @endif
+
+        @if (count($alumnos) > 0)
         <table id="tabla">
             <tr class="fila-cabecera">
                 <th class="columna">
@@ -27,7 +32,7 @@
                     Rol
                 </th>
                 <th class="columna">
-                    codGrupo
+                    Codigo de grupo
                 </th>
 
                 <th class="columna">
@@ -66,7 +71,7 @@
                 </td>
             </tr>
             @endforeach
-
         </table>
+        @endif
     </main>
 </x-layout>

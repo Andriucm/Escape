@@ -17,21 +17,15 @@ class ProgresoController extends Controller
      */
     public function index($id)
     {
-        $progresos = DB::table('partidas')
-        ->select(DB::raw('sum(partidas.puntos) as totales'))
-        ->where('codUsuario' , '=', $id)
-        ->get();
-        print_r($progresos);
+        $totales = DB::table('partidas')->where('codUsuario','=',$id)->sum('puntos');
 
-        // var_dump($id);
-        // $sql = 'SELECT partidas.codPartida, partidas.dificultad, partidas.nivel, 
-        // partidas.puntos, sum(partidas.puntos) as totales from partidas 
-        // where partidas.codUsuario = ' . $id;
+        $sql = 'SELECT partidas.codPartida, partidas.dificultad, partidas.nivel, 
+        partidas.puntos from partidas 
+        where partidas.codUsuario = ' . $id;
 
-        // $progresos = DB::select($sql);
+        $progresos = DB::select($sql);
 
-
-        // return view('progreso', compact('progresos'));
+        return view('progreso', compact('totales', 'progresos'));
     }
 
     /**
