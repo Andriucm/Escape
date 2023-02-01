@@ -27,13 +27,14 @@ main {
     animation-duration: 1.5s;
     animation-name: slide;
     animation-iteration-count: initial;
+    border-collapse: collapse;
 
     #fila-cabecera {
         width: 100%;
         text-transform: uppercase;
 
-        div {
-            width: 100%;
+        th {
+            
             padding: 1rem;
             border-bottom: solid 0.2rem #003566;
         }
@@ -43,8 +44,8 @@ main {
 
         text-align: center;
 
-        div {
-            width: 100%;
+        td {
+        
             padding: 1rem;
             border-bottom: solid 0.2rem #003566;
         }
