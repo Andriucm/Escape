@@ -12,9 +12,14 @@ class ProfesorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'usuario' => ['required', 'min:4', 'max:30',
+            'usuario' => [
+                'required',
+                'min:4',
+                'max:30',
             ],
-            'email' => ['required', 'email',
+            'email' => [
+                'required',
+                'email',
             ],
             'name' => [
                 'required',

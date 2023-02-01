@@ -12,7 +12,8 @@ body {
   background-color: #101010;
 }
 
-button:active, .logo:active {
+button:active,
+.logo:active {
   transform: scale(0.95);
 }
 
@@ -31,4 +32,5 @@ button:active, .logo:active {
 button {
   font-family: Display;
   letter-spacing: 3px;
+  cursor: pointer;
 }/*# sourceMappingURL=general.css.map */

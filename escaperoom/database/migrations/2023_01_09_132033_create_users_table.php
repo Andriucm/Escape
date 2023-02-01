@@ -22,6 +22,7 @@ return new class extends Migration {
             $table->integer('telefono')->nullable()->unique();
             $table->enum('rol', array('admin', 'profesor','alumno'));
             $table->bigInteger('codGrupo')->unsigned()->nullable();
+            $table->string('foto');
             $table->rememberToken();
             $table->timestamps();
             $table->foreign('codGrupo')->references('codGrupo')->on('grupos');

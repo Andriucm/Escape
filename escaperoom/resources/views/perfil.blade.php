@@ -3,19 +3,19 @@
     <?php
     use Illuminate\Support\Facades\Auth;
     use Symfony\Component\VarDumper\VarDumper;
-
+    
     // Get the currently authenticated user...
     $user = Auth::user();
-
+    
     $id = $user->codUsuario;
     $user_name = $user->nombre;
     $user_surname = $user->apellido;
     $user_tel = $user->telefono;
-
+    
     $user_email = $user->email;
     $user_password = $user->password;
     $user_rol = $user->rol;
-
+    
     ?>
 
     <x-layout>
@@ -26,7 +26,7 @@
         </x-slot>
         <main>
             <div class="perfil-intro">
-                <img src="{{ URL::asset('/imagenes/logo.png') }}" class="fotoPerfil">
+                <img class="fotoPerfil" src="{{ URL::asset('/imagenes/perfil/'.Auth::User()->foto) }}" alt="perfil">
                 <div class="informacion">
                     <h1 style="color: white;" class="nombre"><?php echo $user_name; ?></h1>
                     <h1 style="color: white;" class="apellido"><?php echo $user_surname; ?></h1>
