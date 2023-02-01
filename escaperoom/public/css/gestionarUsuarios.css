@@ -37,14 +37,13 @@ main .intro {
           animation-name: slide;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial;
+  border-collapse: collapse;
 }
 #tabla #fila-cabecera {
   width: 100%;
-  text-align: center;
   text-transform: uppercase;
 }
-#tabla #fila-cabecera div {
-  width: 100%;
+#tabla #fila-cabecera th {
   padding: 1rem;
   border-bottom: solid 0.2rem #003566;
 }
@@ -52,34 +51,27 @@ main .intro {
   width: 100%;
   text-align: center;
 }
-#tabla #fila div {
+#tabla #fila td {
   padding: 1rem;
   border-bottom: solid 0.2rem #003566;
-  flex: 1;
 }
-.intro {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 50%;
-}
-
-.profes {
-  background-color: #FFC300;
+#tabla .profes {
+  background-color: #ffc300;
   border: 0;
   padding: 1.5%;
   font-weight: bold;
   border-radius: 7%;
 }
-
-.profes:hover {
-  background-color: #FFD60A;
+#tabla .profes:hover {
+  background-color: #ffd60a;
 }
-.drop {
+#tabla .drop {
   background-color: red;
   padding: 10%;
 }
-.drop:hover {
+#tabla .drop:hover {
   background-color: rgb(252, 51, 51);
 }
+#tabla #fila:hover {
+  background: rgba(255, 196, 0, 0.7294117647);
+}/*# sourceMappingURL=gestionarUsuarios.css.map */

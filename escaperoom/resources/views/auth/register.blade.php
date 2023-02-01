@@ -13,17 +13,6 @@
             <form id="form" action="{{ route('register.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                <input type="text" name="usuario" id="form-username" placeholder="Usuario" value="{{ old('usuario') }}">
-
-                @error('usuario')
-                    <small style="color: red">{{ $message }}</small>
-                @enderror
-                <input type="email" name="email" id="form-email" placeholder="example@gmail.com"
-                    value="{{ old('email') }}">
-
-                @error('email')
-                    <small style="color: red">{{ $message }}</small>
-                @enderror
                 <input type="text" name="name" id="form-nombre" placeholder="Nombre" value="{{ old('name') }}">
 
 
@@ -36,6 +25,20 @@
                 @error('surname')
                     <small style="color: red">{{ $message }}</small>
                 @enderror
+
+                <input type="text" name="usuario" id="form-username" placeholder="Usuario"
+                    value="{{ old('usuario') }}">
+
+                @error('usuario')
+                    <small style="color: red">{{ $message }}</small>
+                @enderror
+                <input type="email" name="email" id="form-email" placeholder="example@gmail.com"
+                    value="{{ old('email') }}">
+
+                @error('email')
+                    <small style="color: red">{{ $message }}</small>
+                @enderror
+
                 <input type="text" name="telefono" id="form-telefono" placeholder="Telefono"
                     value="{{ old('telefono') }}">
 
@@ -44,7 +47,7 @@
                 @enderror
                 <input type="file" accept="image/png,image/jpg,image/jpeg" name="foto" alt="Subir imagen">
                 @error('foto')
-                <small style="color: red">{{ $message }}</small>
+                    <small style="color: red">{{ $message }}</small>
                 @enderror
                 <input type="password" name="password" id="form-password" placeholder="Contraseña">
                 @error('password')
