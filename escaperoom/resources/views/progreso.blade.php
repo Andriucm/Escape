@@ -18,7 +18,12 @@
     </x-slot>
     <main>
         <h1>Progreso personal
-        </h1>
+        </h1><br><br>
+        @if (count($progresos) == 0)
+        <h4>No hay partidas registradas</h4>
+        @endif
+
+        @if (count($progresos) > 0)
         <table id="tabla" style="color: white;">
             <tr class="fila-cabecera">
                 <th class="columna">
@@ -34,6 +39,7 @@
                     Puntos
                 </th>
             </tr>
+
             @foreach ($progresos as $progreso)
             <tr class="fila">
                 <td class="columna">
@@ -55,10 +61,10 @@
                     Puntos totales
                 </td>
                 <td class="columna" id="totales">
-                {{ $progreso-> totales}}
+                    {{ $totales }}
                 </td>
             </tr>
         </table>
+        @endif
     </main>
 </x-layout>
-

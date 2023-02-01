@@ -236,12 +236,15 @@ hr {
 .view {
     background-color: #FFC300;
     border: 0;
-    padding: 3%;
+    padding: 40%;
+    width: 160%;
     font-weight: bold;
     border-radius: 7%;
+    font-family: Display;
+    letter-spacing: 3px;
 }
 
-.perfil-body button:hover {
+.perfil-body button:hover, .view:hover {
     background-color: #FFD60A;
 }
 

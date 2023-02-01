@@ -30,10 +30,10 @@
                     Telefono
                 </th>
                 <th>
-                    codGrupo
+                    Rol
                 </th>
                 <th>
-                    Rol
+                    Cod grupo
                 </th>
                 <th>
                     Eliminar
