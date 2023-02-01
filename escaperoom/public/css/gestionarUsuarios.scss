@@ -34,7 +34,6 @@ main {
         text-transform: uppercase;
 
         th {
-            
             padding: 1rem;
             border-bottom: solid 0.2rem #003566;
         }
@@ -45,10 +44,27 @@ main {
         text-align: center;
 
         td {
-        
             padding: 1rem;
             border-bottom: solid 0.2rem #003566;
         }
+    }
+    .profes {
+        background-color: #ffc300;
+        border: 0;
+        padding: 1.5%;
+        font-weight: bold;
+        border-radius: 7%;
+    }
+
+    .profes:hover {
+        background-color: #ffd60a;
+    }
+    .drop {
+        background-color: red;
+        padding: 10%;
+    }
+    .drop:hover {
+        background-color: rgb(252, 51, 51);
     }
     #fila:hover {
         background: #ffc400ba;
