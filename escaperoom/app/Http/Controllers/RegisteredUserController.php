@@ -46,7 +46,7 @@ class RegisteredUserController extends Controller
             ],
         ]);
 
-        if (User::where('usuario', $request->usuario)->get() || User::where('email', $request->email)->get()) {
+        if ((User::where('usuario', $request->usuario)->first() != null) || (User::where('email', $request->email)->first() != null) ) {
             return to_route('register')->with('warning', 'Este usuario ya existe');
         } else {
             $usuario = User::create([

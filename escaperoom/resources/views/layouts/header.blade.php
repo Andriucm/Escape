@@ -7,7 +7,7 @@
                 <li><a href="{{ route('grupos.index') }}">Grupos</a></li>
                 @auth
                     @if (Auth::user()->rol == 'admin')
-                        <li><a href="./management">Usuarios</a></li>
+                        <li><a href="{{ route('management.index') }}">Usuarios</a></li>
                     @endif
                     <li><img id="fotoPerfil" src="{{ URL::asset('/imagenes/perfil/' . Auth::User()->foto) }}"
                             onclick="window.location.href='{{ route('perfil') }}' " alt="perfil"></li>

@@ -37,13 +37,13 @@ main .intro {
           animation-name: slide;
   -webkit-animation-iteration-count: initial;
           animation-iteration-count: initial;
+  border-collapse: collapse;
 }
 #tabla #fila-cabecera {
   width: 100%;
   text-transform: uppercase;
 }
-#tabla #fila-cabecera div {
-  width: 100%;
+#tabla #fila-cabecera th {
   padding: 1rem;
   border-bottom: solid 0.2rem #003566;
 }
@@ -51,8 +51,7 @@ main .intro {
   width: 100%;
   text-align: center;
 }
-#tabla #fila div {
-  width: 100%;
+#tabla #fila td {
   padding: 1rem;
   border-bottom: solid 0.2rem #003566;
 }
