@@ -185,6 +185,10 @@ hr {
 }
 
 #submitDatos:hover,
+#submitCuenta {
+    font-family: Display;
+    letter-spacing: 3px;
+}
 #submitCuenta:hover {
     transform: scale(1.1);
 }
@@ -237,7 +241,7 @@ hr {
     background-color: #FFC300;
     border: 0;
     padding: 40%;
-    width: 160%;
+    width: 260%;
     font-weight: bold;
     border-radius: 7%;
     font-family: Display;
