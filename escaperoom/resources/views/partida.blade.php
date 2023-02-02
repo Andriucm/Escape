@@ -4,7 +4,7 @@
     </x-slot>
 
     <main id="partida1">
-    
+
     </main>
 
 </x-layout>

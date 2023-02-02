@@ -23,7 +23,8 @@ class GrupoController extends Controller
                 $grupos = Grupo::all();
             } else
                 $grupos = Grupo::where('codGrupo', Auth::user()->codGrupo)->get();
-        }
+        }    
+
         return view('grupos/index', compact('grupos'));
     }
 
@@ -65,7 +66,6 @@ class GrupoController extends Controller
             $alumnos = User::where('codGrupo', $id)->get();
             return view('grupos/show', compact('alumnos'));
         }
-
     }
 
     public function update(Request $request, $id)
@@ -105,7 +105,14 @@ class GrupoController extends Controller
     public function destroy($id)
     {
         $grupo = Grupo::findOrFail($id);
-        $grupo->delete();
-        return redirect('/groups')->with('destroy', 'Se ha eliminado el grupo');
+        
+        $alumnos = User::where('codGrupo', $id)->get();
+
+        if (count($alumnos) == 0) {
+            $grupo->delete();
+            return redirect('/groups')->with('destroy', 'Se ha eliminado el grupo');
+        } else {
+            return redirect('/groups')->with('info', 'No se ha podido eliminar el grupo ya que contiene participantes');
+        }
     }
 }

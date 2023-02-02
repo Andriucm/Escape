@@ -84,6 +84,9 @@ main .juego div #pista4Btn {
   margin-left: 44%;
   margin-top: 26%;
 }
+main .juego div span, main .juego div i {
+  font-family: "FontAwesome";
+}
 main .pistas {
   grid-area: Pistas;
   border-top: 1px solid #212121;
@@ -130,8 +133,6 @@ main a:hover p {
   grid-area: Narrativa;
   border-bottom: 1px solid #212121;
   border-left: 1px solid #212121;
-  display: flex;
-  flex-flow: column nowrap;
 }
 .narrativa h1 {
   color: white;

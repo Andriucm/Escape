@@ -92,6 +92,10 @@ main {
                 margin-left: 44%;
                 margin-top: 26%;
             }
+
+            span, i {
+                font-family:'FontAwesome';
+            }
         }
     }
 
@@ -124,7 +128,7 @@ main {
                     transition: all 250ms;
                 }
         }
-            
+
         }
 
         a:nth-child(1) {
@@ -149,8 +153,6 @@ main {
         grid-area: Narrativa;
         border-bottom: 1px solid #212121;
         border-left: 1px solid #212121;
-        display: flex;
-        flex-flow: column nowrap;
 
         h1 {
             color: white;
