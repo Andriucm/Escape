@@ -1,11 +1,10 @@
 <script setup>
 import Nav from './Nav.vue'
 import nar from './Narrativa.vue'
-import pista from './Carousel.vue'
+// import pista from './Carousel.vue'
 import lvl from './Nivel1.vue'
 import 'viewerjs/dist/viewer.css'
-import VueViewer from 'v-viewer'
-import CarouselPista from './Carousel.vue';
+
 
 </script>
 <template>
@@ -13,7 +12,7 @@ import CarouselPista from './Carousel.vue';
         <lvl />
     </section>
     <section class="pistas">
-        <pista />
+        <div id="pistaSection"></div>
     </section>
 
     <div class="navegacion">

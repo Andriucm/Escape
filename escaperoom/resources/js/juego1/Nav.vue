@@ -1,5 +1,5 @@
 <script >
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 export default {
     data() {
         return {
@@ -7,22 +7,22 @@ export default {
         }
     },
 
-    methods: {
+    method: {
         atras() {
             if (cont.value > 0) {
                 cont.value--;
                 console.log(cont.value)
-                return cont;
+
             } else cont.value = 0;
-            return cont;
+
         },
         adelante() {
             if (cont.value < 2) {
-            cont.value++;
-            console.log(cont.value)
+                cont.value++;
+                console.log(cont.value)
+                return cont;
+            } else cont.value = 2;
             return cont;
-        } else cont.value = 3;
-        return cont;
         },
     },
 }
