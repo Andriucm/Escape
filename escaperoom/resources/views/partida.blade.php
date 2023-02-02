@@ -7,8 +7,8 @@
         <section class="juego">
             <div>
                 <button onclick="location.href='{{ route('index') }}'" type="button" id="salir">X</button>
-                <button id="pista1Btn" class="pistaButton"><i class="fa-solid fa-circle-info"></i></button>
-                <button id="pista2Btn" class="pistaButton"><i class="fa-solid fa-circle-question"></i></button>
+                <button id="pista1Btn" class="pistaButton"><i class="fa-solid fa-info"></i></button>
+                <button id="juegoBtn" class="juegoButton"><i class="fa-solid fa-question"></i></button>
             </div>
         </section>
         <section id="pistaSection" class="pistas">
@@ -17,14 +17,17 @@
         <nav class="navegacion">
             <a>
                 <p>
-                    < </p>
+                    <
+                </p>
             </a>
             <a>
-                <p>></p>
+                <p>
+                    >
+                </p>
             </a>
         </nav>
         <aside class="narrativa">
-            <h1>Fase <b>5</b></h1>
+            <h1>Fase <b>DEMO</b></h1>
             <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit id molestias suscipit quae? Lorem, ipsum
                 dolor sit amet consectetur adipisicing elit. Fugit id molestias suscipit quae? Est eos a id quos dolore
                 obcaecati quod iure nisi alias non fugit quae quis dolorum laboriosam, similique amet aut quia

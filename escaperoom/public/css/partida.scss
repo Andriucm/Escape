@@ -56,7 +56,18 @@ main {
                 transition: all 500ms;
             }
 
-            .pistaButton:hover {
+            .juegoButton {
+                background-color: #003566;
+                border: 3px solid #00498e;
+                color: white;
+                width: 35px;
+                height: 35px;
+                border-radius: 25px;
+                position: absolute;
+                transition: all 500ms;
+            }
+
+            .pistaButton:hover, .juegoButton:hover {
                 width: 40px;
                 height: 40px;
                 font-size: larger;
@@ -70,9 +81,13 @@ main {
                 margin-top: 22%;
             }
 
-            #pista2Btn {
+            #juegoBtn {
                 margin-left: 36%;
                 margin-top: 30%;
+            }
+
+            span, i {
+                font-family:'FontAwesome';
             }
         }
     }
@@ -128,8 +143,6 @@ main {
         grid-area: Narrativa;
         border-bottom: 1px solid #212121;
         border-left: 1px solid #212121;
-        display: flex;
-        flex-flow: column nowrap;
 
         h1 {
             color: white;

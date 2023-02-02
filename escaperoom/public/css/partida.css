@@ -50,7 +50,17 @@ main .juego div .pistaButton {
   position: absolute;
   transition: all 500ms;
 }
-main .juego div .pistaButton:hover {
+main .juego div .juegoButton {
+  background-color: #003566;
+  border: 3px solid #00498e;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  position: absolute;
+  transition: all 500ms;
+}
+main .juego div .pistaButton:hover, main .juego div .juegoButton:hover {
   width: 40px;
   height: 40px;
   font-size: larger;
@@ -62,9 +72,12 @@ main .juego div #pista1Btn {
   margin-left: 21%;
   margin-top: 22%;
 }
-main .juego div #pista2Btn {
+main .juego div #juegoBtn {
   margin-left: 36%;
   margin-top: 30%;
+}
+main .juego div span, main .juego div i {
+  font-family: "FontAwesome";
 }
 main .pistas {
   grid-area: Pistas;
@@ -109,8 +122,6 @@ main .narrativa {
   grid-area: Narrativa;
   border-bottom: 1px solid #212121;
   border-left: 1px solid #212121;
-  display: flex;
-  flex-flow: column nowrap;
 }
 main .narrativa h1 {
   color: white;

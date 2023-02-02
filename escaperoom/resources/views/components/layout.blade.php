@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ URL::asset('./imagenes/logo.png') }}">
-    <link rel="stylesheet" href="{{ URL::asset('./css/header.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('./css/footer.css') }}" />
+    @if ($title != 'Partida')
+        <link rel="stylesheet" href="{{ URL::asset('./css/header.css') }}" />
+        <link rel="stylesheet" href="{{ URL::asset('./css/footer.css') }}" />
+    @endif
     <link rel="stylesheet" href="{{ URL::asset('./css/general.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('./css/flash-message.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('./css/font-awesome/css/font-awesome.min.css') }}">
