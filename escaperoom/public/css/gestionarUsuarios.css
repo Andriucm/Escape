@@ -75,29 +75,3 @@ main .intro {
 #tabla #fila:hover {
   background: rgba(255, 196, 0, 0.7294117647);
 }/*# sourceMappingURL=gestionarUsuarios.css.map */
-.intro {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 50%;
-}
-
-.profes {
-  background-color: #FFC300;
-  border: 0;
-  padding: 1.5%;
-  font-weight: bold;
-  border-radius: 7%;
-}
-
-.profes:hover {
-  background-color: #FFD60A;
-}
-.drop {
-  background-color: red;
-  padding: 10%;
-}
-.drop:hover {
-  background-color: rgb(252, 51, 51);
-}
