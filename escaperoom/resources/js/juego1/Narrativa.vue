@@ -33,7 +33,7 @@ export default {
 </script>
 <template>
     <aside>
-        <h1>{{ this.cont }}</h1>
+        <!-- <h1>{{ this.cont }}</h1> -->
         <h1>Fase <b>0</b></h1>
         <h5>
             {{ narrativa[this.cont] }}
