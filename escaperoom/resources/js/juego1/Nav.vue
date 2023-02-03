@@ -1,35 +1,29 @@
-<script setup>
-	// import { ref } from "vue"
+<script>
+    import { useGlobales } from './Partida1.vue'
+    import { computed } from 'vue'
 
-    // export default {
-    //     props: ['cont'],
-    //     methods: {
-    //         atras() {
-    //             if (this.cont > 0) {
-    //                 this.cont--;
+    export default {
+    setup() {
+        const store = useGlobales();
 
-    //                 console.log(this.cont)
-    //             } else this.cont = 0;
+        return {
 
-    //         },
-    //         adelante() {
-    //             if (this.cont < 2) {
-    //                 this.cont++;
-    //             console.log(this.cont)
-    //         } else this.cont = 2;
-    //         },
-    //     },
-    // }
-    const props = defineProps(['cont'])
-    const emit = defineEmits(['updateCont'])
+            store,
+
+            avanza: computed(()=>store.avanzar),
+
+            retrocede: computed(()=>store.retroceder),
+        }
+    },
+}
 
 </script>
 <template>
-    <a @click="emit('updateCont',-1)">
+    <a @click="retrocede">
         <p>
             &lt; </p>
     </a>
-    <a @click="emit('updateCont',1)">
+    <a @click="avanza">
         <p> &gt;</p>
     </a>
 </template>
