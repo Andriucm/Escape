@@ -5,35 +5,67 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    .intro {
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
-    
-#tabla{
+@keyframes slide {
+    from {
+        margin-top: 100%;
+    }
+
+    to {
+        margin-top: 0%;
+    }
+}
+
+#tabla {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    animation-duration: 1.5s;
+    animation-name: slide;
+    animation-iteration-count: initial;
+    border-collapse: collapse;
+
     #fila-cabecera {
         width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
-        text-align: center;
         text-transform: uppercase;
-        div {
+
+        th {
             padding: 1rem;
             border-bottom: solid 0.2rem #003566;
-            flex: 1;
         }
     }
     #fila {
         width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
         text-align: center;
 
-        div {
+        td {
             padding: 1rem;
             border-bottom: solid 0.2rem #003566;
-            flex: 1;
         }
+    }
+    .profes {
+        background-color: #ffc300;
+        border: 0;
+        padding: 1.5%;
+        font-weight: bold;
+        border-radius: 7%;
+    }
+
+    .profes:hover {
+        background-color: #ffd60a;
+    }
+    .drop {
+        background-color: red;
+        padding: 10%;
+    }
+    .drop:hover {
+        background-color: rgb(252, 51, 51);
+    }
+    #fila:hover {
+        background: #ffc400ba;
     }
 }

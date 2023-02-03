@@ -26,7 +26,7 @@ function validarFormDatos() {
     } else {
         var pattern = /^[a-zA-Z]/;  //Solo letras
         if (pattern.test(nombre) === false) {
-            inputNombre.style.border="medium solid red";
+            inputNombre.style.border = "medium solid red";
             // inputNombre.style.borderRadius = "5%";
             printError("nameErr", "Por favor, introduce un nombre valido");
         } else {
@@ -220,7 +220,7 @@ function consultarProgreso() {
 
 function cancelDatos() {
     history.go();
-    
+
     // let inputNombre = document.getElementById("formNombre");
     // let inputApellido = document.getElementById("formApe");
     // let inputTelefono = document.getElementById("formTel");

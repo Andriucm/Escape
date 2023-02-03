@@ -5,6 +5,11 @@
     </x-slot>
     <main>
         <h1>Puntuaciones</h1>
+        @if (count($usuarios) == 0)
+        <h4>No hay puntuaciones registradas</h4>
+        @endif
+
+        @if (count($usuarios) > 0)
         <div id="tabla">
             <div class="fila-cabecera">
                 <div class="columna"> Usuario</div>
@@ -21,6 +26,7 @@
                 </div>
             @endforeach
         </div>
+        @endif
     </main>
 
 </x-layout>

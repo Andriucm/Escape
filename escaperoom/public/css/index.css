@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
 .index1 {
     display: flex;
     flex-direction: row;
@@ -19,6 +20,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
+
 .index2 {
     display: grid;
     padding: 3%;
@@ -26,20 +28,54 @@ body {
     align-items: center;
     margin-bottom: 5%;
     grid-template-areas:
-    ". intro4 imgs imgs";
+        ". intro4 imgs imgs";
 }
+
 .index-texto {
     grid-column: 1/2;
     grid-row: 1/1;
+    animation-duration: 3s;
+    animation-name: texto;
+    animation-iteration-count: initial;
 }
+
 .imgPeque {
     grid-area: imgs;
+    animation-duration: 3s;
+    animation-name: foto;
+    animation-iteration-count: initial;
 }
+
+@keyframes foto {
+    from {
+        margin-left: 100%;
+        opacity: 0%;
+    }
+
+    to {
+        margin-left: 0%;
+        opacity: 100%;
+    }
+}
+
+@keyframes texto {
+    from {
+        margin-top: 100%;
+        opacity: 0%;
+    }
+
+    to {
+        margin-top: 0%;
+        opacity: 100%;
+    }
+}
+
 .demo {
     display: grid;
     align-items: center;
     width: 80%;
 }
+
 @font-face {
     font-family: 'Gameplay';
     src: url('../fonts/Gameplay.ttf');
@@ -47,17 +83,19 @@ body {
     font-weight: normal;
 }
 
-.intro1 b{
+.intro1 b {
     font-size: 55px;
     color: white;
     font-family: Gameplay;
     letter-spacing: 3px;
 }
+
 .intro2 {
     width: 65%;
     font-weight: lighter;
     color: gray;
 }
+
 .intro3 {
     grid-column: 1/2;
     grid-row: 2/2;
@@ -66,6 +104,7 @@ body {
     margin-top: 2%;
     margin-left: 3%;
 }
+
 .intro4 {
     grid-area: intro4;
     color: gray;
@@ -73,6 +112,7 @@ body {
     margin-top: 10%;
     margin-left: 25%;
 }
+
 .button {
     grid-column: 1/2;
     grid-row: 1/1;
@@ -88,56 +128,72 @@ body {
     box-sizing: border-box;
     border: 0;
     font-size: 16px;
-    
+
 }
-.button:not(:disabled):hover, .button:not(:disabled):focus {
+
+.button:not(:disabled):hover,
+.button:not(:disabled):focus {
     outline: 0;
     background: #FFD60A;
 }
+
 .img1 {
     width: 85%;
 }
+
 .img2 {
     width: 20%;
 }
+
 .img3 {
     width: 20%;
 }
+
 .img4 {
     width: 20%;
 }
+
 .img5 {
     width: 20%;
 }
+
 .index3 {
     display: grid;
     grid-template-columns: 1fr 2.5fr 1fr;
     text-align: center;
     grid-gap: 8%;
     margin-bottom: 10%;
+    animation-duration: 3s;
+    animation-name: texto;
+    animation-iteration-count: initial;
 }
+
 .titulo {
     color: white;
     grid-column: 2/3;
     grid-row: 1/1;
-   
+
 }
-.titulo >b{
+
+.titulo>b {
     font-family: Gameplay;
     letter-spacing: 3px;
 }
+
 .desc1 {
     color: gray;
     grid-column: 2/3;
     grid-row: 2/2;
     font-weight: lighter;
 }
+
 .desc2 {
     color: gray;
     grid-column: 2/3;
     grid-row: 3/3;
     font-weight: lighter;
 }
+
 .desc3 {
     color: gray;
     grid-column: 2/3;
@@ -149,42 +205,52 @@ body {
     .index1 {
         flex-direction: column;
     }
+
     .intro-texto {
         text-align: center;
     }
+
     .intro2 {
         align-self: center;
         margin-bottom: 5%;
     }
+
     .demo {
         margin: auto;
     }
+
     .button {
         margin: auto;
     }
+
     .index3 {
         grid-template-columns: 1fr 7fr 1fr;
         text-align: center;
     }
 }
+
 @media screen and (max-width: 700px) {
     .index2 {
         grid-template-columns: 1fr;
         align-items: center;
         grid-template-areas:
-        "intro4 intro4 intro4 intro4"
-        "imgs imgs imgs imgs";
+            "intro4 intro4 intro4 intro4"
+            "imgs imgs imgs imgs";
         width: 100%;
     }
+
     .index-texto {
         align-self: center;
     }
+
     .intro-img {
         margin-left: 10%;
     }
+
     .imgPeque {
         margin-left: 10%;
     }
+
     .index3 {
         grid-template-columns: 1fr 9fr 1fr;
         text-align: center;

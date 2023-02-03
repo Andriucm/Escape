@@ -52,4 +52,10 @@ main {
     article:active {
         transform: scale(0.95);
     }
+    .hide {
+        display: none;
+    }
+    .show {
+        display: block;
+    }
 }

@@ -17,10 +17,11 @@ class PartidaFactory extends Factory
     public function definition()
     {
         return [
-            'codUsuario' => '4',
+            'codUsuario' => fake()->numberBetween(1,13),
             'dificultad' => fake()->randomElement(['facil','medio','dificil']),
             'puntos' => fake()->randomElement(['25','50','70']),
             'nivel' => fake()->randomElement(['0','1','2','3','4','5','6']),
         ];
     }
 }
+

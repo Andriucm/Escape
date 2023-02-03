@@ -1,16 +1,21 @@
 import './bootstrap';
 import { createApp } from 'vue';
-import Header from './Header.vue';
 import Footer from './Footer.vue';
-import CarouselPista from './Carousel.vue';
+import partida1 from './juego1/Partida1.vue';
+import { createPinia } from 'pinia';
 import 'viewerjs/dist/viewer.css'
 import VueViewer from 'v-viewer'
 
-createApp(Header).mount('#headerSection');
+
+
+const appPartida1 = createApp(partida1);
+const pinia = createPinia();
+appPartida1.use(pinia);
+appPartida1.use(VueViewer);
+appPartida1.mount('#partida1');
 
 createApp(Footer).mount('#footerSection');
 
-const carousel = createApp(CarouselPista);
-carousel.use(VueViewer);
-carousel.mount('#pistaSection');
+
+
 
