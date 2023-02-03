@@ -1,38 +1,35 @@
-<script >
-import { ref } from 'vue'
-export default {
-    data() {
-        return {
-            cont: ref(0),
-        }
-    },
+<script setup>
+	// import { ref } from "vue"
 
-    method: {
-        atras() {
-            if (cont.value > 0) {
-                cont.value--;
-                console.log(cont.value)
+    // export default {
+    //     props: ['cont'],
+    //     methods: {
+    //         atras() {
+    //             if (this.cont > 0) {
+    //                 this.cont--;
 
-            } else cont.value = 0;
+    //                 console.log(this.cont)
+    //             } else this.cont = 0;
 
-        },
-        adelante() {
-            if (cont.value < 2) {
-                cont.value++;
-                console.log(cont.value)
-                return cont;
-            } else cont.value = 2;
-            return cont;
-        },
-    },
-}
+    //         },
+    //         adelante() {
+    //             if (this.cont < 2) {
+    //                 this.cont++;
+    //             console.log(this.cont)
+    //         } else this.cont = 2;
+    //         },
+    //     },
+    // }
+    const props = defineProps(['cont'])
+    const emit = defineEmits(['updateCont'])
+
 </script>
 <template>
-    <a @click="atras()">
+    <a @click="emit('updateCont',-1)">
         <p>
             &lt; </p>
     </a>
-    <a @click="adelante()">
+    <a @click="emit('updateCont',1)">
         <p> &gt;</p>
     </a>
 </template>
