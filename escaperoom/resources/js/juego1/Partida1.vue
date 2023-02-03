@@ -1,27 +1,41 @@
-<script setup>
+<script>
 import Nav from './Nav.vue'
 import nar from './Narrativa.vue'
-// import pista from './Carousel.vue'
 import lvl from './Nivel1.vue'
+import Pista from './Carousel.vue';
 import 'viewerjs/dist/viewer.css'
-import {ref,reactive} from 'vue'
+import {ref} from 'vue'
 import axios from 'axios'
+import { defineStore } from 'pinia';
 
-var cont = ref(0);
-const obj = reactive({cont })
 
-const updateCont = function name(updateCont) {
-    if(updateCont==1){
-        if (cont.value < 4) {
-            cont = ref(cont.value+1)
-        } else cont= ref(4);
-    }else{
-        if (cont.value > 0) {
-            cont=ref(cont.value-1)
-        } else cont= ref(0);
-
-    }
+export default {
+    components: {
+        Nav,
+        nar,
+        lvl,
+        Pista
+    },
 }
+
+export const useGlobales = defineStore('globales', () => {
+
+const cont = ref(0);
+
+const avanzar = () => {
+    if (cont.value < 3) {
+        cont.value++;
+    } else cont.value = 3;
+}
+
+const retroceder = () => {
+    if (cont.value > 0) {
+        cont.value--;
+    } else cont.value = 0;
+}
+
+return {cont, avanzar, retroceder}
+});
 
 // axios.put('/DSADSA',{'fase':1})
 
@@ -31,15 +45,15 @@ const updateCont = function name(updateCont) {
         <lvl />
     </section>
     <section class="pistas">
-        <div id="pistaSection"></div>
+        <Pista />
     </section>
 
     <div class="navegacion">
-        <Nav :cont="cont" @update-cont="updateCont" ref="c"/>
+        <Nav />
     </div>
 
     <aside class="narrativa">
-        <nar :cont="obj.cont"/>
+        <nar />
     </aside>
 </template>
 
