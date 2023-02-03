@@ -15,7 +15,8 @@ main {
 
 #tabla {
   width: 100%;
-  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
 }
 #tabla .fila-cabecera {
   width: 100%;
@@ -40,6 +41,6 @@ main {
   border-bottom: solid 0.2rem #003566;
   flex: 1;
 }
-.fila:hover {
+#tabla .fila:hover {
   background: rgba(255, 196, 0, 0.7294117647);
 }/*# sourceMappingURL=participantes.css.map */

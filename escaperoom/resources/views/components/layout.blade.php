@@ -56,7 +56,7 @@
         @break
 
         @case('Crear Grupo')
-            <link rel="stylesheet" href="{{ URL::asset('./css/.css') }}" />
+            <link rel="stylesheet" href="{{ URL::asset('./css/registerLogin.css') }}" />
         @break
     @endswitch
     <title>{{ $title }}</title>
